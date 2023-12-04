@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 12:13:47 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:35:39 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define CONVERGE2	0.9
 # define DIVERGE1 	2
 # define DIVERGE2 	3
+# define ITER_SMALL	100
 # define ITER	 	500
 # define ITER_LARGE	1000
 

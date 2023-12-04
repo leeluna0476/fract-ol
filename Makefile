@@ -1,6 +1,6 @@
 TARGET=fractol
 CC=cc
-CFLAGS=-Wall -Wextra -Werror -g3 -fsanitize=address -I $(HEADER_DIR)
+CFLAGS=-Wall -Wextra -Werror -g3 -I $(HEADER_DIR)
 RM=rm -fr
 HEADER_DIR=./includes/
 HEADERS=$(HEADER_DIR)ui.h $(HEADER_DIR)fractal.h

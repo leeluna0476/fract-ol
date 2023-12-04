@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 13:00:02 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:32:58 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	init_zoom_center(t_data *img)
 void	control_key(int key, t_data *img)
 {
 	if (key == KEY_ESC)
+	{
+//		system("leaks fractol");
 		exit(0);
+	}
 	else if (key == KEY_0)
 	{
 	//	init_axis(img);
