@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:55:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 12:13:12 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/04 12:41:33 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,42 +75,4 @@ void	iter_complex(t_complex *z, t_complex c, int iter, int flag)
 			tricorn_next(z, c);
 		k++;
 	}
-}
-
-void	draw_mandelbrot(double z_abs, t_data *img, int i, int j)
-{
-	if (z_abs < DIVERGE1)
-		my_mlx_pixel_put(img, i, j, BLACK);
-	else if (z_abs < DIVERGE2)
-		my_mlx_pixel_put(img, i, j, WHITE);
-	else
-		my_mlx_pixel_put(img, i, j, BLUE);
-}
-
-void	draw_julia(double z_abs, t_data *img, int i, int j)
-{
-	if (z_abs < CONVERGE1)
-		my_mlx_pixel_put(img, i, j, RED);
-	else if (z_abs < CONVERGE2)
-		my_mlx_pixel_put(img, i, j, BLUE);
-	else if (z_abs < DIVERGE1)
-		my_mlx_pixel_put(img, i, j, GREEN);
-	else
-		my_mlx_pixel_put(img, i, j, BLACK);
-}
-
-void	draw_burningship(double z_abs, t_data *img, int i, int j)
-{
-	if (z_abs < DIVERGE1)
-		my_mlx_pixel_put(img, i, j, WHITE);
-	else
-		my_mlx_pixel_put(img, i, j, BLACK);
-}
-
-void	draw_tricorn(double z_abs, t_data *img, int i, int j)
-{
-	if (z_abs < DIVERGE1)
-		my_mlx_pixel_put(img, i, j, WHITE);
-	else
-		my_mlx_pixel_put(img, i, j, BLACK);
 }

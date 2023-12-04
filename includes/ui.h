@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/04 11:08:16 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/04 12:49:50 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ void	make_all_false(t_data *img);
  * receive key hooks
  * control keys
  */
+void	init_zoom_center(t_data *img);
 void	control_key(int key, t_data *img);
 void	hook(t_data *img);
 

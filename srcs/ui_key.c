@@ -6,13 +6,18 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 12:16:50 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:00:02 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ui.h"
 #include "fractal.h"
-#include <stdio.h>
+
+void	init_zoom_center(t_data *img)
+{
+	img->zoom = 0.0035;
+	img->center_x = 0;
+	img->center_y = 0;
+}
 
 void	control_key(int key, t_data *img)
 {
@@ -22,9 +27,7 @@ void	control_key(int key, t_data *img)
 	{
 	//	init_axis(img);
 		make_all_false(img);
-		img->zoom = 0.005;
-		img->center_x = 0;
-		img->center_y = 0;
+		init_zoom_center(img);
 		img->button_on_off[CLEAR] = true;
 		clear_box(img);
 	}
@@ -32,80 +35,31 @@ void	control_key(int key, t_data *img)
 	{
 //		init_coordinate(img);
 		make_all_false(img);
-		img->zoom = 0.005;
-		img->center_x = 0;
-		img->center_y = 0;
+		init_zoom_center(img);
 		img->button_on_off[MANDELBROT] = true;
 		mandelbrot(img);
 	}
 	else if (key == KEY_2) {
 //		init_coordinate(img);
 		make_all_false(img);
-		img->zoom = 0.005;
-		img->center_x = 0;
-		img->center_y = 0;
+		init_zoom_center(img);
 		img->button_on_off[JULIA] = true;
 		julia(img);
 	}
 	else if (key == KEY_3) {
 //		init_coordinate(img);
 		make_all_false(img);
-		img->zoom = 0.005;
-		img->center_x = 0;
-		img->center_y = 0;
+		init_zoom_center(img);
 		img->button_on_off[BURNINGSHIP] = true;
 		burningship(img);
 	}
 	else if (key == KEY_4) {
 //		init_coordinate(img);
 		make_all_false(img);
-		img->zoom = 0.005;
-		img->center_x = 0;
-		img->center_y = 0;
+		init_zoom_center(img);
 		img->button_on_off[TRICORN] = true;
 		tricorn(img);
 	}
-//	else if (key == KEY_5) {
-//		init_coordinate(img);
-//		make_all_false(img);
-//		img->fractals[LOGISTIC] = true;
-//		logistic(img);
-//	}
-//	else if (key == KEY_6) {
-//		// z value is real or imaginary value of limit point
-//		init_coordinate(img);
-//		make_all_false(img);
-//		img->fractals[MANDELBROT3D] = true;
-//		img->mosaic = true;
-//		img->real3d = false;
-//		img->real32 = false;
-//		img->imag3d = false;
-//		img->abs3d = false;
-//		
-//		img->reall = false;
-//		img->imagl = false;
-//		
-//		mandelbrot3d(img);
-//	}
-//	else if (key == KEY_7) {
-//		// think 3d printer
-//		init_coordinate(img);
-//		make_all_false(img);
-//		img->fractals[JULIA3D] = true;
-//		julia3d(img);
-//	}
-//	else if (key == KEY_8) {
-//		// stereographic projection
-//		init_coordinate(img);
-//		make_all_false(img);
-//		img->fractals[BURNINGSHIP3D] = true;
-//
-//		burningship3d(img);
-//	}
-//	else if (key == KEY_9) {
-//		// ??
-//		//tricorn3d
-//	}
 	write_menu(img);
 }
 

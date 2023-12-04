@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/03 17:45:17 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/04 12:50:19 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(void)
 	t_data	img;
 
 	ft_bzero(&img, sizeof(t_data));
-	img.zoom = 0.005;
 	img.mlx_ptr = mlx_init();
 	img.win_ptr = mlx_new_window(img.mlx_ptr, WIDTH, HEIGHT, "fract-ol");
 	img.img = mlx_new_image(img.mlx_ptr, WIDTH, HEIGHT);
