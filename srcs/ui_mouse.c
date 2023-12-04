@@ -45,9 +45,7 @@ void	wheel(int button, t_data *img)
 	}
 	if (button == WHEEL_CLICK)
 	{
-		img->center_x = 0;
-		img->center_y = 0;
-		img->zoom = 0.005;
+		init_zoom_center(img);
 	}
 	call_set(img);
 	write_menu(img);
