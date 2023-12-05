@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/05 18:07:49 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 20:35:33 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define WHITE			0x00FFFFFF
 # define RED			0x00FF0000
 # define GREEN			0x0000FF00
+# define YELLOW			0x00FDDA0D
 # define BLUE			0x000000FF
 # define BLACK			0x00000000
 # define CHARCOAL		0x001E1E1E

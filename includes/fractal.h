@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 18:08:10 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 20:51:02 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	burningship_next(t_complex *z, t_complex c);
 void	tricorn_next(t_complex *z, t_complex c);
 
 // fractal_utils_execute
+int		turn_off_trans(int color);
 void	draw_mandelbrot(double z_abs, t_data *img, int i, int j);
 void	draw_julia(double z_abs, t_data *img, int i, int j);
 void	draw_burningship(double z_abs, t_data *img, int i, int j);
