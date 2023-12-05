@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:48:46 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 13:35:43 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 07:41:59 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	burningship(t_data *img)
 			init_complex(&c, \
 					((double)(i - BOXLEFT) - box_std.box_offset_x) * img->zoom, \
 					((double)(j - BOXTOP) - box_std.box_offset_y) * img->zoom);
-			iter_complex(&z, c, ITER_SMALL, BURNINGSHIP);
+			img->iter = iter_complex(&z, c, ITER_SMALL, BURNINGSHIP);
 			draw_burningship(c_abs(z), img, i, j);
 			i++;
 		}
