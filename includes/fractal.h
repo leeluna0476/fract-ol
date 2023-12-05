@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 13:35:39 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:01:03 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	mandelbrot(t_data *img);
 void	julia(t_data *img);
 void	burningship(t_data *img);
 void	tricorn(t_data *img);
+void	logistic_map(t_data *img);
 
 #endif
