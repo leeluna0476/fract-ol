@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 20:51:02 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 08:27:06 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,19 @@ typedef struct s_box_standards {
 // fractal_utils
 void	init_complex(t_complex *c, double r, double i);
 double	c_abs(t_complex z);
+
+// fractal_recurrence
 void	mandelbrot_julia_next(t_complex *z, t_complex c);
 void	burningship_next(t_complex *z, t_complex c);
 void	tricorn_next(t_complex *z, t_complex c);
+int		iter_complex(t_complex *z, t_complex c, int iter, int flag);
 
 // fractal_utils_execute
 int		turn_off_trans(int color);
 void	draw_mandelbrot(double z_abs, t_data *img, int i, int j);
 void	draw_julia(double z_abs, t_data *img, int i, int j);
 void	draw_burningship(double z_abs, t_data *img, int i, int j);
-int		iter_complex(t_complex *z, t_complex c, int iter, int flag);
+void	draw_tricorn(double z_abs, t_data *img, int i, int j);
 
 // logistic_utils
 void	make_box_black(t_data *img);
