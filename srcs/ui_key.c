@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 13:26:30 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:34:43 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	control_key(int key, t_data *img)
 	{
 	//	init_axis(img);
 		make_all_false(img);
-		init_zoom_center(img);
 		img->button_on_off[CLEAR] = true;
 		clear_box(img);
 	}

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:16 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/02 15:47:58 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:36:13 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,5 @@ void	clear_box(t_data *img)
 		}
 		j++;
 	}
+	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);
 }
