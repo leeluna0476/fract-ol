@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:55:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/04 12:41:33 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:04:32 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	tricorn_next(t_complex *z, t_complex c)
 	z->imag = -1 * 2 * r * i + c.imag;
 }
 
-void	iter_complex(t_complex *z, t_complex c, int iter, int flag)
+int	iter_complex(t_complex *z, t_complex c, int iter, int flag)
 {
 	int	k;
 
@@ -75,4 +75,5 @@ void	iter_complex(t_complex *z, t_complex c, int iter, int flag)
 			tricorn_next(z, c);
 		k++;
 	}
+	return (k);
 }

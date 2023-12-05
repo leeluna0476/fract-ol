@@ -6,11 +6,21 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:51:22 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 14:24:44 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:02:38 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
+
+bool	check_inbox(int x, int y)
+{
+	if (x >= BOXLEFT && x <= BOXRIGHT)
+	{
+		if (y >= BOXTOP && y <= BOXBOT)
+			return (true);
+	}
+	return (false);
+}
 
 void	logistic_map(t_data *img)
 {
@@ -33,7 +43,8 @@ void	logistic_map(t_data *img)
 			{
 				scaled_x = (int)(r * BOXWIDTH / 4) + BOXLEFT;
 				scaled_y = (BOXWIDTH - 440) - (int)(x * BOXWIDTH / 2);
-				my_mlx_pixel_put(img, scaled_x, scaled_y, WHITE);
+				if (check_inbox(scaled_x, scaled_y) == true)
+					my_mlx_pixel_put(img, scaled_x, scaled_y, WHITE);
 			}
 			iter++;
 		}

@@ -6,12 +6,11 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 13:27:00 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:52:30 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-#include <stdio.h>
 
 void	call_set(t_data *img)
 {
@@ -67,7 +66,6 @@ int	mouse_move(int x, int y, void *param)
 		_button(img, 30, start_y);
 		start_y += 50;
 	}
-//	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);
 	write_menu(img);
 	return (0);
 }

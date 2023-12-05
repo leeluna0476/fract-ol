@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/04 12:49:50 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:07:49 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct s_data {
 	int		center_x;
 	int		center_y;
 	double	zoom;
+	int		iter;
 	bool	button_on_off[BUTTONS];
 }			t_data;
 

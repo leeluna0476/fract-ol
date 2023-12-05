@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 14:25:42 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:08:10 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	tricorn_next(t_complex *z, t_complex c);
 void	draw_mandelbrot(double z_abs, t_data *img, int i, int j);
 void	draw_julia(double z_abs, t_data *img, int i, int j);
 void	draw_burningship(double z_abs, t_data *img, int i, int j);
-void	iter_complex(t_complex *z, t_complex c, int iter, int flag);
+int		iter_complex(t_complex *z, t_complex c, int iter, int flag);
 
 // logistic_utils
 void	make_box_black(t_data *img);
