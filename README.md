@@ -6,3 +6,5 @@ cd fract-ol
 make
 ./fractol
 ```
+You can click the buttons listed on the menu.
+Try it!
