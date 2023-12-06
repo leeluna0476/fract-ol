@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/05 20:35:33 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 08:55:31 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,17 @@
 # define KEY_8			28
 # define KEY_9			25
 # define KEY_0			29
-# define BUTTONS		10
 
-# define LEFT_CLICK		1
+# define KEY_LEFT		123
+# define KEY_RIGHT		124
+# define KEY_DOWN		125
+# define KEY_UP			126
+
+# define KL				0
+# define KR				1
+# define KD				2
+# define KU				3
+# define KEYS			4
 
 # define CLEAR			0
 # define MANDELBROT		1
@@ -71,6 +79,7 @@
 # define THDJULIA		7
 # define THDBURNINGSHIP	8
 # define THDTRICORN		9
+# define BUTTONS		10
 
 typedef struct s_data {
 	void	*mlx_ptr;
@@ -84,9 +93,12 @@ typedef struct s_data {
 	int		mouse_y;
 	int		center_x;
 	int		center_y;
+	int		key_x;
+	int		key_y;
 	double	zoom;
 	int		iter;
 	bool	button_on_off[BUTTONS];
+	bool	keys_on_off[KEYS];
 }			t_data;
 
 typedef struct s_ab {
@@ -124,12 +136,14 @@ void	make_all_false(t_data *img);
  * control keys
  */
 void	init_zoom_center(t_data *img);
+void	init_key_xy(t_data *img);
 void	control_key(int key, t_data *img);
 void	hook(t_data *img);
 
 /* ui_mouse
  * receive mouse hooks
  */
+void	call_set(t_data *img);
 int		mouse_move(int x, int y, void *param);
 int		mouse_press(int button, int x, int y, void *param);
 

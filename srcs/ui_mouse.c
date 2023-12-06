@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 18:52:30 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:13:59 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	wheel(int button, t_data *img)
 		img->zoom /= 1.5;
 		img->center_x *= 1.5;
 		img->center_y *= 1.5;
+		init_key_xy(img);
+		call_set(img);
 	}
 	if (button == WHEEL_DOWN)
 	{
@@ -41,12 +43,15 @@ void	wheel(int button, t_data *img)
 		img->zoom *= 1.5;
 		img->center_x /= 1.5;
 		img->center_y /= 1.5;
+		init_key_xy(img);
+		call_set(img);
 	}
 	if (button == WHEEL_CLICK)
 	{
 		init_zoom_center(img);
+		init_key_xy(img);
+		call_set(img);
 	}
-	call_set(img);
 	write_menu(img);
 }
 

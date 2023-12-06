@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/05 13:34:43 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:14:38 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	init_zoom_center(t_data *img)
 	img->zoom = 0.0035;
 	img->center_x = 0;
 	img->center_y = 0;
+}
+
+void	init_key_xy(t_data *img)
+{
+	img->key_x = 0;
+	img->key_y = 0;
 }
 
 void	control_key(int key, t_data *img)
@@ -38,6 +44,7 @@ void	control_key(int key, t_data *img)
 //		init_coordinate(img);
 		make_all_false(img);
 		init_zoom_center(img);
+		init_key_xy(img);
 		img->button_on_off[MANDELBROT] = true;
 		mandelbrot(img);
 	}
@@ -45,6 +52,7 @@ void	control_key(int key, t_data *img)
 //		init_coordinate(img);
 		make_all_false(img);
 		init_zoom_center(img);
+		init_key_xy(img);
 		img->button_on_off[JULIA] = true;
 		julia(img);
 	}
@@ -52,6 +60,7 @@ void	control_key(int key, t_data *img)
 //		init_coordinate(img);
 		make_all_false(img);
 		init_zoom_center(img);
+		init_key_xy(img);
 		img->button_on_off[BURNINGSHIP] = true;
 		burningship(img);
 	}
@@ -59,6 +68,7 @@ void	control_key(int key, t_data *img)
 //		init_coordinate(img);
 		make_all_false(img);
 		init_zoom_center(img);
+		init_key_xy(img);
 		img->button_on_off[TRICORN] = true;
 		tricorn(img);
 	}
@@ -67,6 +77,22 @@ void	control_key(int key, t_data *img)
 		make_all_false(img);
 		img->button_on_off[LOGISTIC] = true;
 		logistic_map(img);
+	}
+	else if (key == KEY_LEFT) {
+		img->key_x += 80;
+		call_set(img);
+	}
+	else if (key == KEY_RIGHT) {
+		img->key_x -= 80;
+		call_set(img);
+	}
+	else if (key == KEY_DOWN) {
+		img->key_y -= 80;
+		call_set(img);
+	}
+	else if (key == KEY_UP) {
+		img->key_y += 80;
+		call_set(img);
 	}
 	write_menu(img);
 }
