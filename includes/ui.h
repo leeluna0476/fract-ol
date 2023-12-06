@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/06 08:55:31 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:17:57 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,6 @@ typedef struct s_data {
 	int		mouse_y;
 	int		center_x;
 	int		center_y;
-	int		key_x;
-	int		key_y;
 	double	zoom;
 	int		iter;
 	bool	button_on_off[BUTTONS];
@@ -136,7 +134,6 @@ void	make_all_false(t_data *img);
  * control keys
  */
 void	init_zoom_center(t_data *img);
-void	init_key_xy(t_data *img);
 void	control_key(int key, t_data *img);
 void	hook(t_data *img);
 
