@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:02:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 13:16:20 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:12:34 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	mandelbrot(t_data *img)
 			init_complex(&c, \
 					((double)(i - BOXLEFT) - box_std.box_offset_x) * img->zoom, \
 					((double)(j - BOXTOP) - box_std.box_offset_y) * img->zoom);
-			img->iter = iter_complex(&z, c, 10, MANDELBROT);
+			img->iter = iter_complex(&z, c, ITER, MANDELBROT);
 			draw_mandelbrot(c_abs(z), img, i, j);
 			i++;
 		}
