@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 18:12:32 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:19:36 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	wheel(int button, t_data *img)
 	if (button == WHEEL_CLICK)
 	{
 		init_zoom_center(img);
-		init_key_xy(img);
 		call_set(img);
 	}
 	write_menu(img);
@@ -107,9 +106,8 @@ int	mouse_press(int button, int x, int y, void *param)
 		{
 			if (y >= BOXTOP && y <= BOXBOT)
 			{
-				img->center_x += ((img->mouse_x - BOXLEFT) - BOXWIDTH / 2 - img->key_x);
-				img->center_y += ((img->mouse_y - BOXTOP) - BOXHEIGHT / 2 - img->key_y);
-				init_key_xy(img);
+				img->center_x += ((img->mouse_x - BOXLEFT) - BOXWIDTH / 2);
+				img->center_y += ((img->mouse_y - BOXTOP) - BOXHEIGHT / 2);
 				call_set(img);
 			}
 			write_menu(img);

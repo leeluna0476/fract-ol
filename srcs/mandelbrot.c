@@ -6,12 +6,11 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:02:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 18:12:34 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:15:17 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-#include <stdio.h>
 
 void	mandelbrot(t_data *img)
 {
@@ -21,8 +20,8 @@ void	mandelbrot(t_data *img)
 	int			i;
 	int			j;
 
-	box_std.box_offset_x = BOXWIDTH / 2 - (img->center_x - img->key_x);
-	box_std.box_offset_y = BOXHEIGHT / 2 - (img->center_y - img->key_y);
+	box_std.box_offset_x = BOXWIDTH / 2 - (img->center_x);
+	box_std.box_offset_y = BOXHEIGHT / 2 - (img->center_y);
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
