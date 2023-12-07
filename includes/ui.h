@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/06 19:17:57 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 09:20:46 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@
 # define THDTRICORN		9
 # define BUTTONS		10
 
+typedef struct s_complex {
+	double	real;
+	double	imag;
+}			t_complex;
+
 typedef struct s_data {
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -89,6 +94,8 @@ typedef struct s_data {
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	char	*fractal;
+	t_complex	julia_c;
 	int		mouse_x;
 	int		mouse_y;
 	int		center_x;

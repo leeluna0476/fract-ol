@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 08:27:06 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 09:20:56 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@
 # define ITER_SMALL	100
 # define ITER	 	500
 # define ITER_LARGE	1000
-
-typedef struct s_complex {
-	double	real;
-	double	imag;
-}			t_complex;
 
 typedef struct s_box_standards {
 	int box_offset_x;
@@ -65,5 +60,10 @@ void	burningship(t_data *img);
 void	tricorn(t_data *img);
 
 void	logistic_map(t_data *img);
+
+// main_utils
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		check_if_my_fractal(char *fractal, t_data *img);
+void	call_set_argv(t_data *img);
 
 #endif
