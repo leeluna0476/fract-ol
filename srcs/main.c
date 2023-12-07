@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 12:32:02 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:37:51 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int	main(int argc, char *argv[])
 		{
 			if (ft_strncmp(img.fractal, "julia", ft_strlen(img.fractal)) == 0)
 			{
-				// julia인데 argument가 충분히 들어오지 않았다면 줄리아를 디폴트로 띄우도록.
-				if (argc != 4)
+				// julia인데 argument가 두개밖에 들어오지 않았다면 줄리아를 디폴트로 띄우도록.
+				if (argc == 2)
 					init_complex(&(img.julia_c), -0.7269, 0.1889);
 				else
 				{
 					//julia인데 인자가 정상적으로 들어오지 않았다면 그냥 디폴트 화면 띄우도록.
-					if (!is_num(argv[2]) || !is_num(argv[3]))
+					if (argc < 4 || !is_num(argv[2]) || !is_num(argv[3]))
 						img.fractal = NULL;
 					else
 					{
