@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 19:19:36 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 10:57:52 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@ void	wheel(int button, t_data *img)
 {
 	if (button == WHEEL_UP)
 	{
-		img->center_x += ((img->mouse_x - BOXLEFT) - BOXWIDTH / 2);
-		img->center_y += ((img->mouse_y - BOXTOP) - BOXHEIGHT / 2);
+		img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
+		img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
 		img->zoom /= 1.5;
-		img->center_x *= 1.5;
-		img->center_y *= 1.5;
+		img->center.x *= 1.5;
+		img->center.y *= 1.5;
 		call_set(img);
 	}
 	if (button == WHEEL_DOWN)
 	{
-		img->center_x += ((img->mouse_x - BOXLEFT) - BOXWIDTH / 2);
-		img->center_y += ((img->mouse_y - BOXTOP) - BOXHEIGHT / 2);
+		img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
+		img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
 		img->zoom *= 1.5;
-		img->center_x /= 1.5;
-		img->center_y /= 1.5;
+		img->center.x /= 1.5;
+		img->center.y /= 1.5;
 		call_set(img);
 	}
 	if (button == WHEEL_CLICK)
@@ -60,8 +60,8 @@ int	mouse_move(int x, int y, void *param)
 	img = (t_data *)param;
 	if (x > WIDTH || x < 0 || y > HEIGHT || y < 0)
 		return (1);
-	img->mouse_x = x;
-	img->mouse_y = y;
+	img->mouse.x = x;
+	img->mouse.y = y;
 	start_y = 280;
 	while (start_y <= 730)
 	{
@@ -106,8 +106,8 @@ int	mouse_press(int button, int x, int y, void *param)
 		{
 			if (y >= BOXTOP && y <= BOXBOT)
 			{
-				img->center_x += ((img->mouse_x - BOXLEFT) - BOXWIDTH / 2);
-				img->center_y += ((img->mouse_y - BOXTOP) - BOXHEIGHT / 2);
+				img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
+				img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
 				call_set(img);
 			}
 			write_menu(img);

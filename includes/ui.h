@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/07 09:33:12 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 10:58:47 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,11 @@ typedef struct s_complex {
 	double	imag;
 }			t_complex;
 
+typedef struct s_xy {
+	int	x;
+	int	y;
+}				t_xy;
+
 typedef struct s_data {
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -96,20 +101,13 @@ typedef struct s_data {
 	int		endian;
 	char	*fractal;
 	t_complex	julia_c;
-	int		mouse_x;
-	int		mouse_y;
-	int		center_x;
-	int		center_y;
+	t_xy	mouse;
+	t_xy	center;
 	double	zoom;
 	int		iter;
 	bool	button_on_off[BUTTONS];
 	bool	keys_on_off[KEYS];
 }			t_data;
-
-typedef struct s_ab {
-	int	a;
-	int	b;
-}				t_ab;
 
 /* ui_init_screen
  * initialize the screen
@@ -132,7 +130,7 @@ void	write_menu(t_data *img);
 /* ui_button
  * set buttons
  */
-void	make_button(t_data *img, t_ab start, t_ab button_wh, int color);
+void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);
 void	_button(t_data *img, int start_x, int start_y);
 void	make_all_false(t_data *img);
 

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:48:46 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 07:41:59 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:00:32 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	burningship(t_data *img)
 	int			i;
 	int			j;
 
-	box_std.box_offset_x = BOXWIDTH / 2 - img->center_x;
-	box_std.box_offset_y = BOXHEIGHT / 2 - img->center_y;
+	box_std.box_offset_x = BOXWIDTH / 2 - img->center.x;
+	box_std.box_offset_y = BOXHEIGHT / 2 - img->center.y;
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
