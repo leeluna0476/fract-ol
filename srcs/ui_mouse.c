@@ -6,22 +6,41 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 10:57:52 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:38:11 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-void	call_set(t_data *img)
+void	init_zoom_center(t_data *img)
 {
-	if (img->button_on_off[MANDELBROT] == true)
-		mandelbrot(img);
-	else if (img->button_on_off[JULIA] == true)
-		julia(img);
-	else if (img->button_on_off[BURNINGSHIP] == true)
-		burningship(img);
-	else if (img->button_on_off[TRICORN] == true)
-		tricorn(img);
+	img->zoom = 0.0035;
+	img->center.x = 0;
+	img->center.y = 0;
+}
+
+void	send_click_to_key(t_data *img, int y)
+{
+	if (y >= 280 && y <= 310)
+		control_key(KEY_0, img);
+	if (y >= 330 && y <= 360)
+		control_key(KEY_1, img);
+	if (y >= 380 && y <= 410)
+		control_key(KEY_2, img);
+	if (y >= 430 && y <= 460)
+		control_key(KEY_3, img);
+	if (y >= 480 && y <= 510)
+		control_key(KEY_4, img);
+	if (y >= 530 && y <= 560)
+		control_key(KEY_5, img);
+	if (y >= 580 && y <= 610)
+		control_key(KEY_6, img);
+	if (y >= 630 && y <= 660)
+		control_key(KEY_7, img);
+	if (y >= 680 && y <= 710)
+		control_key(KEY_8, img);
+	if (y >= 730 && y <= 760)
+		control_key(KEY_9, img);
 }
 
 void	wheel(int button, t_data *img)
@@ -74,40 +93,22 @@ int	mouse_move(int x, int y, void *param)
 
 int	mouse_press(int button, int x, int y, void *param)
 {
-	t_data  	*img;
+	t_data	*img;
 
 	img = (t_data *)param;
 	wheel(button, img);
-	if (button == LEFT_CLICK) {
+	if (button == LEFT_CLICK)
+	{
 		if (x >= 30 && x <= 330)
-		{
-			if (y >= 280 && y <= 310)
-				control_key(KEY_0, img);
-			if (y >= 330 && y <= 360)
-				control_key(KEY_1, img);
-			if (y >= 380 && y <= 410)
-				control_key(KEY_2, img);
-			if (y >= 430 && y <= 460)
-				control_key(KEY_3, img);
-			if (y >= 480 && y <= 510)
-				control_key(KEY_4, img);
-			if (y >= 530 && y <= 560)
-				control_key(KEY_5, img);
-			if (y >= 580 && y <= 610)
-				control_key(KEY_6, img);
-			if (y >= 630 && y <= 660)
-				control_key(KEY_7, img);
-			if (y >= 680 && y <= 710)
-				control_key(KEY_8, img);
-			if (y >= 730 && y <= 760)
-				control_key(KEY_9, img);
-		}
+			send_click_to_key(img, y);
 		else if (x >= BOXLEFT && x <= BOXRIGHT)
 		{
 			if (y >= BOXTOP && y <= BOXBOT)
 			{
-				img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
-				img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
+				init_xy(&(img->center), img->center.x + \
+						((img->mouse.x - BOXLEFT) - BOXWIDTH / 2), \
+						img->center.y + \
+						((img->mouse.y - BOXTOP) - BOXHEIGHT / 2));
 				call_set(img);
 			}
 			write_menu(img);
@@ -115,6 +116,5 @@ int	mouse_press(int button, int x, int y, void *param)
 		else
 			return (0);
 	}
-//	write_menu(img);
 	return (0);
 }

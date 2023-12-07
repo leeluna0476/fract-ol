@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:28:01 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 12:33:16 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:29:39 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ void	call_set_argv(t_data *img)
 		img->button_on_off[MANDELBROT] = true;
 	else if (ft_strncmp(img->fractal, "julia", ft_strlen(img->fractal)) == 0)
 		img->button_on_off[JULIA] = true;
-	else if (ft_strncmp(img->fractal, "burningship", ft_strlen(img->fractal)) == 0)
+	else if (ft_strncmp(img->fractal, "burningship", \
+				ft_strlen(img->fractal)) == 0)
 		img->button_on_off[BURNINGSHIP] = true;
 	else if (ft_strncmp(img->fractal, "tricorn", ft_strlen(img->fractal)) == 0)
 		img->button_on_off[TRICORN] = true;

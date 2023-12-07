@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:29:55 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 14:09:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:51:32 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ void	call_set_argv(t_data *img);
 // main_utils_parse
 bool	ft_isdigit(int c);
 bool	is_num(char *arg);
+size_t	parse_integer_part(const char *str, t_julia_parse *parse);
+void	parse_decimal_part(const char *str, t_julia_parse *parse);
 double	ft_atof(const char *str);
+
+// main
+void	parse_main_args(t_data *img, int argc, char *argv[]);
 
 #endif

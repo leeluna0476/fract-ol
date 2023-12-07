@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:52:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 11:00:20 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 14:58:56 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	julia(t_data *img)
 {
 	t_box_standards	box_std;
-	t_complex	z;
-	t_complex	c;
-	int			i;
-	int			j;
+	t_complex		z;
+	t_complex		c;
+	int				i;
+	int				j;
 
 	box_std.box_offset_x = BOXWIDTH / 2 - img->center.x;
 	box_std.box_offset_y = BOXHEIGHT / 2 - img->center.y;
@@ -28,10 +28,7 @@ void	julia(t_data *img)
 		i = BOXLEFT;
 		while (i <= BOXRIGHT)
 		{
-			if (img->fractal && ft_strncmp(img->fractal, "julia", ft_strlen(img->fractal)) == 0)
-				init_complex(&c, img->julia_c.real, img->julia_c.imag);
-			else
-				init_complex(&c, -0.7269, 0.1889);
+			c_default_or_arg(img, &c);
 			init_complex(&z, \
 					((double)(i - BOXLEFT) - box_std.box_offset_x) * img->zoom, \
 					((double)(j - BOXTOP) - box_std.box_offset_y) * img->zoom);

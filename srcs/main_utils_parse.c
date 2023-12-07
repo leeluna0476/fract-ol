@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:10:05 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 14:20:23 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:51:12 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bool	ft_isdigit(int c)
 bool	is_num(char *arg)
 {
 	t_julia_parse	count;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	count.dot = 0;
@@ -48,38 +48,55 @@ bool	is_num(char *arg)
 	return (true);
 }
 
-double	ft_atof(const char *str)
+size_t	parse_integer_part(const char *str, t_julia_parse *parse)
 {
-	t_julia_parse	parse;
-	size_t			i;
-	long long		digit;
+	size_t	i;
 
-	parse.double_num = 0.0;
-	parse.dot = 0;
-	parse.sign = 1;
 	i = 0;
 	while (str[i] && str[i] != '.')
 	{
 		if (ft_isdigit(str[i]) == true)
 		{
-			parse.double_num *= 10;
-			parse.double_num += str[i] - '0';
+			parse->double_num *= 10;
+			parse->double_num += str[i] - '0';
 		}
 		else
 		{
 			if (str[i] == '-')
-				parse.sign = -1;
+				parse->sign = -1;
 		}
 		i++;
 	}
-	if (str[i] == '.')
-		i++;
+	return (i);
+}
+
+void	parse_decimal_part(const char *str, t_julia_parse *parse)
+{
+	long long	digit;
+	size_t		i;
+
 	digit = 10;
+	i = 0;
 	while (str[i] && (str[i] - '0' != 0) && digit <= 1000000000000000)
 	{
-		parse.double_num += ((double)(str[i] - '0')) / digit;
+		parse->double_num += ((double)(str[i] - '0')) / digit;
 		digit *= 10;
 		i++;
 	}
+}
+
+double	ft_atof(const char *str)
+{
+	t_julia_parse	parse;
+	size_t			i;
+
+	parse.double_num = 0.0;
+	parse.dot = 0;
+	parse.sign = 1;
+	i = 0;
+	i = parse_integer_part(str, &parse);
+	if (str[i] == '.')
+		i++;
+	parse_decimal_part(&str[i], &parse);
 	return (parse.sign * parse.double_num);
 }

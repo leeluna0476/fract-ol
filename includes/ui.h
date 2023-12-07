@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/07 12:08:30 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:30:46 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,22 +92,22 @@ typedef struct s_xy {
 }				t_xy;
 
 typedef struct s_data {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	char	*fractal;
+	void		*mlx_ptr;
+	void		*win_ptr;
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	char		*fractal;
 	t_complex	julia_c;
-	t_xy	mouse;
-	t_xy	center;
-	double	zoom;
-	int		iter;
-	bool	button_on_off[BUTTONS];
-	bool	keys_on_off[KEYS];
-}			t_data;
+	t_xy		mouse;
+	t_xy		center;
+	double		zoom;
+	int			iter;
+	bool		button_on_off[BUTTONS];
+	bool		keys_on_off[KEYS];
+}				t_data;
 
 /* ui_init_screen
  * initialize the screen
@@ -133,22 +133,30 @@ void	write_menu(t_data *img);
 void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);
 void	_button(t_data *img, int start_x, int start_y);
 void	make_all_false(t_data *img);
+void	turn_on_button(t_data *img, int button);
 
 /* ui_key
  * receive key hooks
  * control keys
  */
-void	init_zoom_center(t_data *img);
 void	control_key(int key, t_data *img);
 int		key_press(int key, void *param);
-int		terminate_program(void);
 void	hook(t_data *img);
 
 /* ui_mouse
  * receive mouse hooks
  */
-void	call_set(t_data *img);
+void	init_zoom_center(t_data *img);
+void	send_click_to_key(t_data *img, int y);
+void	wheel(int button, t_data *img);
 int		mouse_move(int x, int y, void *param);
 int		mouse_press(int button, int x, int y, void *param);
+
+/* ui_button_execute
+ * execute button
+ */
+void	call_set(t_data *img);
+int		terminate_program(void);
+void	execute_button(t_data *img, int button, void (*f)(t_data *));
 
 #endif
