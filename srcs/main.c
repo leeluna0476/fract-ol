@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 09:28:39 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 10:42:18 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char *argv[])
 		}
 	}
 	img.mlx_ptr = mlx_init();
-	img.win_ptr = mlx_new_window(img.mlx_ptr, WIDTH, HEIGHT, "fract-ol");
+	img.win_ptr = mlx_new_window(img.mlx_ptr, WIDTH, HEIGHT, "fractol");
 	img.img = mlx_new_image(img.mlx_ptr, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, \
 			&img.line_length, &img.endian);
