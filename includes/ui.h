@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/07 10:58:47 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:08:30 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,8 @@ void	make_all_false(t_data *img);
  */
 void	init_zoom_center(t_data *img);
 void	control_key(int key, t_data *img);
+int		key_press(int key, void *param);
+int		terminate_program(void);
 void	hook(t_data *img);
 
 /* ui_mouse

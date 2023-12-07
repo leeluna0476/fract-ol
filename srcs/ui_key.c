@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 10:58:37 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:07:15 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,15 @@ int	key_press(int key, void *param) {
 	return (0);
 }
 
+int	terminate_program(void)
+{
+	exit(0);
+}
+
 void	hook(t_data *img)
 {
 	mlx_hook(img->win_ptr, 6, 0, mouse_move, img);
 	mlx_hook(img->win_ptr, 2, 0, key_press, img);
 	mlx_hook(img->win_ptr, 4, 0, mouse_press, img);
-//	mlx_hook(img->win_ptr, 5, 0, mouse_release, img);
-//	mlx_hook(img->win_ptr, 17, 0, terminate_program, img);
+	mlx_hook(img->win_ptr, 17, 0, terminate_program, img);
 }

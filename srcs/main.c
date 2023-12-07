@@ -6,11 +6,12 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 10:42:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:47:04 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
+#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
@@ -57,5 +58,6 @@ int	main(int argc, char *argv[])
 	mlx_put_image_to_window(img.mlx_ptr, img.win_ptr, img.img, 0, 0);
 	write_menu(&img);
 	mlx_loop(img.mlx_ptr);
+	printf("%p\n", img.win_ptr);
 	return (0);
 }
