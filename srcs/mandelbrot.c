@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:02:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 19:15:17 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:47:58 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	mandelbrot(t_data *img)
 {
 	t_box_standards	box_std;
-	t_complex	z;
-	t_complex	c;
-	int			i;
-	int			j;
+	t_complex		z;
+	t_complex		c;
+	int				i;
+	int				j;
 
-	box_std.box_offset_x = BOXWIDTH / 2 - (img->center_x);
-	box_std.box_offset_y = BOXHEIGHT / 2 - (img->center_y);
+	box_std.box_offset_x = BOXWIDTH / 2 - (img->center.x);
+	box_std.box_offset_y = BOXHEIGHT / 2 - (img->center.y);
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
