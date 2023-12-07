@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:44:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 16:28:38 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:56:21 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void	make_all_false(t_data *img)
 void	turn_on_button(t_data *img, int button)
 {
 	make_all_false(img);
+	init_theme(img);
 	img->button_on_off[button] = true;
 }

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/07 16:30:46 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:32:28 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,8 @@
 # define KEY_DOWN		125
 # define KEY_UP			126
 
-# define KL				0
-# define KR				1
-# define KD				2
-# define KU				3
-# define KEYS			4
+# define THEME_RED		33
+# define THEME_BLUE		30
 
 # define CLEAR			0
 # define MANDELBROT		1
@@ -91,6 +88,13 @@ typedef struct s_xy {
 	int	y;
 }				t_xy;
 
+typedef struct s_theme {
+	int	mandelbrot;
+	int	julia;
+	int	burningship;
+	int	tricorn;
+}		t_theme;
+
 typedef struct s_data {
 	void		*mlx_ptr;
 	void		*win_ptr;
@@ -100,13 +104,13 @@ typedef struct s_data {
 	int			line_length;
 	int			endian;
 	char		*fractal;
+	t_theme		theme;
 	t_complex	julia_c;
 	t_xy		mouse;
 	t_xy		center;
 	double		zoom;
 	int			iter;
 	bool		button_on_off[BUTTONS];
-	bool		keys_on_off[KEYS];
 }				t_data;
 
 /* ui_init_screen
@@ -135,10 +139,19 @@ void	_button(t_data *img, int start_x, int start_y);
 void	make_all_false(t_data *img);
 void	turn_on_button(t_data *img, int button);
 
+/* ui_button_execute
+ * execute button
+ */
+void	call_set(t_data *img);
+int		terminate_program(void);
+void	execute_button(t_data *img, int button, void (*f)(t_data *));
+
 /* ui_key
  * receive key hooks
  * control keys
  */
+void	key_fractals(t_data *img, int key);
+void	key_offset(t_data *img, int key);
 void	control_key(int key, t_data *img);
 int		key_press(int key, void *param);
 void	hook(t_data *img);
@@ -152,11 +165,10 @@ void	wheel(int button, t_data *img);
 int		mouse_move(int x, int y, void *param);
 int		mouse_press(int button, int x, int y, void *param);
 
-/* ui_button_execute
- * execute button
+/* ui_theme
+ * set color themes: RED or BLUE
  */
-void	call_set(t_data *img);
-int		terminate_program(void);
-void	execute_button(t_data *img, int button, void (*f)(t_data *));
+void	init_theme(t_data *img);
+void	key_theme(t_data *img, int key);
 
 #endif

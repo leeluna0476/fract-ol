@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 16:46:55 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:30:38 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	main(int argc, char *argv[])
 	mlx_clear_window(img.mlx_ptr, img.win_ptr);
 	init_screen(&img);
 	init_axis(&img);
+	init_theme(&img);
 	if (img.fractal)
 		call_set_argv(&img);
 	hook(&img);
