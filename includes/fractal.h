@@ -6,16 +6,16 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 09:20:56 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 09:31:21 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTAL_H
 # define FRACTAL_H
 
+# include "main.h"
 # include "ui.h"
 # include <math.h>
-# include <stdlib.h>
 
 # define CONVERGE1	0.2
 # define CONVERGE2	0.9
@@ -60,10 +60,5 @@ void	burningship(t_data *img);
 void	tricorn(t_data *img);
 
 void	logistic_map(t_data *img);
-
-// main_utils
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		check_if_my_fractal(char *fractal, t_data *img);
-void	call_set_argv(t_data *img);
 
 #endif
