@@ -6,12 +6,32 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 11:47:04 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:32:02 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-#include <stdio.h>
+
+bool	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (true);
+	return (false);
+}
+
+bool	is_num(char *arg)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < ft_strlen(arg))
+	{
+		if (!ft_isdigit(arg[i]))
+			return (false);
+		i++;
+	}
+	return (true);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -26,14 +46,18 @@ int	main(int argc, char *argv[])
 			{
 				// julia인데 argument가 충분히 들어오지 않았다면 줄리아를 디폴트로 띄우도록.
 				if (argc != 4)
-				{
-					img.julia_c.real = -0.7269;
-					img.julia_c.imag = 0.1889;
-				}
+					init_complex(&(img.julia_c), -0.7269, 0.1889);
 				else
 				{
-					img.julia_c.real = atof(argv[2]);
-					img.julia_c.imag = atof(argv[3]);
+					//julia인데 인자가 정상적으로 들어오지 않았다면 그냥 디폴트 화면 띄우도록.
+					if (!is_num(argv[2]) || !is_num(argv[3]))
+						img.fractal = NULL;
+					else
+					{
+						// 인자가 정상적으로 들어왔다면 받기.
+						img.julia_c.real = atof(argv[2]);
+						img.julia_c.imag = atof(argv[3]);
+					}
 				}
 			}
 			else
@@ -58,6 +82,5 @@ int	main(int argc, char *argv[])
 	mlx_put_image_to_window(img.mlx_ptr, img.win_ptr, img.img, 0, 0);
 	write_menu(&img);
 	mlx_loop(img.mlx_ptr);
-	printf("%p\n", img.win_ptr);
 	return (0);
 }
