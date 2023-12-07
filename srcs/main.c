@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 12:37:51 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:03:56 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,30 @@ bool	ft_isdigit(int c)
 
 bool	is_num(char *arg)
 {
+	t_julia_parse	count;
 	size_t	i;
 
 	i = 0;
+	count.dot = 0;
+	count.neg = 0;
+	count.num = 0;
 	while (i < ft_strlen(arg))
 	{
 		if (!ft_isdigit(arg[i]))
-			return (false);
+		{
+			if (arg[i] == '.')
+				count.dot++;
+			else if (arg[i] == '-')
+				count.neg++;
+			else
+				return (false);
+		}
+		else
+			count.num++;
 		i++;
 	}
+	if (count.num == 0 || count.dot > 1 || count.neg > 1)
+		return (false);
 	return (true);
 }
 
