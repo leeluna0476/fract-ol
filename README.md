@@ -12,7 +12,7 @@ Options:
 - [fractal]: Enter the name of the fractal you want to see.
 - [c.real] [c.imag]: Enter a complex number $c$ for julia set. (Only for julia set!)
 
----
+## Arguments
 
 ![](pictures/mandelbrot.png)
 ```
@@ -45,7 +45,29 @@ Options:
 ./fractol tricorn
 ```
 
----
-
+## Buttons
 You can click the buttons listed on the menu.
 Try it!
+
+|Button|Function|
+|---|---|
+|[|Theme RED|
+|]|Theme BLUE|
+|0|Reset Box|
+|1|Mandelbrot set|
+|2|Julia set|
+|3|Burningship set|
+|4|Tricorn set|
+
+---
+
+![](pictures/mandelbrot_button.png)
+![](pictures/julia_button.png)
+![](pictures/burningship_button.png)
+![](pictures/tricorn_button.png)
+
+---
+
+There are two themes: RED and BLUE.
+![](pictures/mandelbrot_blue.png)
+![](pictures/julia_red2.png)
