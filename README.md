@@ -63,7 +63,7 @@ Try it!
 
 There are two themes: RED and BLUE.
 ![](pictures/mandelbrot_blue.png)
-![](pictures/julia_red2.png)
+![](pictures/julia_red_2.png)
 
 ---
 
