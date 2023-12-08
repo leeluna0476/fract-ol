@@ -59,6 +59,8 @@ Try it!
 |3|Burningship set|
 |4|Tricorn set|
 
+---
+
 There are two themes: RED and BLUE.
 ![](pictures/mandelbrot_blue.png)
 ![](pictures/julia_red2.png)
