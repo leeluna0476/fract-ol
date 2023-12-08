@@ -1,4 +1,10 @@
 # fract-ol
+[1. Arguments](##Arguments)
+
+[2. Buttons](##Buttons)
+
+---
+
 <!-- First, get explanations about each fractals.
 [fractals.md](fractals.md) -->
 Copy and paste the script below to your bash.
@@ -11,12 +17,6 @@ make
 Options:
 - [fractal]: Enter the name of the fractal you want to see.
 - [c.real] [c.imag]: Enter a complex number $c$ for julia set. (Only for julia set!)
-
----
-
-[1. Arguments](##Arguments)
-
-[2. Buttons](##Buttons)
 
 ## Arguments
 
