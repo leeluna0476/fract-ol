@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:29:55 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 16:51:32 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/08 10:47:06 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define MAIN_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include "ui.h"
+# include "ft_printf.h"
 
 typedef struct s_julia_parse {
 	int		int_num;
@@ -38,6 +40,7 @@ void	parse_decimal_part(const char *str, t_julia_parse *parse);
 double	ft_atof(const char *str);
 
 // main
+void	print_errmsg(void);
 void	parse_main_args(t_data *img, int argc, char *argv[]);
 
 #endif
