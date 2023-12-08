@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:41:05 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/06 08:24:26 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:11:06 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ void	draw_mandelbrot(double z_abs, t_data *img, int i, int j)
 	if (z_abs < DIVERGE1)
 		my_mlx_pixel_put(img, i, j, BLACK);
 	else
-		my_mlx_pixel_put(img, i, j, turn_off_trans(RED * img->iter * 20));
+	{
+		if (img->theme.mandelbrot == RED)
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.mandelbrot * img->iter * 20));
+		else
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.mandelbrot * img->iter / 20));
+	}
 }
 
 void	draw_julia(double z_abs, t_data *img, int i, int j)
@@ -43,7 +50,14 @@ void	draw_julia(double z_abs, t_data *img, int i, int j)
 	else if (z_abs < DIVERGE1)
 		my_mlx_pixel_put(img, i, j, GREEN);
 	else
-		my_mlx_pixel_put(img, i, j, turn_off_trans(BLUE * img->iter / 5));
+	{
+		if (img->theme.julia == RED)
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.julia * img->iter * 20));
+		else
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.julia * img->iter / 5));
+	}
 }
 
 void	draw_burningship(double z_abs, t_data *img, int i, int j)
@@ -51,7 +65,14 @@ void	draw_burningship(double z_abs, t_data *img, int i, int j)
 	if (z_abs < DIVERGE1)
 		my_mlx_pixel_put(img, i, j, BLACK);
 	else
-		my_mlx_pixel_put(img, i, j, turn_off_trans(RED * img->iter * 30));
+	{
+		if (img->theme.burningship == RED)
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.burningship * img->iter * 30));
+		else
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.burningship * img->iter / 20));
+	}
 }
 
 void	draw_tricorn(double z_abs, t_data *img, int i, int j)
@@ -59,5 +80,12 @@ void	draw_tricorn(double z_abs, t_data *img, int i, int j)
 	if (z_abs < DIVERGE1)
 		my_mlx_pixel_put(img, i, j, BLACK);
 	else
-		my_mlx_pixel_put(img, i, j, turn_off_trans(BLUE * img->iter / 5));
+	{
+		if (img->theme.tricorn == RED)
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.tricorn * img->iter * 20));
+		else
+			my_mlx_pixel_put(img, i, j, \
+					turn_off_trans(img->theme.tricorn * img->iter / 5));
+	}
 }

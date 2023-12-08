@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:30:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/02 14:40:41 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:37:40 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ bool	check_menu(int a, int b)
 
 void	write_header(t_data *img, int *line, int *gap)
 {
-	mlx_string_put(img->mlx_ptr, img->win_ptr, 90, \
-			*line, WHITE, "/////  MENU  /////");
-	*line += *gap;
-	mlx_string_put(img->mlx_ptr, img->win_ptr, 70, \
-			*line, WHITE, "///   MOUSE   ///");
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "///// MOVE: Direction Keys");
 	*line += *gap;
 	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
-			*line, WHITE, "MOVE: Mouse Right Button");
+			*line, WHITE, "/////  THEME  /////");
 	*line += *gap;
 	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
-			*line, WHITE, "MOVE: Mouse Right Button");
+			*line, WHITE, "[: RED");
 	*line += *gap;
-	mlx_string_put(img->mlx_ptr, img->win_ptr, 70, \
-			*line, WHITE, "///   KEYBOARD   ///");
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "]: BLUE");
+	*line += *gap;
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "/////   MENU   /////");
 }
 
 void	write_2ds(t_data *img, int *line, int *gap)
