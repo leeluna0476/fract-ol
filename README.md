@@ -12,5 +12,27 @@ Options:
 - [fractal]: Enter the name of the fractal you want to see.
 - [c.real] [c.imag]: Enter a complex number $c$ for julia set. (Only for julia set!)
 
+---
+
+![](pictures/mandelbrot.png)
+![](pictures/mandelbrot_arg.png)
+
+---
+
+![](pictures/julia.png)
+![](pictures/julia_arg.png)
+
+---
+
+![](pictures/burningship.png)
+![](pictures/burningship_arg.png)
+
+---
+
+![](pictures/tricorn.png)
+![](pictures/tricorn_arg.png)
+
+---
+
 You can click the buttons listed on the menu.
 Try it!
