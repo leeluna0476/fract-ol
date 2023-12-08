@@ -18,8 +18,6 @@ Options:
 
 [2. Buttons](##Buttons)
 
----
-
 ## Arguments
 
 ![](pictures/mandelbrot.png)
