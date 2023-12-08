@@ -6,7 +6,10 @@ Copy and paste the script below to your bash.
 git clone https://github.com/leeluna0476/fract-ol.git fract-ol
 cd fract-ol
 make
-./fractol
+./fractol [fractal] [c.real] [c.imag]
 ```
+Options:
+- [fractal]: Enter the name of the fractal you want to see.
+- [c.real] [c.imag]: Enter a complex number $c$ for julia set.
 You can click the buttons listed on the menu.
 Try it!
