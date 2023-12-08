@@ -74,7 +74,4 @@ There are two themes: RED and BLUE.
 ---
 
 You can call each set JUST by clicking the button.
-![](pictures/mandelbrot_button.png)
-![](pictures/julia_button.png)
 ![](pictures/burningship_button.png)
-![](pictures/tricorn_button.png)
