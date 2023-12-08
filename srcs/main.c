@@ -6,22 +6,11 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/08 11:47:30 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:04:44 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-
-void	print_errmsg(void)
-{
-	ft_printf("### Enter 1 or 3 parameters:\n");
-	ft_printf("    ./fractol [fractal] [c.real] [c.imag]\n");
-	ft_printf("[fractal]:\n");
-	ft_printf("    1. mandelbrot\n    2. julia\n");
-	ft_printf("       - [c.real] [c.imag]:\n");
-	ft_printf("         - must enter a proper complex number\n");
-	ft_printf("    3. burningship\n    4. tricorn\n");
-}
 
 void	parse_main_args(t_data *img, int argc, char *argv[])
 {
@@ -72,11 +61,6 @@ int	main(int argc, char *argv[])
 	init_theme(&img);
 	if (img.fractal)
 		call_set_argv(&img);
-	else
-	{
-		print_errmsg();
-		return (0);
-	}
 	hook(&img);
 	mlx_put_image_to_window(img.mlx_ptr, img.win_ptr, img.img, 0, 0);
 	write_menu(&img);
