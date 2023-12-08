@@ -1,7 +1,7 @@
 # fract-ol
-[1. Arguments](##Arguments)
+[1. Arguments](## Arguments)
 
-[2. Buttons](##Buttons)
+[2. Buttons](## Buttons)
 
 ---
 
