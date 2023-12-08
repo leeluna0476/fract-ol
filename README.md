@@ -12,6 +12,9 @@ Options:
 - [fractal]: Enter the name of the fractal you want to see.
 - [c.real] [c.imag]: Enter a complex number $c$ for julia set. (Only for julia set!)
 
+[1. Arguments](##Arguments)
+[2. Buttons](##Buttons)
+
 ## Arguments
 
 ![](pictures/mandelbrot.png)
