@@ -13,6 +13,7 @@ Options:
 - [c.real] [c.imag]: Enter a complex number $c$ for julia set. (Only for julia set!)
 
 [1. Arguments](##Arguments)
+
 [2. Buttons](##Buttons)
 
 ## Arguments
