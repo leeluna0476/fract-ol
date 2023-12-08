@@ -15,22 +15,25 @@ Options:
 ---
 
 ![](pictures/mandelbrot.png)
-![](pictures/mandelbrot_arg.png)
+```./fractol mandelbrot```
 
 ---
 
 ![](pictures/julia.png)
-![](pictures/julia_arg.png)
+```./fractol julia```
+
+![](pictures/julia_-1.28_0.1.png)
+```./fractol julia -1.28 0.1```
 
 ---
 
 ![](pictures/burningship.png)
-![](pictures/burningship_arg.png)
+```./fractol burningship```
 
 ---
 
 ![](pictures/tricorn.png)
-![](pictures/tricorn_arg.png)
+```./fractol tricorn```
 
 ---
 
