@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/08 11:47:30 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:50:04 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	print_errmsg(void)
 {
-	ft_printf("### Enter 1 or 3 parameters:\n");
-	ft_printf("    ./fractol [fractal] [c.real] [c.imag]\n");
-	ft_printf("[fractal]:\n");
-	ft_printf("    1. mandelbrot\n    2. julia\n");
-	ft_printf("       - [c.real] [c.imag]:\n");
-	ft_printf("         - must enter a proper complex number\n");
-	ft_printf("    3. burningship\n    4. tricorn\n");
+	write(1, "### Enter 1 or 3 parameters:\n", 29);
+	write(1, "    ./fractol [fractal] [c.real] [c.imag]\n", 42);
+	write(1, "[fractal]:\n", 11);
+	write(1, "    1. mandelbrot\n    2. julia\n", 31);
+	write(1, "       - [c.real] [c.imag]:\n", 28);
+	write(1, "         - must enter a proper complex number\n", 46);
+	write(1, "    3. burningship\n    4. tricorn\n", 35);
 }
 
 void	parse_main_args(t_data *img, int argc, char *argv[])

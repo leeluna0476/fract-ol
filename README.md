@@ -3,6 +3,8 @@
 
 [2. Buttons](#Buttons)
 
+[3. Keys](#Keys)
+
 ---
 
 <!-- First, get explanations about each fractals.
@@ -75,3 +77,25 @@ There are two themes: RED and BLUE.
 
 You can call each set JUST by clicking the button.
 ![](pictures/burningship_button.png)
+
+## Key controls
+You can click the same keys with buttons to call each functions.
+
+|Keys|Function|
+|---|---|
+|[|Theme RED|
+|]|Theme BLUE|
+|0|Reset Box|
+|1|Mandelbrot set|
+|2|Julia set|
+|3|Burningship set|
+|4|Tricorn set|
+
+## Mouse controls
+You can control the fractals by mouse click.
+
+|Mouse|Function|
+|---|---|
+|Wheel UP|Zoom in|
+|Wheel DOWN|Zoom out|
+|Left click|set the mouse point as the center of the box|
