@@ -3,7 +3,9 @@
 
 [2. Buttons](#Buttons)
 
-[3. Keys](#Keys)
+[3. Keys controls](#Key-controls)
+
+[4. Mouse controls](#Mouse-controls)
 
 ---
 
