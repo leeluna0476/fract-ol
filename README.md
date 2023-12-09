@@ -94,7 +94,7 @@ You can click the same keys with buttons to call each functions.
 |4|Tricorn set|
 
 ## Mouse controls
-You can control the fractals by mouse click.
+You can control fractals by mouse click.
 
 |Mouse|Function|
 |---|---|
