@@ -28,9 +28,9 @@ typedef struct s_vec3d {
 }		t_vec3d;
 
 typedef struct s_julia3d {
-	double	x;
-	double	y;
-	double	z;
+	int	x;
+	int	y;
+	int	z;
 	int	color;
 }		t_julia3d;
 
@@ -196,9 +196,9 @@ void	matrix_point_multiply(t_matrix mat, t_data *img, int u)
 		_rz += mat.mat[2][i] * vec[2];
 		i++;
 	}
-	img->julia3d_dots[u].x = _rx;
-	img->julia3d_dots[u].y = _ry;
-	img->julia3d_dots[u].z = _rz;
+	(&(img->julia3d_dots[u]))->x = _rx;
+	(&(img->julia3d_dots[u]))->y = _ry;
+	(&(img->julia3d_dots[u]))->z = _rz;
 }
 
 void	julia3d(t_data *img)
@@ -223,6 +223,37 @@ void	julia3d(t_data *img)
 	z_value = 0;
 	int box_std_x = WIDTH / 2;
 	int box_std_y = HEIGHT / 2;
+
+//	while (all_diverge(c) == false) {
+//		for (int j = 0; j < HEIGHT; j++) {
+//			for (int i = 0; i < WIDTH; i++) {
+//				int	_i = i - box_std_x; // 박스를 기준으로 0,0을 잡아준다.
+//				int	_j = j - box_std_y;
+//
+//				z.real = (double)_i / 250;
+//				z.imag = (double)_j / 250;
+//
+//				for (int k = 0; k < 100; k++) {
+//					next(&z, c);
+//					if (c_abs(z) >= 2)
+//						break;
+//				}
+//
+//				
+//				// give x,y,z coordinates to every single points
+//				if (c_abs(z) < 2) {
+//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->x = i - box_std_x;
+//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->y = j - box_std_y;
+//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->z = z_value;
+//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->color = WHITE - z_value * 1000;
+//				}
+//			}
+//		}
+//		c.real += slice;
+//		z_value++;
+//	}
+
+
 	while (all_diverge(c) == false)
 	{
 		j = 0;
@@ -235,7 +266,7 @@ void	julia3d(t_data *img)
 				z.imag = (double)(j - box_std_y) / 300;
 
 				k = 0;
-				while (k < 100)
+				while (k < 10)
 				{
 					next(&z, c);
 					if (c_abs(z) >= 2)
@@ -259,8 +290,8 @@ void	julia3d(t_data *img)
 	}
 
 	t_vec3d angle;
-	angle.vec[0] = PI * 45 / 180;
-	angle.vec[1] = PI * 0 / 180;
+	angle.vec[0] = PI * 0 / 180;
+	angle.vec[1] = PI * 45 / 180;
 	angle.vec[2] = 0;
 
 
