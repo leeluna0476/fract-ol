@@ -100,4 +100,4 @@ You can control the fractals by mouse click.
 |---|---|
 |Wheel UP|Zoom in|
 |Wheel DOWN|Zoom out|
-|Left click|set the mouse point as the center of the box|
+|Left click|Set the mouse point as the center of the box|
