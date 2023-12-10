@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:29:55 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/08 10:47:06 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:40:16 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "ui.h"
-# include "ft_printf.h"
+# include <unistd.h>
+# include "ui_bonus.h"
 
 typedef struct s_julia_parse {
 	int		int_num;
