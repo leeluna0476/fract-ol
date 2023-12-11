@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:02:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 15:47:58 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 07:58:15 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	mandelbrot(t_data *img)
 	while (j <= BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i < BOXRIGHT)
+		while (i <= BOXRIGHT)
 		{
 			init_complex(&z, 0, 0);
 			init_complex(&c, \
