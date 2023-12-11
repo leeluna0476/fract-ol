@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:24:04 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 15:42:06 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:34:25 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,21 @@ void	call_set(t_data *img)
 	if (img->button_on_off[CLEAR] == true)
 		clear_box(img);
 	else if (img->button_on_off[MANDELBROT] == true)
-	{
 		mandelbrot(img);
-	}
 	else if (img->button_on_off[JULIA] == true)
-	{
 		julia(img);
-	}
 	else if (img->button_on_off[BURNINGSHIP] == true)
-	{
 		burningship(img);
-	}
 	else if (img->button_on_off[TRICORN] == true)
-	{
 		tricorn(img);
-	}
 	else if (img->button_on_off[LOGISTIC] == true)
-	{
 		logistic_map(img);
-	}
-	else if (img->button_on_off[THDJULIA] == true)
-	{
+}
+
+void	call_set_3d(t_data *img)
+{
+	if (img->button_on_off[THDJULIA] == true)
 		julia3d(img);
-	}
 }
 
 int	terminate_program(void)
