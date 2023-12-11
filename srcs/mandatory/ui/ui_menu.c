@@ -6,26 +6,14 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:30:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 18:37:40 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:27:32 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ui.h"
 
-bool	check_menu(int a, int b)
-{
-	if (!(0 < a && a < MENU))
-		return (false);
-	if (!(0 < b && b < HEIGHT))
-		return (false);
-	return (true);
-}
-
 void	write_header(t_data *img, int *line, int *gap)
 {
-	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
-			*line, WHITE, "///// MOVE: Direction Keys");
-	*line += *gap;
 	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
 			*line, WHITE, "/////  THEME  /////");
 	*line += *gap;
@@ -77,6 +65,25 @@ void	write_3ds(t_data *img, int *line, int *gap)
 			*line, WHITE, "9: 3D Tricorn");
 }
 
+void	write_guides(t_data *img, int *line, int *gap)
+{
+	*line += *gap;
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "-------------- GUIDE --------------");
+	*line += *gap;
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "/// MOVE: Direction Keys");
+	*line += *gap;
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "/// ZOOM: Wheels");
+	*line += *gap;
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "/// ROTATE:");
+	*line += 30;
+	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
+			*line, WHITE, "    h(left) l(right) j(down) k(up)");
+}
+
 // reset button:
 // 	가로: 30 ~ 330
 // 	세로: 480 ~ 550
@@ -90,4 +97,5 @@ void	write_menu(t_data *img)
 	write_header(img, &line, &gap);
 	write_2ds(img, &line, &gap);
 	write_3ds(img, &line, &gap);
+	write_guides(img, &line, &gap);
 }

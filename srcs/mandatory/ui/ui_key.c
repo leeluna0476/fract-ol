@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 16:37:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:53:38 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,38 +50,6 @@ void	key_offset(t_data *img, int key)
 		img->rotate.y -= 30;
 	else if (key == KEY_L)
 		img->rotate.x += 30;
-}
-
-void	control_key(int key, t_data *img)
-{
-	if (key == KEY_ESC)
-		terminate_program();
-	else if ((key != KEY_6 && (key >= KEY_1 && key <= KEY_5)) || key == KEY_0)
-	{
-		key_fractals(img, key);
-		call_set(img);
-	}
-	else if (key >= KEY_6 && key <= KEY_8)
-	{
-		key_fractals(img, key);
-		call_set_3d(img);
-	}
-	else if (key >= KEY_LEFT && key <= KEY_UP)
-	{
-		key_offset(img, key);
-		call_set(img);
-	}
-	else if (key == KEY_H || key == KEY_J || key == KEY_K || key == KEY_L)
-	{
-		key_offset(img, key);
-		call_set_3d(img);
-	}
-	else if (key == THEME_RED || key == THEME_BLUE)
-	{
-		key_theme(img, key);
-		call_set(img);
-	}
-	write_menu(img);
 }
 
 int	key_press(int key, void *param)

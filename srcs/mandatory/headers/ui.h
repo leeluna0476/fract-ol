@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/11 15:55:26 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:56:09 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,9 +162,17 @@ void	execute_button(t_data *img, int button, void (*f)(t_data *));
  */
 void	key_fractals(t_data *img, int key);
 void	key_offset(t_data *img, int key);
-void	control_key(int key, t_data *img);
 int		key_press(int key, void *param);
 void	hook(t_data *img);
+
+/* ui_key_utils
+ * control keys by type
+ */
+void	control_fractals(int key, t_data *img);
+void	control_3ds(int key, t_data *img);
+void	control_directions(int key, t_data *img);
+void	control_theme(int key, t_data *img);
+void	control_key(int key, t_data *img);
 
 /* ui_mouse
  * receive mouse hooks
