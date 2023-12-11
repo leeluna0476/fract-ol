@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 19:53:38 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 08:09:26 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	key_offset(t_data *img, int key)
 	else if (key == KEY_UP)
 		img->center.y -= 80;
 	else if (key == KEY_H)
-		img->rotate.x -= 30;
+		img->rotate.y -= 30;
 	else if (key == KEY_J)
-		img->rotate.y -= 30;
+		img->rotate.x -= 30;
 	else if (key == KEY_K)
-		img->rotate.y -= 30;
-	else if (key == KEY_L)
 		img->rotate.x += 30;
+	else if (key == KEY_L)
+		img->rotate.y += 30;
 }
 
 int	key_press(int key, void *param)
