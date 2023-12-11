@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   main_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 09:29:55 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/10 16:40:16 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/11 20:44:23 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/11 20:44:34 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#ifndef MAIN_BONUS_H
+# define MAIN_BONUS_H
 
 # include <stdlib.h>
 # include <stdio.h>

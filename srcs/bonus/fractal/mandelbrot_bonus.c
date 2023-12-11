@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 16:38:33 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 08:45:06 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/11 20:41:18 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/11 20:41:23 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	mandelbrot(t_data *img)
 	int				i;
 	int				j;
 
-	box_std.box_offset_x = BOX_STD_X - (img->center.x);
-	box_std.box_offset_y = BOX_STD_Y - (img->center.y);
+	box_std.box_offset_x = BOXWIDTH / 2 - (img->center.x);
+	box_std.box_offset_y = BOXHEIGHT / 2 - (img->center.y);
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{

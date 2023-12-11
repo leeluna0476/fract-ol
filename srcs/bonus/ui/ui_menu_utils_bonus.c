@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ui_pop_up.c                                        :+:      :+:    :+:   */
+/*   ui_menu_utils_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 08:55:31 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 09:19:26 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/11 20:43:13 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/11 20:43:19 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal_bonus.h"
+#include "ui_bonus.h"
 
-void	zoom_warning(t_data *img)
+bool	check_menu(int a, int b)
 {
-	int	i;
-	int	j;
-
-	j = POP_TOP;
-	while (j <= POP_BOT)
-	{
-		i = POP_LEFT;
-		while (i <= POP_RIGHT)
-		{
-			my_mlx_pixel_put(img, i, j, BLACK);
-			i++;
-		}
-		j++;
-	}
-	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);
+	if (!(0 < a && a < MENU))
+		return (false);
+	if (!(0 < b && b < HEIGHT))
+		return (false);
+	return (true);
 }
