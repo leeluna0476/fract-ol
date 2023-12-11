@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ui_bonus.h                                         :+:      :+:    :+:   */
+/*   ui.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:44:54 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 20:45:01 by seojilee         ###   ########.fr       */
+/*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
+/*                                                +# +# +# +# +# +   +# +     */
+/*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
+/*   Updated: 2023/12/11 09:07:47 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UI_BONUS_H
-# define UI_BONUS_H
+#ifndef UI_H
+# define UI_H
 
 # include <mlx.h>
 # include <stdbool.h>
@@ -31,6 +31,10 @@
 # define BOXHEIGHT		930
 # define BOX_STD_X		710
 # define BOX_STD_Y		465
+# define POP_LEFT		600
+# define POP_RIGHT		1720
+# define POP_TOP		200
+# define POP_BOT		830
 
 # define BACKCOLOR		0x3C3D42
 # define MENUCOLOR		0x505259
@@ -64,11 +68,6 @@
 # define KEY_RIGHT		124
 # define KEY_DOWN		125
 # define KEY_UP			126
-
-# define KEY_H			4
-# define KEY_J			38
-# define KEY_K			40
-# define KEY_L			37
 
 # define THEME_RED		33
 # define THEME_BLUE		30
@@ -111,12 +110,10 @@ typedef struct s_data {
 	int			line_length;
 	int			endian;
 	char		*fractal;
-	int			key;
 	t_theme		theme;
 	t_complex	julia_c;
 	t_xy		mouse;
 	t_xy		center;
-	t_xy		rotate;
 	double		zoom;
 	int			iter;
 	bool		button_on_off[BUTTONS];
@@ -152,7 +149,6 @@ void	turn_on_button(t_data *img, int button);
  * execute button
  */
 void	call_set(t_data *img);
-void	call_set_3d(t_data *img);
 int		terminate_program(void);
 void	execute_button(t_data *img, int button, void (*f)(t_data *));
 
@@ -162,17 +158,9 @@ void	execute_button(t_data *img, int button, void (*f)(t_data *));
  */
 void	key_fractals(t_data *img, int key);
 void	key_offset(t_data *img, int key);
+void	control_key(int key, t_data *img);
 int		key_press(int key, void *param);
 void	hook(t_data *img);
-
-/* ui_key_utils
- * control keys by type
- */
-void	control_fractals(int key, t_data *img);
-void	control_3ds(int key, t_data *img);
-void	control_directions(int key, t_data *img);
-void	control_theme(int key, t_data *img);
-void	control_key(int key, t_data *img);
 
 /* ui_mouse
  * receive mouse hooks
@@ -188,5 +176,10 @@ int		mouse_press(int button, int x, int y, void *param);
  */
 void	init_theme(t_data *img);
 void	key_theme(t_data *img, int key);
+
+/* ui_pop_up
+ * set pop-up window: warning for zoom
+ */
+void	zoom_warning(t_data *img);
 
 #endif

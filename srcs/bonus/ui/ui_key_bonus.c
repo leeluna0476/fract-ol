@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:42:50 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 20:42:54 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/10 16:41:37 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/10 16:41:42 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ void	key_fractals(t_data *img, int key)
 		execute_button(img, TRICORN, init_zoom_center);
 	else if (key == KEY_5)
 		execute_button(img, LOGISTIC, make_box_black);
-	else if (key == KEY_7)
-		execute_button(img, THDJULIA, init_zoom_center);
-	else
-		execute_button(img, CLEAR, clear_box);
 }
 
 void	key_offset(t_data *img, int key)
@@ -42,14 +38,20 @@ void	key_offset(t_data *img, int key)
 		img->center.y += 80;
 	else if (key == KEY_UP)
 		img->center.y -= 80;
-	else if (key == KEY_H)
-		img->rotate.x -= 30;
-	else if (key == KEY_J)
-		img->rotate.y -= 30;
-	else if (key == KEY_K)
-		img->rotate.y -= 30;
-	else if (key == KEY_L)
-		img->rotate.x += 30;
+}
+
+void	control_key(int key, t_data *img)
+{
+	if (key == KEY_ESC)
+		terminate_program();
+	else if (key >= KEY_1 && key <= KEY_0)
+		key_fractals(img, key);
+	else if (key >= KEY_LEFT && key <= KEY_UP)
+		key_offset(img, key);
+	else if (key == THEME_RED || key == THEME_BLUE)
+		key_theme(img, key);
+	call_set(img);
+	write_menu(img);
 }
 
 int	key_press(int key, void *param)

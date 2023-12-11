@@ -18,19 +18,10 @@ BONUS_HEADER_DIR=./srcs/bonus/headers/
 BONUS_HEADERS=$(BONUS_HEADER_DIR)main_bonus.h $(BONUS_HEADER_DIR)ui_bonus.h $(BONUS_HEADER_DIR)fractal_bonus.h
 BONUS_SRCS_DIR=./srcs/bonus/
 BONUS_MAINS=$(BONUS_SRCS_DIR)main/main_bonus.c $(BONUS_SRCS_DIR)main/main_utils_bonus.c $(BONUS_SRCS_DIR)main/main_utils_parse_bonus.c 
-BONUS_UIS=$(BONUS_SRCS_DIR)ui/ui_init_screen_bonus.c $(BONUS_SRCS_DIR)ui/ui_key_bonus.c $(BONUS_SRCS_DIR)ui/ui_key_utils_bonus.c $(BONUS_SRCS_DIR)ui/ui_mouse_bonus.c $(BONUS_SRCS_DIR)ui/ui_button_bonus.c $(BONUS_SRCS_DIR)ui/ui_button_execute_bonus.c $(BONUS_SRCS_DIR)ui/ui_menu_bonus.c $(BONUS_SRCS_DIR)ui/ui_theme_bonus.c $(BONUS_SRCS_DIR)ui/ui_menu_utils_bonus.c
-BONUS_FRACTALS=$(BONUS_SRCS_DIR)fractal/fractal_utils_bonus.c $(BONUS_SRCS_DIR)fractal/fractal_utils_recurrence_bonus.c $(BONUS_SRCS_DIR)fractal/fractal_utils_execute_bonus.c $(BONUS_SRCS_DIR)fractal/logistic_utils_bonus.c $(BONUS_SRCS_DIR)fractal/mandelbrot_bonus.c $(BONUS_SRCS_DIR)fractal/julia_bonus.c $(BONUS_SRCS_DIR)fractal/burningship_bonus.c $(BONUS_SRCS_DIR)fractal/tricorn_bonus.c $(BONUS_SRCS_DIR)fractal/logistic_map_bonus.c $(BONUS_SRCS_DIR)fractal/julia3d_bonus.c
+BONUS_UIS=$(BONUS_SRCS_DIR)ui/ui_init_screen_bonus.c $(BONUS_SRCS_DIR)ui/ui_key_bonus.c $(BONUS_SRCS_DIR)ui/ui_mouse_bonus.c $(BONUS_SRCS_DIR)ui/ui_button_bonus.c $(BONUS_SRCS_DIR)ui/ui_button_execute_bonus.c $(BONUS_SRCS_DIR)ui/ui_menu_bonus.c $(BONUS_SRCS_DIR)ui/ui_theme_bonus.c $(BONUS_SRCS_DIR)ui/ui_pop_up.c
+BONUS_FRACTALS=$(BONUS_SRCS_DIR)fractal/fractal_utils_bonus.c $(BONUS_SRCS_DIR)fractal/fractal_utils_recurrence_bonus.c $(BONUS_SRCS_DIR)fractal/fractal_utils_execute_bonus.c $(BONUS_SRCS_DIR)fractal/logistic_utils_bonus.c $(BONUS_SRCS_DIR)fractal/mandelbrot_bonus.c $(BONUS_SRCS_DIR)fractal/julia_bonus.c $(BONUS_SRCS_DIR)fractal/burningship_bonus.c $(BONUS_SRCS_DIR)fractal/tricorn_bonus.c $(BONUS_SRCS_DIR)fractal/logistic_map_bonus.c
 BONUS_SRCS=$(BONUS_MAINS) $(BONUS_UIS) $(BONUS_FRACTALS)
 BONUS_OBJS=$(BONUS_SRCS:.c=.o)
-
-#BONUS_HEADER_DIR=./srcs/bonus/headers/
-#BONUS_HEADERS=$(BONUS_HEADER_DIR)main_bonus.h $(BONUS_HEADER_DIR)ui_bonus.h $(BONUS_HEADER_DIR)fractal_bonus.h
-#BONUS_SRCS_DIR=./srcs/bonus/
-#BONUS_MAINS=$(BONUS_SRCS_DIR)main/main_bonus.c $(BONUS_SRCS_DIR)main/main_utils_bonus.c $(BONUS_SRCS_DIR)main/main_utils_parse_bonus.c 
-#BONUS_UIS=$(BONUS_SRCS_DIR)ui/ui_init_screen_bonus.c $(BONUS_SRCS_DIR)ui/ui_key_bonus.c $(BONUS_SRCS_DIR)ui/ui_mouse_bonus.c $(BONUS_SRCS_DIR)ui/ui_button_bonus.c $(BONUS_SRCS_DIR)ui/ui_button_execute_bonus.c $(BONUS_SRCS_DIR)ui/ui_menu_bonus.c $(BONUS_SRCS_DIR)ui/ui_theme_bonus.c
-#BONUS_FRACTALS=$(BONUS_SRCS_DIR)fractal/fractal_utils_bonus.c $(BONUS_SRCS_DIR)fractal/fractal_utils_recurrence_bonus.c $(BONUS_SRCS_DIR)fractal/fractal_utils_execute_bonus.c $(BONUS_SRCS_DIR)fractal/logistic_utils_bonus.c $(BONUS_SRCS_DIR)fractal/mandelbrot_bonus.c $(BONUS_SRCS_DIR)fractal/julia_bonus.c $(BONUS_SRCS_DIR)fractal/burningship_bonus.c $(BONUS_SRCS_DIR)fractal/tricorn_bonus.c $(BONUS_SRCS_DIR)fractal/logistic_map_bonus.c
-#BONUS_SRCS=$(BONUS_MAINS) $(BONUS_UIS) $(BONUS_FRACTALS)
-#BONUS_OBJS=$(BONUS_SRCS:.c=.o)
 
 ifeq ($(MAKECMDGOALS),bonus)
 	HEADER_DIR=$(BONUS_HEADER_DIR)
@@ -59,4 +50,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
