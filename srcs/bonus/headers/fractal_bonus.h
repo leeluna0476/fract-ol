@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/10 16:40:08 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 07:47:34 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define DIVERGE2 	3
 # define ITER_SMALL	100
 # define ITER	 	500
-# define ITER_LARGE	1000
+# define ITER_LARGE	2000
 
 typedef struct s_box_standards {
 	int	box_offset_x;

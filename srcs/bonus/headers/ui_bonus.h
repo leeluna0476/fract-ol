@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/10 16:40:20 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 09:07:47 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@
 # define BOXRIGHT		1870
 # define BOXWIDTH		1420
 # define BOXHEIGHT		930
+# define BOX_STD_X		710
+# define BOX_STD_Y		465
+# define POP_LEFT		600
+# define POP_RIGHT		1720
+# define POP_TOP		200
+# define POP_BOT		830
 
 # define BACKCOLOR		0x3C3D42
 # define MENUCOLOR		0x505259
@@ -170,5 +176,10 @@ int		mouse_press(int button, int x, int y, void *param);
  */
 void	init_theme(t_data *img);
 void	key_theme(t_data *img, int key);
+
+/* ui_pop_up
+ * set pop-up window: warning for zoom
+ */
+void	zoom_warning(t_data *img);
 
 #endif

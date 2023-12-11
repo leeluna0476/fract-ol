@@ -42,6 +42,8 @@ typedef struct s_data {
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
+	int			horz;
+	int			vert;
 	t_julia3d	*julia3d_dots;
 }				t_data;
 
@@ -191,9 +193,9 @@ void	matrix_point_multiply(t_matrix mat, t_data *img, int u)
 	int i = 0;
 	while (i < 3)
 	{
-		_rx += mat.mat[0][i] * vec[0];
-		_ry += mat.mat[1][i] * vec[1];
-		_rz += mat.mat[2][i] * vec[2];
+		_rx += mat.mat[0][i] * vec[i];
+		_ry += mat.mat[1][i] * vec[i];
+		_rz += mat.mat[2][i] * vec[i];
 		i++;
 	}
 	(&(img->julia3d_dots[u]))->x = _rx;
@@ -223,36 +225,6 @@ void	julia3d(t_data *img)
 	z_value = 0;
 	int box_std_x = WIDTH / 2;
 	int box_std_y = HEIGHT / 2;
-
-//	while (all_diverge(c) == false) {
-//		for (int j = 0; j < HEIGHT; j++) {
-//			for (int i = 0; i < WIDTH; i++) {
-//				int	_i = i - box_std_x; // 박스를 기준으로 0,0을 잡아준다.
-//				int	_j = j - box_std_y;
-//
-//				z.real = (double)_i / 250;
-//				z.imag = (double)_j / 250;
-//
-//				for (int k = 0; k < 100; k++) {
-//					next(&z, c);
-//					if (c_abs(z) >= 2)
-//						break;
-//				}
-//
-//				
-//				// give x,y,z coordinates to every single points
-//				if (c_abs(z) < 2) {
-//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->x = i - box_std_x;
-//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->y = j - box_std_y;
-//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->z = z_value;
-//					(&(img->julia3d_dots[i + j * WIDTH + z_value * dots_per_slice]))->color = WHITE - z_value * 1000;
-//				}
-//			}
-//		}
-//		c.real += slice;
-//		z_value++;
-//	}
-
 
 	while (all_diverge(c) == false)
 	{
@@ -290,8 +262,8 @@ void	julia3d(t_data *img)
 	}
 
 	t_vec3d angle;
-	angle.vec[0] = PI * 0 / 180;
-	angle.vec[1] = PI * 45 / 180;
+	angle.vec[0] = PI * img->horz / 180;
+	angle.vec[1] = PI * img->vert / 180;
 	angle.vec[2] = 0;
 
 
@@ -306,8 +278,8 @@ void	julia3d(t_data *img)
 	t_matrix maty;
 	init_matrix(&maty);
 	maty.mat[0][0] = cos(angle.vec[1]);
-	maty.mat[0][2] = -sin(angle.vec[1]);
-	maty.mat[2][0] = sin(angle.vec[1]);
+	maty.mat[0][2] = sin(angle.vec[1]);
+	maty.mat[2][0] = -sin(angle.vec[1]);
 	maty.mat[2][2] = cos(angle.vec[1]);
 
 	t_matrix matz;

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/07 17:32:28 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:43:17 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define BOXRIGHT		1870
 # define BOXWIDTH		1420
 # define BOXHEIGHT		930
+# define BOX_STD_X		710
+# define BOX_STD_Y		465
 
 # define BACKCOLOR		0x3C3D42
 # define MENUCOLOR		0x505259
@@ -62,6 +64,11 @@
 # define KEY_RIGHT		124
 # define KEY_DOWN		125
 # define KEY_UP			126
+
+# define KEY_H			4
+# define KEY_J			38
+# define KEY_K			40
+# define KEY_L			37
 
 # define THEME_RED		33
 # define THEME_BLUE		30
@@ -104,10 +111,12 @@ typedef struct s_data {
 	int			line_length;
 	int			endian;
 	char		*fractal;
+	int			key;
 	t_theme		theme;
 	t_complex	julia_c;
 	t_xy		mouse;
 	t_xy		center;
+	t_xy		rotate;
 	double		zoom;
 	int			iter;
 	bool		button_on_off[BUTTONS];

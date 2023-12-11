@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:42:14 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/10 16:42:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:02:12 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,29 @@ void	send_click_to_key(t_data *img, int y)
 
 void	wheel(int button, t_data *img)
 {
+	t_xy	mouse_std;
+
+	init_xy(&mouse_std, img->mouse.x - BOXLEFT - BOX_STD_X, \
+			img->mouse.y - BOXTOP - BOX_STD_Y);
 	if (button == WHEEL_UP)
 	{
-		img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
-		img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
+		init_xy(&(img->center), img->center.x + mouse_std.x, \
+				img->center.y + mouse_std.y);
 		img->zoom /= 1.5;
-		img->center.x *= 1.5;
-		img->center.y *= 1.5;
-		call_set(img);
+		init_xy(&(img->center), img->center.x * 1.5 - mouse_std.x, \
+				img->center.y * 1.5 - mouse_std.y);
 	}
-	if (button == WHEEL_DOWN)
+	else if (button == WHEEL_DOWN)
 	{
-		img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
-		img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
+		init_xy(&(img->center), img->center.x + mouse_std.x, \
+				img->center.y + mouse_std.y);
 		img->zoom *= 1.5;
-		img->center.x /= 1.5;
-		img->center.y /= 1.5;
-		call_set(img);
+		init_xy(&(img->center), img->center.x / 1.5 - mouse_std.x, \
+				img->center.y / 1.5 - mouse_std.y);
 	}
-	if (button == WHEEL_CLICK)
-	{
+	else if (button == WHEEL_CLICK)
 		init_zoom_center(img);
-		call_set(img);
-	}
+	call_set(img);
 	write_menu(img);
 }
 
@@ -106,7 +106,8 @@ int	mouse_press(int button, int x, int y, void *param)
 	t_data	*img;
 
 	img = (t_data *)param;
-	wheel(button, img);
+	if (button == WHEEL_UP || button == WHEEL_DOWN || button == WHEEL_CLICK)
+		wheel(button, img);
 	if (button == LEFT_CLICK)
 	{
 		if (x >= 30 && x <= 330)

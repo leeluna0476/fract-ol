@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 16:20:19 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:48:09 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,38 @@
 # include "ui.h"
 # include <math.h>
 
-# define CONVERGE1	0.2
-# define CONVERGE2	0.9
-# define DIVERGE1 	2
-# define DIVERGE2 	3
-# define ITER_SMALL	100
-# define ITER	 	500
-# define ITER_LARGE	1000
+# define CONVERGE1		0.2
+# define CONVERGE2		0.9
+# define DIVERGE1		2
+# define DIVERGE2		3
+# define JULIA_DEF_CR	-0.7269
+# define JULIA_DEF_CI	0.1889
+# define SLICE_GAP		0.01
+# define DOTS_PER_SLICE	2073600
+# define ITER_SMALL		100
+# define ITER			500
+# define ITER_LARGE		1000
 
 typedef struct s_box_standards {
 	int	box_offset_x;
 	int	box_offset_y;
 }		t_box_standards;
 
+typedef struct s_matrix {
+	double mat[3][3];
+}		t_matrix;
+
+typedef struct s_vec3d {
+	double vec[3];
+}		t_vec3d;
+
+typedef struct s_julia3d {
+	int	x;
+	int	y;
+	int	z;
+	int	color;
+}		t_julia3d;
+	
 // fractal_utils
 void	init_complex(t_complex *c, double r, double i);
 void	init_xy(t_xy *xy, int x, int y);
@@ -63,5 +82,7 @@ void	burningship(t_data *img);
 void	tricorn(t_data *img);
 
 void	logistic_map(t_data *img);
+
+void	julia3d(t_data *img);
 
 #endif

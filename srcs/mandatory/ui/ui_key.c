@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 17:56:23 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:43:37 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	key_fractals(t_data *img, int key)
 		execute_button(img, TRICORN, init_zoom_center);
 	else if (key == KEY_5)
 		execute_button(img, LOGISTIC, make_box_black);
+	else if (key == KEY_7)
+		execute_button(img, THDJULIA, init_zoom_center);
 }
 
 void	key_offset(t_data *img, int key)
@@ -38,6 +40,14 @@ void	key_offset(t_data *img, int key)
 		img->center.y += 80;
 	else if (key == KEY_UP)
 		img->center.y -= 80;
+	else if (key == KEY_H)
+		img->rotate.x -= 30;
+	else if (key == KEY_J)
+		img->rotate.y -= 30;
+	else if (key == KEY_K)
+		img->rotate.y -= 30;
+	else if (key == KEY_L)
+		img->rotate.x += 30;
 }
 
 void	control_key(int key, t_data *img)
@@ -47,6 +57,8 @@ void	control_key(int key, t_data *img)
 	else if (key >= KEY_1 && key <= KEY_0)
 		key_fractals(img, key);
 	else if (key >= KEY_LEFT && key <= KEY_UP)
+		key_offset(img, key);
+	else if (key == KEY_H || key == KEY_J || key == KEY_K || key == KEY_L)
 		key_offset(img, key);
 	else if (key == THEME_RED || key == THEME_BLUE)
 		key_theme(img, key);

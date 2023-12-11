@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 18:36:38 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:28:53 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	init_zoom_center(t_data *img)
 	img->zoom = 0.0035;
 	img->center.x = 0;
 	img->center.y = 0;
+	img->rotate.x = 0;
+	img->rotate.y = 0;
 }
 
 void	send_click_to_key(t_data *img, int y)
@@ -49,29 +51,29 @@ void	send_click_to_key(t_data *img, int y)
 
 void	wheel(int button, t_data *img)
 {
+	t_xy	mouse_std;
+
+	init_xy(&mouse_std, img->mouse.x - BOXLEFT - BOX_STD_X, \
+			img->mouse.y - BOXTOP - BOX_STD_Y);
 	if (button == WHEEL_UP)
 	{
-		img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
-		img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
+		init_xy(&(img->center), img->center.x + mouse_std.x, \
+				img->center.y + mouse_std.y);
 		img->zoom /= 1.5;
-		img->center.x *= 1.5;
-		img->center.y *= 1.5;
-		call_set(img);
+		init_xy(&(img->center), img->center.x * 1.5 - mouse_std.x, \
+				img->center.y * 1.5 - mouse_std.y);
 	}
-	if (button == WHEEL_DOWN)
+	else if (button == WHEEL_DOWN)
 	{
-		img->center.x += ((img->mouse.x - BOXLEFT) - BOXWIDTH / 2);
-		img->center.y += ((img->mouse.y - BOXTOP) - BOXHEIGHT / 2);
+		init_xy(&(img->center), img->center.x + mouse_std.x, \
+				img->center.y + mouse_std.y);
 		img->zoom *= 1.5;
-		img->center.x /= 1.5;
-		img->center.y /= 1.5;
-		call_set(img);
+		init_xy(&(img->center), img->center.x / 1.5 - mouse_std.x, \
+				img->center.y / 1.5 - mouse_std.y);
 	}
-	if (button == WHEEL_CLICK)
-	{
+	else if (button == WHEEL_CLICK)
 		init_zoom_center(img);
-		call_set(img);
-	}
+	call_set(img);
 	write_menu(img);
 }
 
