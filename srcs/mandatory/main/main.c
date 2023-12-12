@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 09:48:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 11:17:29 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:54:36 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,11 @@ int	main(int argc, char *argv[])
 	init_theme(&img);
 	if (img.fractal)
 		call_set_argv(&img);
+	else
+	{
+		print_errmsg();
+		return (0);
+	}
 	hook(&img);
 	mlx_put_image_to_window(img.mlx_ptr, img.win_ptr, img.img, 0, 0);
 	write_menu(&img);
