@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:52:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 15:56:16 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 16:03:21 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	julia(t_data *img)
 			img->iter = iter_complex(&z, c, ITER, JULIA);
 			draw_julia(c_abs(z), img, i, j);
 			i++;
-	}
+		}
 		j++;
 	}
 	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 15:52:38 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:58:11 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_julia3d {
 	int	y;
 	int	z;
 	int	color;
+	int	last_layer;
 }		t_julia3d;
 
 // fractal_utils
@@ -79,7 +80,8 @@ t_matrix	matrix_multiply(t_matrix mat1, t_matrix mat2);
 t_matrix	generate_rotation_matrix(t_data *img);
 void		matrix_point_multiply(t_matrix mat, t_julia3d *dots, int u);
 void		draw_julia3d(t_data *img, t_julia3d *dots, \
-		t_matrix mat_rot, int total_dots);
+		int total_dots);
+int			find_layer(t_data *img, t_julia3d *dots, int total_dots);
 
 void		mandelbrot(t_data *img);
 
