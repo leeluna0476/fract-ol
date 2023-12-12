@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 18:54:36 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 15:30:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:54:32 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,27 @@ int	get_total_slices(t_complex c)
 
 void	iter_julia3d(t_julia3d *dots, t_complex c, int z_value)
 {
+	t_xy		box_std;
 	t_complex	z;
 	int			i;
 	int			j;
 
+	init_xy(&box_std, BOX_STD_X + BOXLEFT, BOX_STD_Y + BOXTOP);
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
 		i = BOXLEFT;
 		while (i <= BOXRIGHT)
 		{
-			init_complex(&z, (double)(i - (BOX_STD_X + BOXLEFT)) / 300, \
-					(double)(j - (BOX_STD_Y + BOXTOP)) / 300);
+			init_complex(&z, (double)(i - box_std.x) / 300, \
+					(double)(j - box_std.y) / 300);
 			iter_complex(&z, c, 10, JULIA);
 			if (c_abs(z) < 2)
 			{
 				dots[(i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH + \
-					z_value * DOTS_PER_SLICE].x = i - (BOX_STD_X + BOXLEFT);
+					z_value * DOTS_PER_SLICE].x = i - box_std.x;
 				dots[(i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH + \
-					z_value * DOTS_PER_SLICE].y = j - (BOX_STD_Y + BOXTOP);
+					z_value * DOTS_PER_SLICE].y = j - box_std.y;
 				dots[(i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH + \
 					z_value * DOTS_PER_SLICE].z = z_value;
 				dots[(i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH + \
