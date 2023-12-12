@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/11 19:56:09 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 10:25:06 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ typedef struct s_data {
 	int			line_length;
 	int			endian;
 	char		*fractal;
-	int			key;
 	t_theme		theme;
 	t_complex	julia_c;
 	t_xy		mouse;
@@ -139,6 +138,12 @@ void	write_header(t_data *img, int *line, int *gap);
 void	write_2ds(t_data *img, int *line, int *gap);
 void	write_3ds(t_data *img, int *line, int *gap);
 void	write_menu(t_data *img);
+
+/* ui_menu_utils
+ * menu utilities
+ */
+bool	check_menu(int a, int b);
+bool	check_write(t_data *img);
 
 /* ui_button
  * set buttons
