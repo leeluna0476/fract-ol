@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 09:48:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 09:48:58 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/12 09:42:15 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,22 @@ void	print_errmsg(void)
 	write(1, "       - [c.real] [c.imag]:\n", 28);
 	write(1, "         - must enter a proper complex number\n", 46);
 	write(1, "    3. burningship\n    4. tricorn\n", 35);
+}
+
+double	ft_atof(const char *str)
+{
+	t_julia_parse	parse;
+	size_t			i;
+
+	parse.double_num = 0.0;
+	parse.dot = 0;
+	parse.sign = 1;
+	i = 0;
+	i = parse_integer_part(str, &parse);
+	if (str[i] == '.')
+		i++;
+	parse_decimal_part(&str[i], &parse);
+	return (parse.sign * parse.double_num);
 }
 
 void	parse_main_args(t_data *img, int argc, char *argv[])
