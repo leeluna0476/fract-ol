@@ -24,33 +24,33 @@ Options:
 
 ## Arguments
 
-![](pictures/mandelbrot.png)
+![](pictures/mandelbrot_red.png)
 ```
 ./fractol mandelbrot
 ```
 
 ---
 
-![](pictures/julia.png)
+![](pictures/julia_blue.png)
 ```
 ./fractol julia
 ```
 
-![](pictures/julia_-1.28_0.1.png)
+![](pictures/julia_-1.25_0.1.png)
 ```
-./fractol julia -1.28 0.1
+./fractol julia -1.25 0.1
 ```
 
 ---
 
-![](pictures/burningship.png)
+![](pictures/burningship_red.png)
 ```
 ./fractol burningship
 ```
 
 ---
 
-![](pictures/tricorn.png)
+![](pictures/tricorn_blue.png)
 ```
 ./fractol tricorn
 ```
@@ -73,12 +73,12 @@ Try it!
 
 There are two themes: RED and BLUE.
 ![](pictures/mandelbrot_blue.png)
-![](pictures/julia_red_2.png)
+![](pictures/julia_-1.25_0.1_red.png)
 
 ---
 
 You can call each set JUST by clicking the button.
-![](pictures/burningship_button.png)
+![](pictures/burningship_red.png)
 
 ## Key controls
 You can click the same keys with buttons to call each functions.
