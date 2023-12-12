@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 20:44:15 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 20:46:23 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:58:22 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@
 # define ITER_SMALL		100
 # define ITER			500
 # define ITER_LARGE		1000
-
-typedef struct s_box_standards {
-	int	box_offset_x;
-	int	box_offset_y;
-}		t_box_standards;
 
 typedef struct s_matrix {
 	double	mat[3][3];
