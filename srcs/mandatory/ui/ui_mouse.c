@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 10:36:41 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 12:20:00 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,17 @@ void	wheel(int button, t_data *img)
 	{
 		init_xy(&(img->center), img->center.x + mouse_std.x, \
 				img->center.y + mouse_std.y);
-		img->zoom /= 1.25;
-		init_xy(&(img->center), img->center.x * 1.25 - mouse_std.x, \
-				img->center.y * 1.25 - mouse_std.y);
+		img->zoom /= ZOOM_SCALE;
+		init_xy(&(img->center), img->center.x * ZOOM_SCALE - mouse_std.x, \
+				img->center.y * ZOOM_SCALE - mouse_std.y);
 	}
 	else if (button == WHEEL_DOWN)
 	{
 		init_xy(&(img->center), img->center.x + mouse_std.x, \
 				img->center.y + mouse_std.y);
-		img->zoom *= 1.25;
-		init_xy(&(img->center), img->center.x / 1.25 - mouse_std.x, \
-				img->center.y / 1.25 - mouse_std.y);
+		img->zoom *= ZOOM_SCALE;
+		init_xy(&(img->center), img->center.x / ZOOM_SCALE - mouse_std.x, \
+				img->center.y / ZOOM_SCALE - mouse_std.y);
 	}
 	else if (button == WHEEL_CLICK)
 		init_zoom_center(img);

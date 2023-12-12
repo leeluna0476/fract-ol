@@ -5,20 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD:srcs/main.c
-/*   Created: 2023/12/02 13:15:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/08 12:04:44 by seojilee         ###   ########.fr       */
-=======
 /*   Created: 2023/12/12 09:48:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 09:55:33 by seojilee         ###   ########.fr       */
->>>>>>> master:srcs/mandatory/main/main.c
+/*   Updated: 2023/12/12 11:17:29 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-<<<<<<< HEAD:srcs/main.c
-=======
 void	print_errmsg(void)
 {
 	write(1, "### Enter 1 or 3 parameters:\n", 29);
@@ -46,7 +39,6 @@ double	ft_atof(const char *str)
 	return (parse.sign * parse.double_num);
 }
 
->>>>>>> master:srcs/mandatory/main/main.c
 void	parse_main_args(t_data *img, int argc, char *argv[])
 {
 	if (argc >= 2 && argc <= 4)

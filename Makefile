@@ -4,12 +4,9 @@ CFLAGS=-Wall -Wextra -Werror -I $(HEADER_DIR)
 RM=rm -fr
 MLX_DIR=./srcs/mlx
 MLX_FLAGS=-L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
-<<<<<<< HEAD
 SRCS_DIR=./srcs/
 SRCS=$(SRCS_DIR)main.c $(SRCS_DIR)main_utils.c $(SRCS_DIR)main_utils_parse.c $(SRCS_DIR)ui_init_screen.c $(SRCS_DIR)ui_key.c $(SRCS_DIR)ui_mouse.c $(SRCS_DIR)ui_button.c $(SRCS_DIR)ui_button_execute.c $(SRCS_DIR)ui_menu.c $(SRCS_DIR)ui_theme.c $(SRCS_DIR)fractal_utils.c $(SRCS_DIR)fractal_utils_recurrence.c $(SRCS_DIR)fractal_utils_execute.c $(SRCS_DIR)logistic_utils.c $(SRCS_DIR)mandelbrot.c $(SRCS_DIR)julia.c $(SRCS_DIR)burningship.c $(SRCS_DIR)tricorn.c $(SRCS_DIR)logistic_map.c
 OBJS=$(SRCS:.c=.o)
-=======
->>>>>>> master
 
 MAN_HEADER_DIR=./srcs/mandatory/headers/
 MAN_HEADERS=$(MAN_HEADER_DIR)main.h $(MAN_HEADER_DIR)ui.h $(MAN_HEADER_DIR)fractal.h

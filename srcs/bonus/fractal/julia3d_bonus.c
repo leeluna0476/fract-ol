@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 20:40:24 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 20:40:25 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 12:12:36 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ bool	all_diverge(t_complex c)
 		i = -1;
 		while (++i < WIDTH)
 		{
-			z.real = (double)(i - WIDTH / 2) / 300;
-			z.imag = (double)(j - HEIGHT / 2) / 300;
+			z.real = (double)(i - (BOX_STD_X + BOXLEFT)) / 300;
+			z.imag = (double)(j - (BOX_STD_Y + BOXTOP)) / 300;
 			k = -1;
 			while (c_abs(z) < 2 && ++k < 400)
 				mandelbrot_julia_next(&z, c);

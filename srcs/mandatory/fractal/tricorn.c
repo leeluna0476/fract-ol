@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:11:35 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 15:48:19 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 12:17:23 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	tricorn(t_data *img)
 	int				i;
 	int				j;
 
-	box_std.box_offset_x = BOXWIDTH / 2 - img->center.x;
-	box_std.box_offset_y = BOXHEIGHT / 2 - img->center.y;
+	box_std.box_offset_x = (BOX_STD_X + BOXLEFT) - img->center.x;
+	box_std.box_offset_y = (BOX_STD_Y + BOXTOP) - img->center.y;
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
@@ -30,8 +30,8 @@ void	tricorn(t_data *img)
 		{
 			init_complex(&z, 0, 0);
 			init_complex(&c, \
-					((double)(i - BOXLEFT) - box_std.box_offset_x) * img->zoom, \
-					((double)(j - BOXTOP) - box_std.box_offset_y) * img->zoom);
+					((double)(i - box_std.box_offset_x)) * img->zoom, \
+					((double)(j - box_std.box_offset_y)) * img->zoom);
 			img->iter = iter_complex(&z, c, ITER, TRICORN);
 			draw_tricorn(c_abs(z), img, i, j);
 			i++;

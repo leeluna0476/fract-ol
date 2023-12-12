@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/12 10:25:06 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 12:21:51 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 # define WHEEL_CLICK	3
 # define WHEEL_DOWN		4
 # define WHEEL_UP		5
+# define ZOOM_SCALE		1.25
 
 # define KEY_ESC		53
 # define KEY_1			18

@@ -6,11 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:29:55 by seojilee          #+#    #+#             */
-<<<<<<< HEAD:srcs/headers/main.h
-/*   Updated: 2023/12/08 12:05:52 by seojilee         ###   ########.fr       */
-=======
-/*   Updated: 2023/12/12 09:42:38 by seojilee         ###   ########.fr       */
->>>>>>> master:srcs/mandatory/headers/main.h
+/*   Updated: 2023/12/12 11:18:08 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +14,7 @@
 # define MAIN_H
 
 # include <stdlib.h>
-<<<<<<< HEAD:srcs/headers/main.h
-=======
-# include <stdio.h>
 # include <unistd.h>
->>>>>>> master:srcs/mandatory/headers/main.h
 # include "ui.h"
 
 typedef struct s_julia_parse {

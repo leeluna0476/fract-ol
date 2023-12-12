@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:52:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 14:58:56 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/12 12:15:36 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ void	julia(t_data *img)
 	int				i;
 	int				j;
 
-	box_std.box_offset_x = BOXWIDTH / 2 - img->center.x;
-	box_std.box_offset_y = BOXHEIGHT / 2 - img->center.y;
+	box_std.box_offset_x = (BOX_STD_X + BOXLEFT) - img->center.x;
+	box_std.box_offset_y = (BOX_STD_Y + BOXTOP) - img->center.y;
+	c_default_or_arg(img, &c);
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
 		i = BOXLEFT;
 		while (i <= BOXRIGHT)
 		{
-			c_default_or_arg(img, &c);
 			init_complex(&z, \
-					((double)(i - BOXLEFT) - box_std.box_offset_x) * img->zoom, \
-					((double)(j - BOXTOP) - box_std.box_offset_y) * img->zoom);
+					((double)(i - box_std.box_offset_x)) * img->zoom, \
+					((double)(j - box_std.box_offset_y)) * img->zoom);
 			img->iter = iter_complex(&z, c, ITER, JULIA);
 			draw_julia(c_abs(z), img, i, j);
 			i++;
