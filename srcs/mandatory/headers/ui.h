@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/12 19:54:00 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/13 14:39:09 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ typedef struct s_data {
 	double		zoom;
 	int			iter;
 	bool		layer;
+	int			last_layer;
 	bool		button_on_off[BUTTONS];
 }				t_data;
 

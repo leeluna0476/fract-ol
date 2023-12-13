@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 18:21:22 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 20:45:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:38:02 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ void	draw_julia3d(t_data *img, t_julia3d *dots, \
 {
 	t_xy	dots_xy;
 	int		u;
-	int		layer;
 
 	u = 0;
 	if (img->layer == true)
 	{
-		layer = find_layer(img, dots, total_dots);
+		img->last_layer = find_layer(img, dots, total_dots);
 	}
 	else
 	{
-		layer = dots->last_layer;
+		img->last_layer = dots->last_layer;
 	}
 	while (u < total_dots)
 	{
@@ -37,7 +36,7 @@ void	draw_julia3d(t_data *img, t_julia3d *dots, \
 		{
 			if (dots[u].color != 0)
 			{
-				if (dots[u].z <= layer)
+				if (dots[u].z <= img->last_layer)
 					my_mlx_pixel_put(img, dots[u].x + BOX_STD_X + BOXLEFT, \
 							dots[u].y + BOX_STD_Y + BOXTOP, dots[u].color);
 			}
@@ -54,15 +53,17 @@ void	julia3d(t_data *img)
 	t_julia3d	*dots;
 	t_complex	c;
 	int			total_dots;
+	int			total_slices;
 	int			z_value;
 
 	make_box_black(img);
-	init_complex(&c, JULIA_DEF_CR, JULIA_DEF_CI);
-	total_dots = DOTS_PER_SLICE * get_total_slices(c);
+	init_complex(&c, -1.235, 0.1);
+//	init_complex(&c, JULIA_DEF_CR, JULIA_DEF_CI);
+	total_slices = get_total_slices(c);
+	total_dots = DOTS_PER_SLICE * total_slices;
 	dots = malloc(total_dots * sizeof(t_julia3d));
-	dots->last_layer = 0;
 	z_value = 0;
-	while (all_diverge(c) == false)
+	while (z_value < total_slices)
 	{
 		iter_julia3d(dots, c, z_value);
 		c.real += SLICE_GAP;
