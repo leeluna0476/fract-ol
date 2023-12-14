@@ -42,4 +42,7 @@
 |19||```void	set_dot_values(t_julia3d *dot, int x_value, int y_value, int z_value);```|
 |20||```int	find_layer(t_data *img, t_julia3d *dots);```|
 |21||```void	draw_julia3d(t_data *img, t_julia3d *dots, int total_dots);```|
-
+|22|**mandelbrot.c**|```void	mandelbrot(t_data *img);```|
+|23|**julia.c**|```void	julia(t_data *img);```|
+|24|**burningship.c**|```void	burningship(t_data *img);```|
+|25|**tricorn.c**|```void	tricorn(t_data *img);```|
