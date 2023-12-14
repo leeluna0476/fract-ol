@@ -60,30 +60,30 @@
 |8||```void	write_2ds(t_data *img, int *line, int *gap);```|
 |9||```void	write_3ds(t_data *img, int *line, int *gap);```|
 |10||```void	write_menu(t_data *img);```|
-|11||```bool	check_menu(int a, int b);```|
+|11|**ui_menu_utils.c**|```bool	check_menu(int a, int b);```|
 |12||```bool	check_write(t_data *img);```|
-|13||```void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);```|
+|13|**ui_button.c**|```void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);```|
 |14||```void	_button(t_data *img, int start_x, int start_y);```|
 |15||```void	make_all_false(t_data *img);```|
 |16||```void	turn_on_button(t_data *img, int button);```|
-|17||```void	call_set(t_data *img);```|
+|17|**ui_button_execute.c**|```void	call_set(t_data *img);```|
 |18||```void	call_set_3d(t_data *img);```|
 |19||```void	choose_set(t_data *img);```|
 |20||```int	terminate_program(void);```|
 |21||```void	execute_button(t_data *img, int button, void (*f)(t_data *));```|
-|22||```void	key_fractals(t_data *img, int key);```|
+|22|**ui_key.c**|```void	key_fractals(t_data *img, int key);```|
 |23||```void	key_offset(t_data *img, int key);```|
 |24||```int	key_press(int key, void *param);```|
 |25||```void	hook(t_data *img);```|
-|26||```void	control_fractals(int key, t_data *img);```|
+|26|*ui_key_utils.c**|```void	control_fractals(int key, t_data *img);```|
 |27||```void	control_3ds(int key, t_data *img);```|
 |28||```void	control_directions(int key, t_data *img);```|
 |29||```void	control_theme(int key, t_data *img);```|
 |30||```void	control_key(int key, t_data *img);```|
-|31||```void	init_zoom_center(t_data *img);```|
+|31|*ui_mouse.c**|```void	init_zoom_center(t_data *img);```|
 |32||```void	send_click_to_key(t_data *img, int y);```|
 |33||```void	wheel(int button, t_data *img);```|
 |34||```int	mouse_move(int x, int y, void *param);```|
 |35||```int	mouse_press(int button, int x, int y, void *param);```|
-|36||```void	init_theme(t_data *img);```|
+|36|**ui_theme.c**|```void	init_theme(t_data *img);```|
 |37||```void	key_theme(t_data *img, int key);```|
