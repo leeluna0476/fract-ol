@@ -1,4 +1,9 @@
 # fract-ol
+**Implementation description →** 
+[Implementation](implementation.md)
+
+---
+
 [1. Arguments](#Arguments)
 
 [2. Buttons](#Buttons)
@@ -9,8 +14,6 @@
 
 ---
 
-<!-- First, get explanations about each fractals.
-[fractals.md](fractals.md) -->
 Copy and paste the script below to your bash.
 ```bash
 git clone https://github.com/leeluna0476/fract-ol.git fract-ol

@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   burningship_bonus.c                                :+:      :+:    :+:   */
+/*   fractal3d_utils_recurrence_bonus.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:39:43 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 15:59:12 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/14 15:30:04 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/14 15:30:12 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal_bonus.h"
 
-void	burningship(t_data *img)
+void	iter_julia3d(t_julia3d *dots, t_complex c, int z_value)
 {
 	t_xy		box_std;
 	t_complex	z;
-	t_complex	c;
 	int			i;
 	int			j;
+	int			current_idx;
 
-	box_std.x = (BOX_STD_X + BOXLEFT) - img->center.x;
-	box_std.y = (BOX_STD_Y + BOXTOP) - img->center.y;
+	init_xy(&box_std, BOX_STD_X + BOXLEFT, BOX_STD_Y + BOXTOP);
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
 		i = BOXLEFT;
 		while (i <= BOXRIGHT)
 		{
-			init_complex(&z, 0, 0);
-			init_complex(&c, \
-					((double)(i - box_std.x)) * img->zoom, \
-					((double)(j - box_std.y)) * img->zoom);
-			img->iter = iter_complex(&z, c, ITER_SMALL, BURNINGSHIP);
-			draw_burningship(c_abs(z), img, i, j);
+			init_complex(&z, (double)(i - box_std.x) / 300, \
+					(double)(j - box_std.y) / 300);
+			iter_complex(&z, c, 100, JULIA);
+			current_idx = (i - BOXLEFT) + (j - BOXTOP) * \
+					BOXWIDTH + z_value * DOTS_PER_SLICE;
+			if (c_abs(z) < 2)
+				set_dot_values(&dots[current_idx], \
+					i - box_std.x, j - box_std.y, z_value);
 			i++;
 		}
 		j++;
 	}
-	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);
 }

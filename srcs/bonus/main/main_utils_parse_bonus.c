@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 20:39:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 09:44:49 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:43:54 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool	is_num(char *arg)
 	{
 		if (!ft_isdigit(arg[i]))
 		{
-			if (arg[i] == '.')
+			if (count.int_num > 0 && arg[i] == '.')
 				count.dot++;
 			else
 				return (false);
@@ -84,7 +84,7 @@ void	parse_decimal_part(const char *str, t_julia_parse *parse)
 
 	digit = 10;
 	i = 0;
-	while (str[i] && (str[i] - '0' != 0) && digit <= 1000000000000000)
+	while (str[i] && digit <= 1000000000000000)
 	{
 		parse->double_num += ((double)(str[i] - '0')) / digit;
 		digit *= 10;

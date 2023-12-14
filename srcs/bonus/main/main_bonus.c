@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 20:39:02 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 09:44:42 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:42:25 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	print_errmsg(void)
 	write(1, "### Enter 1 or 3 parameters:\n", 29);
 	write(1, "    ./fractol [fractal] [c.real] [c.imag]\n", 42);
 	write(1, "[fractal]:\n", 11);
-	write(1, "    1. mandelbrot\n    2. julia\n", 31);
+	write(1, "    1. mandelbrot\n    2. julia\n", 30);
 	write(1, "       - [c.real] [c.imag]:\n", 28);
 	write(1, "         - must enter a proper complex number\n", 46);
-	write(1, "    3. burningship\n    4. tricorn\n", 35);
+	write(1, "    3. burningship\n    4. tricorn\n", 34);
 }
 
 double	ft_atof(const char *str)
@@ -67,10 +67,11 @@ void	parse_main_args(t_data *img, int argc, char *argv[])
 	}
 }
 
-// julia인데 argument가 두개밖에 들어오지 않았다면 줄리아를 디폴트로 띄우도록.
-// julia인데 인자가 정상적으로 들어오지 않았다면 그냥 디폴트 화면 띄우도록.
-// 인자가 정상적으로 들어왔다면 받기.
-// julia가 아닌데 argument가 2개보다 많다면 화면 디폴트로 띄우도록.
+// if julia, but no c arguments, then default julia
+// if julia, and correct c arguments, then atof
+// if julia, but incorrect c arguments, then errmsg
+// if julia, but too many arguments(more than 4), then errmsg
+// if not julia, but too many arguments(more than 2), then errmsg
 int	main(int argc, char *argv[])
 {
 	t_data	img;

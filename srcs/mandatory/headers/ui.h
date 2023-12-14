@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/12 12:21:51 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 14:35:59 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ typedef struct s_data {
 	t_xy		rotate;
 	double		zoom;
 	int			iter;
+	bool		layer;
+	int			last_layer;
 	bool		button_on_off[BUTTONS];
 }				t_data;
 
@@ -159,6 +161,7 @@ void	turn_on_button(t_data *img, int button);
  */
 void	call_set(t_data *img);
 void	call_set_3d(t_data *img);
+void	choose_set(t_data *img);
 int		terminate_program(void);
 void	execute_button(t_data *img, int button, void (*f)(t_data *));
 
