@@ -18,7 +18,7 @@
 ### Functions 함수
 |No.|File|Function|
 |---|---|---|
-|1|fractal_utils.c|void		init_complex(t_complex *c, double r, double i);|
+|1|**fractal_utils.c**|void		init_complex(t_complex *c, double r, double i);|
 |2||void		init_xy(t_xy *xy, int x, int y);|
 |3||double		c_abs(t_complex z);|
 |4||void		c_default_or_arg(t_data *img, t_complex *c);|
