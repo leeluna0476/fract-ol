@@ -46,3 +46,4 @@
 |23|**julia.c**|```void	julia(t_data *img);```|
 |24|**burningship.c**|```void	burningship(t_data *img);```|
 |25|**tricorn.c**|```void	tricorn(t_data *img);```|
+|26|**julia3d.c**|```void	julia3d(t_data *img);```|
