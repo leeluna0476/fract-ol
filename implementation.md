@@ -89,6 +89,7 @@
 
 ### Main
 |No.|File|Function|
+|---|---|---|
 |1|**main_utils.c**|```void	ft_bzero(void *s, size_t n);```|
 |2||```int	ft_strncmp(const char *s1, const char *s2, size_t n);```|
 |3||```size_t	ft_strlen(const char *s);```|
