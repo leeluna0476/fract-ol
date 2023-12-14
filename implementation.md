@@ -104,6 +104,6 @@
 |8||```bool	is_num(char *arg);```|
 |9||```size_t	parse_integer_part(const char *str, t_julia_parse *parse);```|
 |10||```void	parse_decimal_part(const char *str, t_julia_parse *parse);```|
-|11|**main.c**|void	print_errmsg(void);|
-|12||void	parse_main_args(t_data *img, int argc, char *argv[]);|
-|13||double	ft_atof(const char *str);|
+|11|**main.c**|```void	print_errmsg(void);```|
+|12||```void	parse_main_args(t_data *img, int argc, char *argv[]);```|
+|13||```double	ft_atof(const char *str);```|
