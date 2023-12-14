@@ -1,4 +1,9 @@
 # fract-ol
+**Implementation description →** 
+[Implementation](implementation.md)
+
+---
+
 [1. Arguments](#Arguments)
 
 [2. Buttons](#Buttons)
@@ -6,11 +11,6 @@
 [3. Keys controls](#Key-controls)
 
 [4. Mouse controls](#Mouse-controls)
-
----
-
-**Implementation description →** 
-[Implementation](implementation.md)
 
 ---
 
