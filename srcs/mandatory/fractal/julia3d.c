@@ -6,42 +6,11 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 18:21:22 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 11:12:16 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:16:48 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-
-void	draw_julia3d(t_data *img, t_julia3d *dots, \
-		int total_dots)
-{
-	t_xy	dots_xy;
-	int		u;
-
-	u = 0;
-	if (img->layer == true)
-		img->last_layer = find_layer(img, dots);
-	else
-		img->last_layer = dots->last_layer;
-	while (u < total_dots)
-	{
-		dots_xy.x = dots[u].x + BOX_STD_X + BOXLEFT;
-		dots_xy.y = dots[u].y + BOX_STD_Y + BOXTOP;
-		if (check_inbox(dots_xy) == true)
-		{
-			if (dots[u].color != 0)
-			{
-				if (dots[u].z <= img->last_layer)
-					my_mlx_pixel_put(img, dots[u].x + BOX_STD_X + BOXLEFT, \
-							dots[u].y + BOX_STD_Y + BOXTOP, dots[u].color);
-			}
-			else
-				my_mlx_pixel_put(img, dots[u].x + BOX_STD_X + BOXLEFT, \
-						dots[u].y + BOX_STD_Y + BOXTOP, BLACK);
-		}
-		u++;
-	}
-}
 
 void	julia3d(t_data *img)
 {

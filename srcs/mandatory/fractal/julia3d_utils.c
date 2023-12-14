@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 18:54:36 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 11:13:53 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:16:42 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	all_diverge(t_complex c)
 	j = BOXTOP;
 	while (j <= BOXBOT)
 	{
-		i= BOXLEFT;
+		i = BOXLEFT;
 		while (i <= BOXRIGHT)
 		{
 			init_complex(&z, (double)(i - box_std.x) / 300, \
@@ -59,35 +59,6 @@ void	set_dot_values(t_julia3d *dot, int x_value, int y_value, int z_value)
 	dot->color = WHITE - z_value * 1000;
 }
 
-void	iter_julia3d(t_julia3d *dots, t_complex c, int z_value)
-{
-	t_xy		box_std;
-	t_complex	z;
-	int			i;
-	int			j;
-	int			current_idx;
-
-	init_xy(&box_std, BOX_STD_X + BOXLEFT, BOX_STD_Y + BOXTOP);
-	j = BOXTOP;
-	while (j <= BOXBOT)
-	{
-		i = BOXLEFT;
-		while (i <= BOXRIGHT)
-		{
-			init_complex(&z, (double)(i - box_std.x) / 300, \
-					(double)(j - box_std.y) / 300);
-			iter_complex(&z, c, 100, JULIA);
-			if (c_abs(z) < 2)
-			{
-				current_idx = (i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH + z_value * DOTS_PER_SLICE;
-				set_dot_values(&dots[current_idx], i - box_std.x, j - box_std.y, z_value);
-			}
-			i++;
-		}
-		j++;
-	}
-}
-
 int	find_layer(t_data *img, t_julia3d *dots)
 {
 	int	i;
@@ -95,11 +66,41 @@ int	find_layer(t_data *img, t_julia3d *dots)
 	i = img->last_layer * DOTS_PER_SLICE;
 	while (i >= 0)
 	{
-		if (img->mouse.x == dots[i].x + (BOX_STD_X + BOXLEFT) && img->mouse.y == dots[i].y + (BOX_STD_Y + BOXTOP))
+		if (img->mouse.x == dots[i].x + (BOX_STD_X + BOXLEFT) && \
+				img->mouse.y == dots[i].y + (BOX_STD_Y + BOXTOP))
 			break ;
 		i--;
 	}
 	if (i < 0)
 		return (dots->last_layer);
 	return (dots[i].z);
+}
+
+void	draw_julia3d(t_data *img, t_julia3d *dots, \
+		int total_dots)
+{
+	t_xy	dots_xy;
+	int		u;
+
+	u = 0;
+	if (img->layer == true)
+		img->last_layer = find_layer(img, dots);
+	else
+		img->last_layer = dots->last_layer;
+	while (u < total_dots)
+	{
+		dots_xy.x = dots[u].x + BOX_STD_X + BOXLEFT;
+		dots_xy.y = dots[u].y + BOX_STD_Y + BOXTOP;
+		if (check_inbox(dots_xy) == true)
+		{
+			if (dots[u].color != 0)
+			{
+				if (dots[u].z <= img->last_layer)
+					my_mlx_pixel_put(img, dots_xy.x, dots_xy.y, dots[u].color);
+			}
+			else
+				my_mlx_pixel_put(img, dots_xy.x, dots_xy.y, BLACK);
+		}
+		u++;
+	}
 }
