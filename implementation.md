@@ -15,9 +15,8 @@
 |11|julia3d_utils.c||||
 |12|fractal_3d_utils_recurrence.c||||
 
----
-
-### Functions 함수
+## Functions 함수
+### Fractals
 |No.|File|Function|
 |---|---|---|
 |1|**fractal_utils.c**|```void	init_complex(t_complex *c, double r, double i);```|
