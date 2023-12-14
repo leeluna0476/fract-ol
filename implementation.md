@@ -69,11 +69,11 @@
 |17||```void	call_set(t_data *img);```|
 |18||```void	call_set_3d(t_data *img);```|
 |19||```void	choose_set(t_data *img);```|
-|20||```int		terminate_program(void);```|
+|20||```int	terminate_program(void);```|
 |21||```void	execute_button(t_data *img, int button, void (*f)(t_data *));```|
 |22||```void	key_fractals(t_data *img, int key);```|
 |23||```void	key_offset(t_data *img, int key);```|
-|24||```int		key_press(int key, void *param);```|
+|24||```int	key_press(int key, void *param);```|
 |25||```void	hook(t_data *img);```|
 |26||```void	control_fractals(int key, t_data *img);```|
 |27||```void	control_3ds(int key, t_data *img);```|
@@ -83,7 +83,7 @@
 |31||```void	init_zoom_center(t_data *img);```|
 |32||```void	send_click_to_key(t_data *img, int y);```|
 |33||```void	wheel(int button, t_data *img);```|
-|34||```int		mouse_move(int x, int y, void *param);```|
-|35||```int		mouse_press(int button, int x, int y, void *param);```|
+|34||```int	mouse_move(int x, int y, void *param);```|
+|35||```int	mouse_press(int button, int x, int y, void *param);```|
 |36||```void	init_theme(t_data *img);```|
 |37||```void	key_theme(t_data *img, int key);```|
