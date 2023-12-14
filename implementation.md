@@ -37,3 +37,9 @@
 |14|**logistic_utils.c**|```bool	check_inbox(t_xy xy);```|
 |15||```void	make_box_black(t_data *img);```|
 |16||```void	logistic_next(double r, double *x);```|
+|17|**julia3d_utils.c**|```bool	all_diverge(t_complex c);```|
+|18||```int	get_total_slices(t_complex c);```|
+|19||```void	set_dot_values(t_julia3d *dot, int x_value, int y_value, int z_value);```|
+|20||```int	find_layer(t_data *img, t_julia3d *dots);```|
+|21||```void	draw_julia3d(t_data *img, t_julia3d *dots, int total_dots);```|
+
