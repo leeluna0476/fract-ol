@@ -1,5 +1,5 @@
 # Implementation 구현
-## fractals
+## Categories 분류
 |No.|Fractals|UI|Main|
 |---|---|---|---|
 |1|mandelbrot.c|ui_init_screen.c|
@@ -14,7 +14,3 @@
 |10|julia3d.c|
 |11|julia3d_utils.c|
 |12|fractal_3d_utils_recurrence.c|
-
-## ui
-
-## main
