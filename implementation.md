@@ -27,7 +27,7 @@
 |4|**fractal_recurrence.c**|```void	mandelbrot_julia_next(t_complex *z, t_complex c);```|
 |5||```void	burningship_next(t_complex *z, t_complex c);```|
 |6||```void	tricorn_next(t_complex *z, t_complex c);```|
-|7||```int		iter_complex(t_complex *z, t_complex c, int iter, int flag);```|
+|7||```int	iter_complex(t_complex *z, t_complex c, int iter, int flag);```|
 |8|**fractal_utils_execute.c**|```int	turn_off_trans(int color);```|
 |9||```void	draw_mandelbrot(double z_abs, t_data *img, int i, int j);```|
 |10||```void	draw_julia(double z_abs, t_data *img, int i, int j);```|
