@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/13 14:38:43 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 08:49:17 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_matrix	generate_rotation_matrix(t_data *img);
 void		matrix_point_multiply(t_matrix mat, t_julia3d *dots, int u);
 void		draw_julia3d(t_data *img, t_julia3d *dots, \
 		int total_dots);
-int			find_layer(t_data *img, t_julia3d *dots, int total_dots);
+int			find_layer(t_data *img, t_julia3d *dots);
 
 void		mandelbrot(t_data *img);
 

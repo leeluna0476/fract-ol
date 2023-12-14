@@ -6,12 +6,11 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 18:21:22 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/13 16:38:02 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:12:16 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-#include <stdio.h>
 
 void	draw_julia3d(t_data *img, t_julia3d *dots, \
 		int total_dots)
@@ -21,13 +20,9 @@ void	draw_julia3d(t_data *img, t_julia3d *dots, \
 
 	u = 0;
 	if (img->layer == true)
-	{
-		img->last_layer = find_layer(img, dots, total_dots);
-	}
+		img->last_layer = find_layer(img, dots);
 	else
-	{
 		img->last_layer = dots->last_layer;
-	}
 	while (u < total_dots)
 	{
 		dots_xy.x = dots[u].x + BOX_STD_X + BOXLEFT;
@@ -57,8 +52,7 @@ void	julia3d(t_data *img)
 	int			z_value;
 
 	make_box_black(img);
-	init_complex(&c, -1.235, 0.1);
-//	init_complex(&c, JULIA_DEF_CR, JULIA_DEF_CI);
+	init_complex(&c, JULIA_DEF_CR, JULIA_DEF_CI);
 	total_slices = get_total_slices(c);
 	total_dots = DOTS_PER_SLICE * total_slices;
 	dots = malloc(total_dots * sizeof(t_julia3d));

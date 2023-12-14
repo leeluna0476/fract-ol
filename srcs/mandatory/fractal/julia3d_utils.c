@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 18:54:36 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/13 16:54:15 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:13:53 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,19 +88,18 @@ void	iter_julia3d(t_julia3d *dots, t_complex c, int z_value)
 	}
 }
 
-int	find_layer(t_data *img, t_julia3d *dots, int total_dots)
+int	find_layer(t_data *img, t_julia3d *dots)
 {
 	int	i;
 
-	(void)total_dots;
 	i = img->last_layer * DOTS_PER_SLICE;
-	while (i >= DOTS_PER_SLICE)
+	while (i >= 0)
 	{
 		if (img->mouse.x == dots[i].x + (BOX_STD_X + BOXLEFT) && img->mouse.y == dots[i].y + (BOX_STD_Y + BOXTOP))
 			break ;
 		i--;
 	}
-	if (i < DOTS_PER_SLICE)
+	if (i < 0)
 		return (dots->last_layer);
 	return (dots[i].z);
 }
