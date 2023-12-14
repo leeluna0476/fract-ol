@@ -46,3 +46,17 @@
 |25|**burningship.c**|```void	burningship(t_data *img);```|
 |26|**tricorn.c**|```void	tricorn(t_data *img);```|
 |27|**julia3d.c**|```void	julia3d(t_data *img);```|
+
+### UI
+|No.|File|Function|
+|---|---|---|
+|1|**ui_init_screen.c**|```void	my_mlx_pixel_put(t_data *data, int x, int y, int color);```|
+|2||```void	init_screen(t_data *img);```|
+|3||```void	init_axis(t_data *img);```|
+|4||```void	init_box(t_data *img);```|
+|5||```void	clear_box(t_data *img);```|
+|6|**ui_menu.c**|```bool	check_menu(int a, int b);```|
+|7||```void	write_header(t_data *img, int *line, int *gap);```|
+|8||```void	write_2ds(t_data *img, int *line, int *gap);```|
+|9||```void	write_3ds(t_data *img, int *line, int *gap);```|
+|10||```void	write_menu(t_data *img);```|
