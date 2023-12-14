@@ -95,6 +95,8 @@ You can click the same keys with buttons to call each function.
 |2|Julia set|
 |3|Burningship set|
 |4|Tricorn set|
+|5|Bifurcation diagram of logistic map|
+|7|3D Julia set|
 
 ## Mouse controls
 You can control fractals by mouse click.
