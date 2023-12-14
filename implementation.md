@@ -2,10 +2,7 @@
 ## fractals
 |Category|files|
 |---|---|
-|Fractals|mandelbrot.c
-julia.c
-burningship.c
-tricorn.c|
+|Fractals|mandelbrot.c<br>julia.c<br>burningship.c<br>tricorn.c|
 
 
 ## ui
