@@ -94,5 +94,12 @@
 |2||```int	ft_strncmp(const char *s1, const char *s2, size_t n);```|
 |3||```size_t	ft_strlen(const char *s);```|
 |4||```int	check_if_my_fractal(char *fractal, t_data *img);```|
-|5|**main_utils_parse.c**|```void	call_set_argv(t_data *img);```|
-|6||```bool	ft_isdigit(int c);```|
+|5||```void	call_set_argv(t_data *img);```|
+|6|**main_utils_parse.c**|```bool	ft_isdigit(int c);```|
+|7||```void	init_parser(t_julia_parse *count);```|
+|8||```bool	is_num(char *arg);```|
+|9||```size_t	parse_integer_part(const char *str, t_julia_parse *parse);```|
+|10||```void	parse_decimal_part(const char *str, t_julia_parse *parse);```|
+|11|**main.c**|void	print_errmsg(void);|
+|12||void	parse_main_args(t_data *img, int argc, char *argv[]);|
+|13||double	ft_atof(const char *str);|
