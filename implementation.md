@@ -86,4 +86,9 @@
 |34||```int	mouse_move(int x, int y, void *param);```|
 |35||```int	mouse_press(int button, int x, int y, void *param);```|
 |36|**ui_theme.c**|```void	init_theme(t_data *img);```|
-|37||```void	key_theme(t_data *img, int key);```|
+|37||```void	ft_bzero(void *s, size_t n);```|
+|38||```int	ft_strncmp(const char *s1, const char *s2, size_t n);```|
+|39||```size_t	ft_strlen(const char *s);```|
+|40||```int	check_if_my_fractal(char *fractal, t_data *img);```|
+|41|**main_utils_parse.c**|```void	call_set_argv(t_data *img);```|
+|42||```bool	ft_isdigit(int c);```|
