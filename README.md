@@ -84,7 +84,7 @@ You can call each set JUST by clicking the button.
 ![](pictures/burningship_red.png)
 
 ## Key controls
-You can click the same keys with buttons to call each functions.
+You can click the same keys with buttons to call each function.
 
 |Keys|Function|
 |---|---|
@@ -95,6 +95,8 @@ You can click the same keys with buttons to call each functions.
 |2|Julia set|
 |3|Burningship set|
 |4|Tricorn set|
+|5|Bifurcation diagram of logistic map|
+|7|3D Julia set|
 
 ## Mouse controls
 You can control fractals by mouse click.
