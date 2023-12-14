@@ -84,7 +84,7 @@ You can call each set JUST by clicking the button.
 ![](pictures/burningship_red.png)
 
 ## Key controls
-You can click the same keys with buttons to call each functions.
+You can click the same keys with buttons to call each function.
 
 |Keys|Function|
 |---|---|
