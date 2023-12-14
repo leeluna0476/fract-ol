@@ -4,7 +4,7 @@ CFLAGS=-Wall -Wextra -Werror -I $(HEADER_DIR)
 RM=rm -fr
 MLX_DIR=./srcs/mlx
 MLX_FLAGS=-L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
-
+ 
 MAN_HEADER_DIR=./srcs/mandatory/headers/
 MAN_HEADERS=$(MAN_HEADER_DIR)main.h $(MAN_HEADER_DIR)ui.h $(MAN_HEADER_DIR)fractal.h
 MAN_SRCS_DIR=./srcs/mandatory/
