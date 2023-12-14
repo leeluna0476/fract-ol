@@ -9,7 +9,7 @@
 
 ---
 
-**Implementation description →**
+**Implementation description → **
 [Implementation](implementation.md)
 
 ---
