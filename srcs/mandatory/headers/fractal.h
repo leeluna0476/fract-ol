@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 15:17:23 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:23:36 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void		logistic_next(double r, double *x);
 // julia3d_utils
 bool		all_diverge(t_complex c);
 int			get_total_slices(t_complex c);
-void		set_dot_values(t_julia3d *dot, int x_value, int y_value, int z_value);
+void		set_dot_values(t_julia3d *dot, int x_value, \
+				int y_value, int z_value);
 int			find_layer(t_data *img, t_julia3d *dots);
 void		draw_julia3d(t_data *img, t_julia3d *dots, \
 				int total_dots);
