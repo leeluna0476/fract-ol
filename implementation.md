@@ -23,7 +23,7 @@
 |2||```void	init_xy(t_xy *xy, int x, int y);```|
 |3||```double	c_abs(t_complex z);```|
 |4||```void	c_default_or_arg(t_data *img, t_complex *c);```|
-|5|**fractal_recurrence.c**|```void	mandelbrot_julia_next(t_complex *z, t_complex c);```|
+|5|**fractal_utils_recurrence.c**|```void	mandelbrot_julia_next(t_complex *z, t_complex c);```|
 |6||```void	burningship_next(t_complex *z, t_complex c);```|
 |7||```void	tricorn_next(t_complex *z, t_complex c);```|
 |8||```int	iter_complex(t_complex *z, t_complex c, int iter, int flag);```|
