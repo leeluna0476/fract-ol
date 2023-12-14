@@ -88,7 +88,7 @@
 |34||```int	mouse_move(int x, int y, void *param);```|
 |35||```int	mouse_press(int button, int x, int y, void *param);```|
 |36|**ui_theme.c**|```void	init_theme(t_data *img);```|
-|37||```void	key_theme(t_data *img);```|
+|37||```void	key_theme(t_data *img, int key);```|
 
 ---
 
