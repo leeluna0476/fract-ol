@@ -21,19 +21,19 @@
 |No.|File|Function|
 |---|---|---|
 |0|**fractal_utils.c**|```void		init_complex(t_complex *c, double r, double i);```|
-|1||void		init_xy(t_xy *xy, int x, int y);|
-|2||double		c_abs(t_complex z);|
-|3||void		c_default_or_arg(t_data *img, t_complex *c);|
-|4|**fractal_recurrence.c**|void		mandelbrot_julia_next(t_complex *z, t_complex c);|
-|5||void		burningship_next(t_complex *z, t_complex c);|
-|6||void		tricorn_next(t_complex *z, t_complex c);|
-|7||int			iter_complex(t_complex *z, t_complex c, int iter, int flag);|
-|8|**fractal_utils_execute.c**|int			turn_off_trans(int color);|
-|9||void		draw_mandelbrot(double z_abs, t_data *img, int i, int j);|
-|10||void		draw_julia(double z_abs, t_data *img, int i, int j);|
-|11||void		draw_burningship(double z_abs, t_data *img, int i, int j);|
-|12||void		draw_tricorn(double z_abs, t_data *img, int i, int j);|
-|13|**fractal3d_recurrence.c**|void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);|
-|14|**logistic_utils.c**|bool		check_inbox(t_xy xy);|
-|15||void		make_box_black(t_data *img);|
-|16||void		logistic_next(double r, double *x);|
+|1||```void		init_xy(t_xy *xy, int x, int y);```|
+|2||```double		c_abs(t_complex z);```|
+|3||```void		c_default_or_arg(t_data *img, t_complex *c);```|
+|4|**fractal_recurrence.c**|```void		mandelbrot_julia_next(t_complex *z, t_complex c);```|
+|5||```void		burningship_next(t_complex *z, t_complex c);```|
+|6||```void		tricorn_next(t_complex *z, t_complex c);```|
+|7||```int			iter_complex(t_complex *z, t_complex c, int iter, int flag);```|
+|8|**fractal_utils_execute.c**|```int			turn_off_trans(int color);```|
+|9||```void		draw_mandelbrot(double z_abs, t_data *img, int i, int j);```|
+|10||```void		draw_julia(double z_abs, t_data *img, int i, int j);```|
+|11||```void		draw_burningship(double z_abs, t_data *img, int i, int j);```|
+|12||```void		draw_tricorn(double z_abs, t_data *img, int i, int j);```|
+|13|**fractal3d_recurrence.c**|```void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);```|
+|14|**logistic_utils.c**|```bool		check_inbox(t_xy xy);```|
+|15||```void		make_box_black(t_data *img);```|
+|16||```void		logistic_next(double r, double *x);```|
