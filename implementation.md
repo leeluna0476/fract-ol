@@ -13,7 +13,7 @@
 |9|logistic_utils.c|ui_theme.c|||
 |10|julia3d.c||||
 |11|julia3d_utils.c||||
-|12|fractal_3d_utils_recurrence.c||||
+|12|fractal_3d_utils_recurrence.c|||*27 files*|
 
 ## Functions 함수
 ### Fractals
