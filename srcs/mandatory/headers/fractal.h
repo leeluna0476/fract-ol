@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 15:31:12 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:22:47 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		draw_julia(double z_abs, t_data *img, int i, int j);
 void		draw_burningship(double z_abs, t_data *img, int i, int j);
 void		draw_tricorn(double z_abs, t_data *img, int i, int j);
 
-// fractal3d_recurrence.c
+// fractal3d_recurrence
 void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);
 
 // logistic_utils
