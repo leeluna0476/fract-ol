@@ -75,12 +75,12 @@
 |23||```void	key_offset(t_data *img, int key);```|
 |24||```int	key_press(int key, void *param);```|
 |25||```void	hook(t_data *img);```|
-|26|*ui_key_utils.c**|```void	control_fractals(int key, t_data *img);```|
+|26|**ui_key_utils.c**|```void	control_fractals(int key, t_data *img);```|
 |27||```void	control_3ds(int key, t_data *img);```|
 |28||```void	control_directions(int key, t_data *img);```|
 |29||```void	control_theme(int key, t_data *img);```|
 |30||```void	control_key(int key, t_data *img);```|
-|31|*ui_mouse.c**|```void	init_zoom_center(t_data *img);```|
+|31|**ui_mouse.c**|```void	init_zoom_center(t_data *img);```|
 |32||```void	send_click_to_key(t_data *img, int y);```|
 |33||```void	wheel(int button, t_data *img);```|
 |34||```int	mouse_move(int x, int y, void *param);```|
