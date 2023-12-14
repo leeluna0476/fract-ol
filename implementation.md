@@ -47,6 +47,8 @@
 |26|**tricorn.c**|```void	tricorn(t_data *img);```|
 |27|**julia3d.c**|```void	julia3d(t_data *img);```|
 
+---
+
 ### UI
 |No.|File|Function|
 |---|---|---|
@@ -86,6 +88,8 @@
 |34||```int	mouse_move(int x, int y, void *param);```|
 |35||```int	mouse_press(int button, int x, int y, void *param);```|
 |36|**ui_theme.c**|```void	init_theme(t_data *img);```|
+
+---
 
 ### Main
 |No.|File|Function|
