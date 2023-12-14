@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:43:13 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 11:08:39 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/14 15:41:11 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/14 15:41:17 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	check_write(t_data *img)
 	i = 0;
 	while (img->button_on_off[i] == false)
 		i++;
-	if (i >= CLEAR && i <= TRICORN)
+	if ((i >= CLEAR && i <= TRICORN) || i == THDJULIA)
 		return (true);
 	return (false);
 }

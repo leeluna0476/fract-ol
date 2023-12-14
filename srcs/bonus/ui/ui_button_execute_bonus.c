@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:42:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 20:42:31 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/14 15:40:27 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/14 15:40:31 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ void	call_set(t_data *img)
 void	call_set_3d(t_data *img)
 {
 	if (img->button_on_off[THDJULIA] == true)
-	{
-		make_box_black(img);
 		julia3d(img);
-	}
+}
+
+void	choose_set(t_data *img)
+{
+	call_set(img);
+	call_set_3d(img);
 }
 
 int	terminate_program(void)

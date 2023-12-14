@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 20:41:00 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 12:00:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:33:14 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	logistic_map(t_data *img)
 			if (iter >= 950)
 			{
 				init_xy(&scaled, (int)(r * BOXWIDTH / 4) + BOXLEFT, \
-						(BOXWIDTH - 440) - (int)(x *  BOX_STD_X));
+						(BOXWIDTH - 440) - (int)(x * BOXWIDTH / 2));
 				if (check_inbox(scaled) == true)
 					my_mlx_pixel_put(img, scaled.x, scaled.y, WHITE);
 			}
