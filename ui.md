@@ -66,4 +66,21 @@ mlx 내장 함수인 ```int	mlx_string_put (void *mlx_ptr, void *win_ptr, int x,
 |22||```int	mouse_move(int x, int y, void *param);```|
 |23||```int	mouse_press(int button, int x, int y, void *param);```|
 
+본 프로그램은 마우스/키보드 훅으로 사용자에게 입력을 받는다.
+mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param);```을 사용해서 마우스/키보드의 입력을 감지한다.
+그에 따라서 알맞는 처리를 해주는 함수 몇가지를 직접 구현했다.
+
+1. Mouse hook
+  - Wheel
+    - Wheel up, Wheel down, Wheel click
+  - Left click
+2. Keyboard hook
+
+|Event|Function|
+|---|---|
+|**Left click**|버튼 조작|
+||프랙탈을 화면 중앙으로 평행이동|
+|**Wheel up, down**|프랙탈 확대 및 축소|
+|**Wheel click**|색상 테마를 제외한 모든 설정값 초기화|
+
 ## Key
