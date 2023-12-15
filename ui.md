@@ -16,6 +16,7 @@
 3. Box
 
 파싱 단계에서 아무런 오류 없이 프로그램이 정상적으로 시작할 때, 세 구역을 모두 기본값으로 초기화를 해준다.
+
 ```void	my_mlx_pixel_put(t_data *data, int x, int y, int color);```을 사용하여 이미지에 지정된 색깔을 일일히 찍어준다.
 
 ## Menu
