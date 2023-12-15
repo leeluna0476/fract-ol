@@ -139,8 +139,8 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 위 차트에 있는 키들은 각 버튼들과도 상응한다.
 마우스로 버튼을 클릭할 때도 키보드로 입력을 할 때와 동일한 버튼을 제어하고 동일한 함수를 호출하여 동일하게 작동하도록 구현하였다.
 
-```void	key_fractals(t_data *img, int key);```로 어떤 버튼을 켜고 끌지 제어한다.
+```void key_fractals(t_data *img, int key);```로 어떤 버튼을 켜고 끌지 제어한다.
 
-또한 ```void	execute_button(t_data *img, int button, void (*f)(t_data *));```는 함수 포인터를 매개변수로 받아서 초기에 실행해야 하는 기능들을 실행한다.
+또한 ```void execute_button(t_data *img, int button, void (*f)(t_data *));```는 함수 포인터를 매개변수로 받아서 초기에 실행해야 하는 기능들을 실행한다.
 
 모든 초기 설정이 완료되면 비로소 해당하는 프랙탈 함수를 호출해서 보여준다.
