@@ -125,15 +125,15 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 ### Key
 |Event|Function|
 |---|---|
-|[|Theme RED|
-|]|Theme BLUE|
-|0|Clear box|
-|1|Mandelbrot|
-|2|Julia|
-|3|Burningship|
-|4|Tricorn|
-|5|Bifurcation diagram of logistic map|
-|7|3D Julia|
+|**[**|Theme RED|
+|**]**|Theme BLUE|
+|**0**|Clear box|
+|**1**|Mandelbrot|
+|**2**|Julia|
+|**3**|Burningship|
+|**4**|Tricorn|
+|**5**|Bifurcation diagram of logistic map|
+|**7**|3D Julia|
 
 키보드 입력으로도 간편하게 각 기능들을 호출할 수 있다.
 위 차트에 있는 키들은 각 버튼들과도 상응한다.
