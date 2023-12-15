@@ -7,6 +7,7 @@
 |3||```void	init_axis(t_data *img);```|
 |4||```void	init_box(t_data *img);```|
 |5||```void	clear_box(t_data *img);```|
+
 가장 첫번째 단계는 스크린을 초기화하는 것이다.
 본 스크린의 구역은 메뉴바와 배경, 그리고 프랙탈이 송출될 박스 화면으로 나뉜다.
 
@@ -27,6 +28,7 @@
 |5||```void	write_menu(t_data *img);```|
 |6|**ui_menu_utils.c**|```bool	check_menu(int a, int b);```|
 |7||```bool	check_write(t_data *img);```|
+
 메뉴에 메뉴들을 한 줄씩 적어준다.
 mlx 내장 함수인 ```int	mlx_string_put (void *mlx_ptr, void *win_ptr, int x, int y, int color, char *string);```를 사용했다.
 
