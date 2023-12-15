@@ -65,6 +65,22 @@ mlx 내장 함수인 ```int	mlx_string_put (void *mlx_ptr, void *win_ptr, int x,
 |21||```void	wheel(int button, t_data *img);```|
 |22||```int	mouse_move(int x, int y, void *param);```|
 |23||```int	mouse_press(int button, int x, int y, void *param);```|
+|24|**ui_key.c**|```void	key_fractals(t_data *img, int key);```|
+|25||```void	key_offset(t_data *img, int key);```|
+|26||```int	key_press(int key, void *param);```|
+|27||```void	hook(t_data *img);```|
+|28|**ui_key_utils.c**|```void	control_fractals(int key, t_data *img);```|
+|29||```void	control_3ds(int key, t_data *img);```|
+|30||```void	control_directions(int key, t_data *img);```|
+|31||```void	control_theme(int key, t_data *img);```|
+|32||```void	control_key(int key, t_data *img);```|
+|33|**ui_mouse.c**|```void	init_zoom_center(t_data *img);```|
+|34||```void	send_click_to_key(t_data *img, int y);```|
+|35||```void	wheel(int button, t_data *img);```|
+|36||```int	mouse_move(int x, int y, void *param);```|
+|37||```int	mouse_press(int button, int x, int y, void *param);```|
+|38|**ui_theme.c**|```void	init_theme(t_data *img);```|
+|39||```void	key_theme(t_data *img, int key);```|
 
 본 프로그램은 마우스/키보드 훅으로 사용자에게 입력을 받는다.
 mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param);```을 사용해서 마우스/키보드의 입력을 감지한다.
@@ -87,12 +103,12 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 
 **Mouse move**
 
-가장 우선적으로 받는 입력은 mouse_move이다.
-마우스의 움직임을 실시간으로 감지하면서 마우스 커서가 버튼의 범위 안에 올라올 때마다 CHARCOAL 색상으로 버튼을 칠해주며 호버링 효과를 주었다.
+가장 우선적으로 받는 입력은 **mouse_move**이다.
+마우스의 움직임을 실시간으로 감지하면서 마우스 커서가 버튼의 범위 안에 올라올 때마다 CHARCOAL 색상으로 버튼을 칠해주며 **호버링** 효과를 주었다.
 
 **Mouse click**
 
-프로그램을 조작하는 데 주로 쓰이는 입력은 마우스 좌클릭이다.
+프로그램을 조작하는 데 주로 쓰이는 입력은 **마우스 좌클릭**이다.
 버튼의 범위에서 클릭이 들어오면 해당하는 프랙탈 또는 테마(문자열로 적혀있다)를 실행하고, 박스의 범위에서 클릭이 들어오면 현재 어떤 프랙탈이 켜져 있는지 탐색해서 해당하는 기능을 수행한다.
 
 프랙탈을 실행할 때는 ```boolean``` 배열에 버튼의 상태 정보를 담아서 상태가 ```true```인 프랙탈만 호출하도록 구현하였다.
@@ -100,10 +116,46 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 3D 줄리아의 경우, 좌클릭으로 클릭한 부분의 단층을 잘라서 볼 수 있다.
 같은 좌클릭이지만 어떤 프랙탈이 ```true```인지에 따라 다르게 작동하는 것이다.
 
-마우스 휠은 2D 프랙탈을 조작하는 데 쓰인다. 휠을 위로 밀면 확대, 아래로 당기면 축소이다.
+**마우스 휠**은 2D 프랙탈을 조작하는 데 쓰인다. 휠을 위로 밀면 확대, 아래로 당기면 축소이다.
 프랙탈은 작은 부분이 큰 부분과 유사한 형태를 가지는 구조이므로 확대를 함으로써 그것을 관찰할 수 있다.
 마우스 커서가 위치한 부분을 박스의 중앙과의 거리 * 확대할 비율만큼 이동을 시키고 나서 프랙탈을 확대를 시킨다. 그 후 다시 원래 위치로 되돌려놓는 방식으로 마우스 커서를 기준으로 확대하는 움직임을 구현하였다.
 
 휠을 클릭하면 색상 테마를 제외한 모든 설정값들을 초기화한다. 확대, 평행이동, 단층 높이 등을 기본값으로 돌려놓는다. 처음에 버튼을 켰을 때의 상태로 돌아가는 걸 볼 수 있다.
 
 ## Key
+|22|**ui_key.c**|```void	key_fractals(t_data *img, int key);```|
+|23||```void	key_offset(t_data *img, int key);```|
+|24||```int	key_press(int key, void *param);```|
+|25||```void	hook(t_data *img);```|
+|26|**ui_key_utils.c**|```void	control_fractals(int key, t_data *img);```|
+|27||```void	control_3ds(int key, t_data *img);```|
+|28||```void	control_directions(int key, t_data *img);```|
+|29||```void	control_theme(int key, t_data *img);```|
+|30||```void	control_key(int key, t_data *img);```|
+|31|**ui_mouse.c**|```void	init_zoom_center(t_data *img);```|
+|32||```void	send_click_to_key(t_data *img, int y);```|
+|33||```void	wheel(int button, t_data *img);```|
+|34||```int	mouse_move(int x, int y, void *param);```|
+|35||```int	mouse_press(int button, int x, int y, void *param);```|
+|36|**ui_theme.c**|```void	init_theme(t_data *img);```|
+|37||```void	key_theme(t_data *img, int key);```|
+|Event|Function|
+|---|---|
+|[|Theme RED|
+|]|Theme BLUE|
+|0|Clear box|
+|1|Mandelbrot|
+|2|Julia|
+|3|Burningship|
+|4|Tricorn|
+|5|Bifurcation diagram of logistic map|
+|7|3D Julia|
+
+키보드 입력으로도 간편하게 각 기능들을 호출할 수 있다.
+위 차트에 있는 키들은 각 버튼들과도 상응한다.
+마우스로 버튼을 클릭할 때도 키보드로 입력을 할 때와 동일한 버튼을 제어하고 동일한 함수를 호출하여 동일하게 작동하도록 구현하였다.
+
+```void	key_fractals(t_data *img, int key);```로 어떤 버튼을 켜고 끌지 제어한다.
+또한 ```void	execute_button(t_data *img, int button, void (*f)(t_data *));```는 함수 포인터를 매개변수로 받아서 초기에 실행해야 하는 기능들을 실행한다.
+
+모든 초기 설정이 완료되면 비로소 해당하는 프랙탈 함수를 호출해서 보여준다.
