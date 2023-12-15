@@ -122,7 +122,7 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 
 휠을 클릭하면 색상 테마를 제외한 모든 설정값들을 초기화한다. 확대, 평행이동, 단층 높이 등을 기본값으로 돌려놓는다. 처음에 버튼을 켰을 때의 상태로 돌아가는 걸 볼 수 있다.
 
-**Key**
+### Key
 |Event|Function|
 |---|---|
 |[|Theme RED|
