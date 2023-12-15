@@ -123,22 +123,6 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 휠을 클릭하면 색상 테마를 제외한 모든 설정값들을 초기화한다. 확대, 평행이동, 단층 높이 등을 기본값으로 돌려놓는다. 처음에 버튼을 켰을 때의 상태로 돌아가는 걸 볼 수 있다.
 
 ## Key
-|22|**ui_key.c**|```void	key_fractals(t_data *img, int key);```|
-|23||```void	key_offset(t_data *img, int key);```|
-|24||```int	key_press(int key, void *param);```|
-|25||```void	hook(t_data *img);```|
-|26|**ui_key_utils.c**|```void	control_fractals(int key, t_data *img);```|
-|27||```void	control_3ds(int key, t_data *img);```|
-|28||```void	control_directions(int key, t_data *img);```|
-|29||```void	control_theme(int key, t_data *img);```|
-|30||```void	control_key(int key, t_data *img);```|
-|31|**ui_mouse.c**|```void	init_zoom_center(t_data *img);```|
-|32||```void	send_click_to_key(t_data *img, int y);```|
-|33||```void	wheel(int button, t_data *img);```|
-|34||```int	mouse_move(int x, int y, void *param);```|
-|35||```int	mouse_press(int button, int x, int y, void *param);```|
-|36|**ui_theme.c**|```void	init_theme(t_data *img);```|
-|37||```void	key_theme(t_data *img, int key);```|
 |Event|Function|
 |---|---|
 |[|Theme RED|
