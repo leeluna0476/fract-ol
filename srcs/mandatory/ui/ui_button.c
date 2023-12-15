@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:44:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 13:23:51 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:04:51 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,18 @@ void	turn_on_button(t_data *img, int button)
 	make_all_false(img);
 	init_theme(img);
 	img->button_on_off[button] = true;
+}
+
+bool	check_if_2d(t_data *img)
+{
+	int	i;
+
+	i = MANDELBROT;
+	while (i <= TRICORN)
+	{
+		if (img->button_on_off[i] == true)
+			return (true);
+		i++;
+	}
+	return (false);
 }

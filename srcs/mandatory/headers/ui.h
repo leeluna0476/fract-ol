@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/14 14:35:59 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:05:44 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);
 void	_button(t_data *img, int start_x, int start_y);
 void	make_all_false(t_data *img);
 void	turn_on_button(t_data *img, int button);
+bool	check_if_2d(t_data *img);
 
 /* ui_button_execute
  * execute button

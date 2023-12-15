@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:41:21 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 10:50:56 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:09:43 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	mouse_press(int button, int x, int y, void *param)
 
 	img = (t_data *)param;
 	if ((x >= BOXLEFT && x <= BOXRIGHT) && \
-			(y >= BOXTOP && y <= BOXBOT))
+			(y >= BOXTOP && y <= BOXBOT) && check_if_2d(img) == true)
 		if (button >= WHEEL_CLICK && button <= WHEEL_UP)
 			wheel(button, img);
 	if (button == LEFT_CLICK)
