@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 14:07:14 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/15 19:02:18 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	wheel(int button, t_data *img)
 	}
 	else if (button == WHEEL_CLICK)
 		init_zoom_center(img);
-	choose_set(img);
+	call_set(img);
 	if (check_write(img) == true)
 		write_menu(img);
 }
