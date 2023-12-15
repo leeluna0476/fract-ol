@@ -70,11 +70,11 @@ mlx 내장 함수인 ```int	mlx_string_put (void *mlx_ptr, void *win_ptr, int x,
 mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param);```을 사용해서 마우스/키보드의 입력을 감지한다.
 그에 따라서 알맞는 처리를 해주는 함수 몇가지를 직접 구현했다.
 
-1. Mouse hook
+- Mouse hook
   - Wheel
     - Wheel up, Wheel down, Wheel click
   - Left click
-2. Keyboard hook
+- Keyboard hook
 
 |Event|Input range|Target|Function|
 |---|---|---|---|
