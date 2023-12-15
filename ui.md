@@ -76,6 +76,7 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
   - Left click
 - Keyboard hook
 
+### Mouse
 |Event|Input range|Target|Function|
 |---|---|---|---|
 |**Left click**|메뉴바 버튼|모든 프랙탈|버튼 조작|
@@ -84,6 +85,7 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
 |**Wheel up, down**|박스|2D 프랙탈|프랙탈 확대 및 축소|
 |**Wheel click**|박스|모든 프랙탈|색상 테마를 제외한 모든 설정값 초기화|
 
+**<Mouse move>**
 가장 우선적으로 받는 입력은 mouse_move이다.
 마우스의 움직임을 실시간으로 감지하면서 마우스 커서가 버튼의 범위 안에 올라올 때마다 CHARCOAL 색상으로 버튼을 칠해주며 호버링 효과를 주었다.
 
