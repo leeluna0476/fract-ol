@@ -76,7 +76,7 @@ mlx 내장 함수인 ```void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int 
   - Left click
 2. Keyboard hook
 
-|Event|Operation range|Target|Function|
+|Event|Input range|Target|Function|
 |---|---|---|---|
 |**Left click**|메뉴바 버튼|모든 프랙탈|버튼 조작|
 ||박스|2D 프랙탈|프랙탈을 화면 중앙으로 평행이동|
