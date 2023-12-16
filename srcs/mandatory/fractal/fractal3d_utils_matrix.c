@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:34:03 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 14:59:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:10:12 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,57 +67,49 @@ t_matrix	generate_rotation_matrix(t_vec3d angle)
 	return (matxyz);
 }
 
-void	matrix_point_multiply(t_point *mandelbrot3d, t_matrix rotation_matrix, int q)
+void	init_xyz(t_xyz *xyz, int x, int y, int z)
 {
-	double	vec[3];
-	double	nx;
-	double	ny;
-	double	nz;
+	xyz->x = x;
+	xyz->y = y;
+	xyz->z = z;
+}
+
+t_xyz	generate_new_xyz(t_matrix rotation_matrix, double vec[3])
+{
+	t_xyz	new;
 	int		u;
 
+	init_xyz(&new, 0, 0, 0);
+	u = 0;
+	while (u < 3)
+	{
+		new.x += rotation_matrix.mat[0][u] * vec[u];
+		new.y += rotation_matrix.mat[1][u] * vec[u];
+		new.z += rotation_matrix.mat[2][u] * vec[u];
+		u++;
+	}
+	return (new);
+}
+
+void	matrix_point_multiply(t_point *mandelbrot3d, \
+		t_matrix rotation_matrix, int q)
+{
+	double	vec[3];
+	t_xyz	new;
+
 	init_vec3d(vec, mandelbrot3d[q].rx, mandelbrot3d[q].ry, mandelbrot3d[q].rz);
-	nx = 0;
-	ny = 0;
-	nz = 0;
-	u = 0;
-	while (u < 3)
-	{
-		nx += rotation_matrix.mat[0][u] * vec[u];
-		ny += rotation_matrix.mat[1][u] * vec[u];
-		nz += rotation_matrix.mat[2][u] * vec[u];
-		u++;
-	}
-	(&(mandelbrot3d[q]))->rx = nx;
-	(&(mandelbrot3d[q]))->ry = ny;
-	(&(mandelbrot3d[q]))->rz = nz;
+	new = generate_new_xyz(rotation_matrix, vec);
+	(&(mandelbrot3d[q]))->rx = new.x;
+	(&(mandelbrot3d[q]))->ry = new.y;
+	(&(mandelbrot3d[q]))->rz = new.z;
 	init_vec3d(vec, mandelbrot3d[q].ix, mandelbrot3d[q].iy, mandelbrot3d[q].iz);
-	nx = 0;
-	ny = 0;
-	nz = 0;
-	u = 0;
-	while (u < 3)
-	{
-		nx += rotation_matrix.mat[0][u] * vec[u];
-		ny += rotation_matrix.mat[1][u] * vec[u];
-		nz += rotation_matrix.mat[2][u] * vec[u];
-		u++;
-	}
-	(&(mandelbrot3d[q]))->ix = nx;
-	(&(mandelbrot3d[q]))->iy = ny;
-	(&(mandelbrot3d[q]))->iz = nz;
+	new = generate_new_xyz(rotation_matrix, vec);
+	(&(mandelbrot3d[q]))->ix = new.x;
+	(&(mandelbrot3d[q]))->iy = new.y;
+	(&(mandelbrot3d[q]))->iz = new.z;
 	init_vec3d(vec, mandelbrot3d[q].ax, mandelbrot3d[q].ay, mandelbrot3d[q].az);
-	nx = 0;
-	ny = 0;
-	nz = 0;
-	u = 0;
-	while (u < 3)
-	{
-		nx += rotation_matrix.mat[0][u] * vec[u];
-		ny += rotation_matrix.mat[1][u] * vec[u];
-		nz += rotation_matrix.mat[2][u] * vec[u];
-		u++;
-	}
-	(&(mandelbrot3d[q]))->ax = nx;
-	(&(mandelbrot3d[q]))->ay = ny;
-	(&(mandelbrot3d[q]))->az = nz;
+	new = generate_new_xyz(rotation_matrix, vec);
+	(&(mandelbrot3d[q]))->ax = new.x;
+	(&(mandelbrot3d[q]))->ay = new.y;
+	(&(mandelbrot3d[q]))->az = new.z;
 }

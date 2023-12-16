@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 14:59:08 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:10:35 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ typedef struct s_matrix {
 	double	mat[3][3];
 }	t_matrix;
 
+typedef struct s_xyz {
+	double	x;
+	double	y;
+	double	z;
+}			t_xyz;
+
 typedef struct s_julia3d {
 	int	x;
 	int	y;
@@ -88,21 +94,33 @@ double		c_abs_3d(t_point point);
 void		init_angle(t_vec3d *angle, t_data *img);
 void		init_matrix(t_matrix *matrix);
 void		init_vec3d(double *vector, double x, double y, double z);
+void		set_values_mandelbrot3d(t_point *mandelbrot3d, \
+				int idx, int i, int j);
 
 // fractal3d_recurrence
 void		next_mandelbrot3d(t_point *p, t_complex c);
+void		iter_mandelbrot3d(t_point *mandelbrot3d, int idx, t_complex c);
 void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);
 
 //fractal3d_utils_matrix
 t_matrix	multiply_matrix(t_matrix mat1, t_matrix mat2);
 t_matrix	generate_rotation_matrix(t_vec3d angle);
-void		matrix_point_multiply(t_point *mandelbrot3d, t_matrix rotation_matrix, int q);
-
+void		init_xyz(t_xyz *xyz, int x, int y, int z);
+t_xyz		generate_new_xyz(t_matrix rotation_matrix, double vec[3]);
+void		matrix_point_multiply(t_point *mandelbrot3d, \
+				t_matrix rotation_matrix, int q);
 
 // logistic_utils
 bool		check_inbox(t_xy xy);
 void		make_box_black(t_data *img);
 void		logistic_next(double r, double *x);
+
+// mandelbrot3d_utils
+void		set_mandelbrot3d_height(t_point *mandelbrot3d, t_complex z_value);
+void		if_converge(t_point *mandelbrot4d, int idx, double abs);
+void		generate_mandelbrot3d(t_point *mandelbrot3d);
+void		draw_mandelbrot3d(t_data *img, t_point *mandelbrot3d, \
+				t_matrix rotation_matrix);
 
 // julia3d_utils
 bool		all_diverge(t_complex c);

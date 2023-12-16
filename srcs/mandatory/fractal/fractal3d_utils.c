@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:27:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 14:55:14 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 16:10:32 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ double	c_abs_3d(t_point point)
 
 	r = point.real;
 	i = point.imag;
-	return sqrt(r * r + i * i);
+	return (sqrt(r * r + i * i));
 }
 
 void	init_angle(t_vec3d *angle, t_data *img)
@@ -53,4 +53,25 @@ void	init_vec3d(double *vector, double x, double y, double z)
 	vector[0] = x;
 	vector[1] = y;
 	vector[2] = z;
+}
+
+void	set_values_mandelbrot3d(t_point *mandelbrot3d, int idx, int i, int j)
+{
+	int	real_value;
+	int	imag_value;
+
+	real_value = i - BOX_CENTER_X;
+	imag_value = j - BOX_CENTER_Y;
+	mandelbrot3d[idx].real = 0;
+	mandelbrot3d[idx].rx = real_value;
+	mandelbrot3d[idx].ry = imag_value;
+	mandelbrot3d[idx].rz = 0;
+	mandelbrot3d[idx].imag = 0;
+	mandelbrot3d[idx].ix = real_value;
+	mandelbrot3d[idx].iy = imag_value;
+	mandelbrot3d[idx].iz = 0;
+	mandelbrot3d[idx].abs = 0;
+	mandelbrot3d[idx].ax = real_value;
+	mandelbrot3d[idx].ay = imag_value;
+	mandelbrot3d[idx].az = 0;
 }
