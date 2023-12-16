@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 11:00:15 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:59:08 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,21 +83,26 @@ void		draw_julia(double z_abs, t_data *img, int i, int j);
 void		draw_burningship(double z_abs, t_data *img, int i, int j);
 void		draw_tricorn(double z_abs, t_data *img, int i, int j);
 
+// fractal3d_utils
+double		c_abs_3d(t_point point);
+void		init_angle(t_vec3d *angle, t_data *img);
+void		init_matrix(t_matrix *matrix);
+void		init_vec3d(double *vector, double x, double y, double z);
+
 // fractal3d_recurrence
+void		next_mandelbrot3d(t_point *p, t_complex c);
 void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);
+
+//fractal3d_utils_matrix
+t_matrix	multiply_matrix(t_matrix mat1, t_matrix mat2);
+t_matrix	generate_rotation_matrix(t_vec3d angle);
+void		matrix_point_multiply(t_point *mandelbrot3d, t_matrix rotation_matrix, int q);
+
 
 // logistic_utils
 bool		check_inbox(t_xy xy);
 void		make_box_black(t_data *img);
 void		logistic_next(double r, double *x);
-
-// mandelbrot3d_utils
-double		pt_abs(t_point *p);
-void		next_mandelbrot3d(t_point *p, t_complex c);
-void		init_angle(t_vec3d *angle, t_data *img);
-void		init_matrix(t_matrix *matrix);
-t_matrix	multiply_matrix(t_matrix mat1, t_matrix mat2);
-t_matrix	generate_rotation_matrix(t_vec3d angle);
 
 // julia3d_utils
 bool		all_diverge(t_complex c);
