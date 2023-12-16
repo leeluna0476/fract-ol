@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:44:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 14:04:51 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 09:20:26 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	make_button(t_data *img, t_xy start, t_xy button_wh, int color)
 	}
 }
 
-void	_button(t_data *img, int start_x, int start_y)
+void	button(t_data *img, int start_x, int start_y)
 {
 	t_xy	start;
 	t_xy	button_wh;

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/15 14:05:44 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 13:11:30 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@
 # define BOXBOT			980
 # define BOXLEFT 		450
 # define BOXRIGHT		1870
-# define BOXWIDTH		1420
-# define BOXHEIGHT		930
+# define BOXWIDTH		1421
+# define BOXHEIGHT		931
 # define BOX_STD_X		710
 # define BOX_STD_Y		465
+# define BOX_CENTER_X	1160
+# define BOX_CENTER_Y	515
 
 # define BACKCOLOR		0x3C3D42
 # define MENUCOLOR		0x505259
@@ -152,7 +154,7 @@ bool	check_write(t_data *img);
  * set buttons
  */
 void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);
-void	_button(t_data *img, int start_x, int start_y);
+void	button(t_data *img, int start_x, int start_y);
 void	make_all_false(t_data *img);
 void	turn_on_button(t_data *img, int button);
 bool	check_if_2d(t_data *img);

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:47:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 19:02:18 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 13:15:46 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,13 @@ int	mouse_move(int x, int y, void *param)
 	start_y = 80;
 	while (start_y <= 130)
 	{
-		_button(img, 30, start_y);
+		button(img, 30, start_y);
 		start_y += 50;
 	}
 	start_y = 230;
 	while (start_y <= 680)
 	{
-		_button(img, 30, start_y);
+		button(img, 30, start_y);
 		start_y += 50;
 	}
 	write_menu(img);

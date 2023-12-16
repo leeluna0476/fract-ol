@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 17:22:47 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 11:00:15 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,36 @@
 # define JULIA_DEF_CI	0.1889
 # define SLICE_GAP		0.01
 # define DOTS_PER_SLICE	2073600
+# define TOTAL_DOTS		2073600
 # define ITER_SMALL		100
 # define ITER			500
 # define ITER_LARGE		1000
+
+typedef struct s_point {
+	double	real;
+	double	rx;
+	double	ry;
+	double	rz;
+	int		rcolor;
+	double	imag;
+	double	ix;
+	double	iy;
+	double	iz;
+	int		icolor;
+	double	abs;
+	double	ax;
+	double	ay;
+	double	az;
+	int		acolor;
+}			t_point;
+
+typedef struct s_vec3d {
+	double	vec[3];
+}	t_vec3d;
+
+typedef struct s_matrix {
+	double	mat[3][3];
+}	t_matrix;
 
 typedef struct s_julia3d {
 	int	x;
@@ -64,6 +91,14 @@ bool		check_inbox(t_xy xy);
 void		make_box_black(t_data *img);
 void		logistic_next(double r, double *x);
 
+// mandelbrot3d_utils
+double		pt_abs(t_point *p);
+void		next_mandelbrot3d(t_point *p, t_complex c);
+void		init_angle(t_vec3d *angle, t_data *img);
+void		init_matrix(t_matrix *matrix);
+t_matrix	multiply_matrix(t_matrix mat1, t_matrix mat2);
+t_matrix	generate_rotation_matrix(t_vec3d angle);
+
 // julia3d_utils
 bool		all_diverge(t_complex c);
 int			get_total_slices(t_complex c);
@@ -82,6 +117,8 @@ void		burningship(t_data *img);
 void		tricorn(t_data *img);
 
 void		logistic_map(t_data *img);
+
+void		mandelbrot3d(t_data *img);
 
 void		julia3d(t_data *img);
 

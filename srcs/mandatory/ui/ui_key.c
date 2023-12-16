@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:52:38 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 08:09:26 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/16 10:58:11 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	key_fractals(t_data *img, int key)
 		execute_button(img, TRICORN, init_zoom_center);
 	else if (key == KEY_5)
 		execute_button(img, LOGISTIC, make_box_black);
+	else if (key == KEY_6)
+		execute_button(img, THDMANDELBROT, init_zoom_center);
 	else if (key == KEY_7)
 		execute_button(img, THDJULIA, init_zoom_center);
 	else
