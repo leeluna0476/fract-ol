@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:34:03 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 19:10:12 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:11:10 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ t_matrix	generate_rotation_matrix(t_vec3d angle)
 	matx.mat[2][1] = sin(angle.vec[0]);
 	matx.mat[2][2] = cos(angle.vec[0]);
 	maty.mat[0][0] = cos(angle.vec[1]);
-	maty.mat[0][2] = sin(angle.vec[1]);
-	maty.mat[2][0] = -sin(angle.vec[1]);
+	maty.mat[0][2] = -sin(angle.vec[1]);
+	maty.mat[2][0] = sin(angle.vec[1]);
 	maty.mat[2][2] = cos(angle.vec[1]);
 	matz.mat[0][0] = cos(angle.vec[2]);
 	matz.mat[0][1] = -sin(angle.vec[2]);
@@ -74,6 +74,15 @@ void	init_xyz(t_xyz *xyz, int x, int y, int z)
 	xyz->z = z;
 }
 
+// vec[3]는 기존 좌표.
+// 기존 좌표에 회전행렬을 곱해서 새로운 좌표를 구하는 부분.
+// x축 기준으로 회전할 때는 x좌표는 변하지 않고
+	// (x축 기준으로 들어오는 angle.vec[0]은 x좌표에 적용하지 않는다.)
+// y축 기준으로 회전할 때는 y좌표는 변하지 않고
+	// (y축 기준으로 들어오는 angle.vec[1]은 y좌표에 적용하지 않는다.)
+// z축 기준으로 회전할 때는 z좌표는 변하지 않는다.
+	// (z축 기준으로 들어오는 angle.vec[2]은 z좌표에 적용하지 않는다.)
+	// 그치만 난 z축 기준으로는 회전하지 않는걸
 t_xyz	generate_new_xyz(t_matrix rotation_matrix, double vec[3])
 {
 	t_xyz	new;
@@ -112,4 +121,12 @@ void	matrix_point_multiply(t_point *mandelbrot3d, \
 	(&(mandelbrot3d[q]))->ax = new.x;
 	(&(mandelbrot3d[q]))->ay = new.y;
 	(&(mandelbrot3d[q]))->az = new.z;
+	for (int i = 0; i < 32; i++)
+	{
+		init_vec3d(vec, mandelbrot3d[q].x32[i], mandelbrot3d[q].y32[i], mandelbrot3d[q].z32[i]);
+		new = generate_new_xyz(rotation_matrix, vec);
+		mandelbrot3d[q].x32[i] = new.x;
+		mandelbrot3d[q].y32[i] = new.y;
+		mandelbrot3d[q].z32[i] = new.z;
+	}
 }

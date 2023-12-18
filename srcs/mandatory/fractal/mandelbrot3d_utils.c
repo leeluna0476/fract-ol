@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:30:00 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 18:55:29 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:38:28 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ void	if_converge(t_point *mandelbrot3d, int idx, double abs)
 	{
 		mandelbrot3d[idx].rcolor = BLUE;
 		mandelbrot3d[idx].icolor = RED;
-		mandelbrot3d[idx].acolor = GREEN;
+		mandelbrot3d[idx].acolor = YELLOW;
 	}
 	else
 		mandelbrot3d[idx].rcolor = BLACK;
 }
 
+// idx는 이런 순서다.
+// 0번째 열의 0번째 행, 0번째 열의 1번째 행......
+// 그런데 일차원 배열이라서 BOXWIDTH로 오프셋을 준 것이다.
 void	generate_mandelbrot3d(t_point *mandelbrot3d)
 {
 	t_complex	c;
@@ -64,22 +67,28 @@ void	generate_mandelbrot3d(t_point *mandelbrot3d)
 void	check_and_draw(t_data *img, t_point *mandelbrot3d, int u)
 {
 	t_xy	print_xy;
+	int		k;
 
-	init_xy(&print_xy, mandelbrot3d[u].ix + \
-			BOX_CENTER_X, mandelbrot3d[u].iy + BOX_CENTER_Y);
-	if (check_inbox(print_xy) == true)
-		my_mlx_pixel_put(img, mandelbrot3d[u].ix + \
-				BOX_CENTER_X, mandelbrot3d[u].iy + BOX_CENTER_Y, RED);
 	init_xy(&print_xy, mandelbrot3d[u].ax + \
 			BOX_CENTER_X, mandelbrot3d[u].ay + BOX_CENTER_Y);
 	if (check_inbox(print_xy) == true)
-		my_mlx_pixel_put(img, mandelbrot3d[u].ax + BOX_CENTER_X, \
-				mandelbrot3d[u].ay + BOX_CENTER_Y, YELLOW);
-	init_xy(&print_xy, mandelbrot3d[u].rx + BOX_CENTER_X, \
-			mandelbrot3d[u].ry + BOX_CENTER_Y);
+		my_mlx_pixel_put(img, print_xy.x, print_xy.y, YELLOW);
+	init_xy(&print_xy, mandelbrot3d[u].ix + \
+			BOX_CENTER_X, mandelbrot3d[u].iy + BOX_CENTER_Y);
 	if (check_inbox(print_xy) == true)
-		my_mlx_pixel_put(img, mandelbrot3d[u].rx + BOX_CENTER_X, \
-				mandelbrot3d[u].ry + BOX_CENTER_Y, BLUE);
+		my_mlx_pixel_put(img, print_xy.x, print_xy.y, RED);
+	k = 0;
+	while (k < 32)
+	{
+		init_xy(&print_xy, mandelbrot3d[u].x32[k] + BOX_CENTER_X, mandelbrot3d[u].y32[k] + BOX_CENTER_Y);
+		if (check_inbox(print_xy) == true)
+		{
+			my_mlx_pixel_put(img, print_xy.x, print_xy.y, BLUE);
+			if (mandelbrot3d[u].imag == 0)
+				my_mlx_pixel_put(img, print_xy.x, print_xy.y, WHITE);
+		}
+		k++;
+	}
 }
 
 void	draw_mandelbrot3d(t_data *img, t_point *mandelbrot3d, \

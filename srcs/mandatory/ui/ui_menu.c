@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:30:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/11 19:27:32 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/17 21:37:52 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	write_2ds(t_data *img, int *line, int *gap)
 			*line, WHITE, "0: Reset Box");
 	*line += *gap;
 	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
-			*line, WHITE, "1: Mandelsbrot");
+			*line, WHITE, "1: Mandelbrot");
 	*line += *gap;
 	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
 			*line, WHITE, "2: Julia");

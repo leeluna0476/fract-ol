@@ -6,13 +6,13 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:14:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 16:24:33 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:21:37 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-void	next_mandelbrot3d(t_point *p, t_complex c)
+void	next_mandelbrot3d(t_point *p, t_complex c, int k)
 {
 	double	r;
 	double	i;
@@ -21,6 +21,7 @@ void	next_mandelbrot3d(t_point *p, t_complex c)
 	i = p->imag;
 	p->real = r * r - i * i + c.real;
 	p->imag = 2 * r * i + c.imag;
+	p->z32[k % 32] = p->real * 200;
 }
 
 void	iter_mandelbrot3d(t_point *mandelbrot3d, int idx, t_complex c)
@@ -28,9 +29,9 @@ void	iter_mandelbrot3d(t_point *mandelbrot3d, int idx, t_complex c)
 	int	k;
 
 	k = 0;
-	while (k < ITER)
+	while (k < ITER_LARGE)
 	{
-		next_mandelbrot3d(&(mandelbrot3d[idx]), c);
+		next_mandelbrot3d(&(mandelbrot3d[idx]), c, k);
 		if (c_abs_3d(mandelbrot3d[idx]) >= DIVERGE1)
 			break ;
 		k++;

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:27:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 16:10:32 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 10:57:59 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,30 @@ void	init_vec3d(double *vector, double x, double y, double z)
 
 void	set_values_mandelbrot3d(t_point *mandelbrot3d, int idx, int i, int j)
 {
-	int	real_value;
-	int	imag_value;
+	int	x;
+	int	y;
+	int	k;
 
-	real_value = i - BOX_CENTER_X;
-	imag_value = j - BOX_CENTER_Y;
+	x = i - BOX_CENTER_X;
+	y = j - BOX_CENTER_Y;
 	mandelbrot3d[idx].real = 0;
-	mandelbrot3d[idx].rx = real_value;
-	mandelbrot3d[idx].ry = imag_value;
+	mandelbrot3d[idx].rx = x;
+	mandelbrot3d[idx].ry = y;
 	mandelbrot3d[idx].rz = 0;
 	mandelbrot3d[idx].imag = 0;
-	mandelbrot3d[idx].ix = real_value;
-	mandelbrot3d[idx].iy = imag_value;
+	mandelbrot3d[idx].ix = x;
+	mandelbrot3d[idx].iy = y;
 	mandelbrot3d[idx].iz = 0;
 	mandelbrot3d[idx].abs = 0;
-	mandelbrot3d[idx].ax = real_value;
-	mandelbrot3d[idx].ay = imag_value;
+	mandelbrot3d[idx].ax = x;
+	mandelbrot3d[idx].ay = y;
 	mandelbrot3d[idx].az = 0;
+	k = 0;
+	while (k < 32)
+	{
+		mandelbrot3d[idx].x32[k] = x;
+		mandelbrot3d[idx].y32[k] = y;
+		mandelbrot3d[idx].z32[k] = 0;
+		k++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 19:14:46 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:19:46 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ typedef struct s_point {
 	double	ay;
 	double	az;
 	int		acolor;
+	double	x32[32];
+	double	y32[32];
+	double	z32[32];
 }			t_point;
 
 typedef struct s_vec3d {
@@ -98,7 +101,7 @@ void		set_values_mandelbrot3d(t_point *mandelbrot3d, \
 				int idx, int i, int j);
 
 // fractal3d_recurrence
-void		next_mandelbrot3d(t_point *p, t_complex c);
+void		next_mandelbrot3d(t_point *p, t_complex c, int k);
 void		iter_mandelbrot3d(t_point *mandelbrot3d, int idx, t_complex c);
 void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);
 
