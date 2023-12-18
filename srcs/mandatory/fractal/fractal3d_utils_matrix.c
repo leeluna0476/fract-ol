@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:34:03 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 11:11:10 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:17:17 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,25 +108,18 @@ void	matrix_point_multiply(t_point *mandelbrot3d, \
 
 	init_vec3d(vec, mandelbrot3d[q].rx, mandelbrot3d[q].ry, mandelbrot3d[q].rz);
 	new = generate_new_xyz(rotation_matrix, vec);
-	(&(mandelbrot3d[q]))->rx = new.x;
-	(&(mandelbrot3d[q]))->ry = new.y;
-	(&(mandelbrot3d[q]))->rz = new.z;
+	mandelbrot3d[q].rx = new.x;
+	mandelbrot3d[q].ry = new.y;
+	mandelbrot3d[q].rz = new.z;
 	init_vec3d(vec, mandelbrot3d[q].ix, mandelbrot3d[q].iy, mandelbrot3d[q].iz);
 	new = generate_new_xyz(rotation_matrix, vec);
-	(&(mandelbrot3d[q]))->ix = new.x;
-	(&(mandelbrot3d[q]))->iy = new.y;
-	(&(mandelbrot3d[q]))->iz = new.z;
+	mandelbrot3d[q].ix = new.x;
+	mandelbrot3d[q].iy = new.y;
+	mandelbrot3d[q].iz = new.z;
 	init_vec3d(vec, mandelbrot3d[q].ax, mandelbrot3d[q].ay, mandelbrot3d[q].az);
 	new = generate_new_xyz(rotation_matrix, vec);
-	(&(mandelbrot3d[q]))->ax = new.x;
-	(&(mandelbrot3d[q]))->ay = new.y;
-	(&(mandelbrot3d[q]))->az = new.z;
-	for (int i = 0; i < 32; i++)
-	{
-		init_vec3d(vec, mandelbrot3d[q].x32[i], mandelbrot3d[q].y32[i], mandelbrot3d[q].z32[i]);
-		new = generate_new_xyz(rotation_matrix, vec);
-		mandelbrot3d[q].x32[i] = new.x;
-		mandelbrot3d[q].y32[i] = new.y;
-		mandelbrot3d[q].z32[i] = new.z;
-	}
+	mandelbrot3d[q].ax = new.x;
+	mandelbrot3d[q].ay = new.y;
+	mandelbrot3d[q].az = new.z;
+	generate_new_real32xyz(&(mandelbrot3d[q]), rotation_matrix);
 }

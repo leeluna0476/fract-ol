@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:14:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 11:21:37 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 14:40:16 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	iter_mandelbrot3d(t_point *mandelbrot3d, int idx, t_complex c)
 	int	k;
 
 	k = 0;
-	while (k < ITER_LARGE)
+	while (k < ITER)
 	{
 		next_mandelbrot3d(&(mandelbrot3d[idx]), c, k);
 		if (c_abs_3d(mandelbrot3d[idx]) >= DIVERGE1)
@@ -55,7 +55,7 @@ void	iter_julia3d(t_julia3d *dots, t_complex c, int z_value)
 		{
 			init_complex(&z, (double)(i - box_std.x) / 300, \
 					(double)(j - box_std.y) / 300);
-			iter_complex(&z, c, 100, JULIA);
+			iter_complex(&z, c, ITER_SMALL, JULIA);
 			current_idx = (i - BOXLEFT) + (j - BOXTOP) * \
 					BOXWIDTH + z_value * DOTS_PER_SLICE;
 			if (c_abs(z) < 2)

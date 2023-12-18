@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 11:19:46 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:13:24 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,14 @@ void		draw_julia(double z_abs, t_data *img, int i, int j);
 void		draw_burningship(double z_abs, t_data *img, int i, int j);
 void		draw_tricorn(double z_abs, t_data *img, int i, int j);
 
-// fractal3d_utils
-double		c_abs_3d(t_point point);
+// fractal3d_utils_init
 void		init_angle(t_vec3d *angle, t_data *img);
 void		init_matrix(t_matrix *matrix);
 void		init_vec3d(double *vector, double x, double y, double z);
+void		init_xyz(t_xyz *xyz, int x, int y, int z);
+
+// fractal3d_utils
+double		c_abs_3d(t_point point);
 void		set_values_mandelbrot3d(t_point *mandelbrot3d, \
 				int idx, int i, int j);
 
@@ -108,8 +111,9 @@ void		iter_julia3d(t_julia3d *dots, t_complex c, int z_value);
 // fractal3d_utils_matrix
 t_matrix	multiply_matrix(t_matrix mat1, t_matrix mat2);
 t_matrix	generate_rotation_matrix(t_vec3d angle);
-void		init_xyz(t_xyz *xyz, int x, int y, int z);
 t_xyz		generate_new_xyz(t_matrix rotation_matrix, double vec[3]);
+void		generate_new_real32xyz(t_point *mandelbrot3d, \
+				t_matrix rotation_matrix);
 void		matrix_point_multiply(t_point *mandelbrot3d, \
 				t_matrix rotation_matrix, int q);
 
@@ -122,6 +126,7 @@ void		logistic_next(double r, double *x);
 void		set_mandelbrot3d_height(t_point *mandelbrot3d, t_complex z_value);
 void		if_converge(t_point *mandelbrot4d, int idx, double abs);
 void		generate_mandelbrot3d(t_point *mandelbrot3d);
+void		check_and_draw(t_data *img, t_point *mandelbrot3d, int u);
 void		draw_mandelbrot3d(t_data *img, t_point *mandelbrot3d, \
 				t_matrix rotation_matrix);
 

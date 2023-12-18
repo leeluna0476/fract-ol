@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:30:00 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 12:38:28 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:00:06 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ void	check_and_draw(t_data *img, t_point *mandelbrot3d, int u)
 	k = 0;
 	while (k < 32)
 	{
-		init_xy(&print_xy, mandelbrot3d[u].x32[k] + BOX_CENTER_X, mandelbrot3d[u].y32[k] + BOX_CENTER_Y);
+		init_xy(&print_xy, mandelbrot3d[u].x32[k] + BOX_CENTER_X, \
+				mandelbrot3d[u].y32[k] + BOX_CENTER_Y);
 		if (check_inbox(print_xy) == true)
 		{
 			my_mlx_pixel_put(img, print_xy.x, print_xy.y, BLUE);
