@@ -4,6 +4,7 @@
 
 ![](spherical_coordinate.gif)
 ![](spherical_coordinate.png)
+
 좌표(r, theta, phi)는 다음과 같이 정의된다. 주어진 점을 P라 하자.
 - r: 원점으로부터 P까지의 거리. 반지름.
 - theta 방위각: z축의 양의 방향으로부터 원점과 P가 이루는 직선까지의 각.
