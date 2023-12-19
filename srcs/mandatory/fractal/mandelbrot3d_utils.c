@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:30:00 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 16:51:06 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:25:41 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void	generate_mandelbrot3d(t_point *mandelbrot3d)
 	int			j;
 
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			idx = (i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH;
 			set_values_mandelbrot3d(mandelbrot3d, idx, i, j);

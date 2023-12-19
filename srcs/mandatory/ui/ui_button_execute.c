@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:24:04 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/16 13:15:29 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/19 21:51:16 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	call_set_3d(t_data *img)
 		mandelbrot3d(img);
 	else if (img->button_on_off[THDJULIA] == true)
 		julia3d(img);
+	else if (img->button_on_off[THDBURNINGSHIP] == true)
+		burningship3d(img);
 }
 
 void	choose_set(t_data *img)

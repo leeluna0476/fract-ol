@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 16:13:24 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/19 22:09:20 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@
 # define JULIA_DEF_CR	-0.7269
 # define JULIA_DEF_CI	0.1889
 # define SLICE_GAP		0.01
-# define DOTS_PER_SLICE	2073600
-# define TOTAL_DOTS		2073600
+# define DOTS_PER_SLICE	1320600
+# define TOTAL_DOTS		1320600
+# define RADIUS			320
 # define ITER_SMALL		100
 # define ITER			500
 # define ITER_LARGE		1000
@@ -102,6 +103,7 @@ void		init_xyz(t_xyz *xyz, int x, int y, int z);
 double		c_abs_3d(t_point point);
 void		set_values_mandelbrot3d(t_point *mandelbrot3d, \
 				int idx, int i, int j);
+bool		on_sphere(double x, double y);
 
 // fractal3d_recurrence
 void		next_mandelbrot3d(t_point *p, t_complex c, int k);
@@ -152,5 +154,7 @@ void		logistic_map(t_data *img);
 void		mandelbrot3d(t_data *img);
 
 void		julia3d(t_data *img);
+
+void		burningship3d(t_data *img);
 
 #endif

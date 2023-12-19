@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:52:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/13 20:10:40 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:24:55 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	julia(t_data *img)
 			(BOX_STD_Y + BOXTOP) - img->center.y);
 	c_default_or_arg(img, &c);
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			init_complex(&z, \
 					((double)(i - box_std.x)) * img->zoom, \

@@ -6,7 +6,7 @@
 ![](spherical_coordinate.png)
 
 좌표(r, theta, phi)는 다음과 같이 정의된다. 주어진 점을 P라 하자.
-- r: 원점으로부터 P까지의 거리. 반지름.
+- radius 반지름: 원점으로부터 P까지의 거리.
 - theta 방위각: z축의 양의 방향으로부터 원점과 P가 이루는 직선까지의 각.
 	방위각은 지점이 기준점으로부터 시계 방향으로 얼마나 돌아갔는지를 나타낸다.
 	일반적으로 북쪽을 기준으로 0도부터 360도까지 측정한다.
@@ -23,7 +23,9 @@ theta = arccos(i / radius * sin(phi))
 	- i는 3차원 좌표에서의 x 좌표를 나타내며, radius는 3차원 좌표의 반지름이다.
 
 
-구면좌표계를 직교좌표계로 변환:
+고도각과 방위각을 가지고 3차원 구면좌표 구하기:
 x = radius * sin(phi) * cos(theta)
 y = radius * sin(phi) * sin(theta)
 z = radius * cos(phi)
+
+3차원 공간을 표현하기 위해서는 x, y, z를 알아야 하는데, x, y는 알고 있지만 z는 모르기 때문에 x, y를 가지고 phi와 theta를 구해서 다시 x, y, z를 구한다.

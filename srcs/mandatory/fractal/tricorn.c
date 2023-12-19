@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:11:35 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 15:53:58 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:26:16 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	tricorn(t_data *img)
 	init_xy(&box_std, (BOX_STD_X + BOXLEFT) - img->center.x, \
 			(BOX_STD_Y + BOXTOP) - img->center.y);
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			init_complex(&z, 0, 0);
 			init_complex(&c, \

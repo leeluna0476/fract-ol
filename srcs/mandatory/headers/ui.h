@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +# +  +:+       +# +      */
 /*                                                +# +# +# +# +# +   +# +     */
 /*   Created: 2023/12/02 12:59:13 by seojilee          # +#     # +#          */
-/*   Updated: 2023/12/17 16:52:12 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/19 21:15:27 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # define BOXBOT			980
 # define BOXLEFT 		450
 # define BOXRIGHT		1870
-# define BOXWIDTH		1421
-# define BOXHEIGHT		931
+# define BOXWIDTH		1420
+# define BOXHEIGHT		930
 # define BOX_STD_X		710
 # define BOX_STD_Y		465
 # define BOX_CENTER_X	1160
@@ -94,8 +94,8 @@ typedef struct s_complex {
 }			t_complex;
 
 typedef struct s_xy {
-	int	x;
-	int	y;
+	double	x;
+	double	y;
 }				t_xy;
 
 typedef struct s_theme {
