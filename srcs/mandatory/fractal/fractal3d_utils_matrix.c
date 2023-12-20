@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:34:03 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 16:17:17 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:16:35 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_matrix	generate_rotation_matrix(t_vec3d angle)
 	return (matxyz);
 }
 
-void	init_xyz(t_xyz *xyz, int x, int y, int z)
+void	init_xyz(t_xyz *xyz, double x, double y, double z)
 {
 	xyz->x = x;
 	xyz->y = y;

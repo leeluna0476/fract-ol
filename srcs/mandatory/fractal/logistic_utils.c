@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:23:33 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/07 16:19:54 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/20 08:55:01 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	make_box_black(t_data *img)
 	int	j;
 
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			my_mlx_pixel_put(img, i, j, BLACK);
 			i++;

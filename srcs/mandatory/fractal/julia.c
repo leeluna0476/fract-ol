@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:52:25 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/19 20:24:55 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/20 09:12:19 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	julia(t_data *img)
 {
-	t_xy		box_std;
 	t_complex	z;
 	t_complex	c;
 	int			i;
 	int			j;
 
-	init_xy(&box_std, (BOX_STD_X + BOXLEFT) - img->center.x, \
-			(BOX_STD_Y + BOXTOP) - img->center.y);
 	c_default_or_arg(img, &c);
 	j = BOXTOP;
 	while (j < BOXBOT)
@@ -30,8 +27,8 @@ void	julia(t_data *img)
 		while (i < BOXRIGHT)
 		{
 			init_complex(&z, \
-					((double)(i - box_std.x)) * img->zoom, \
-					((double)(j - box_std.y)) * img->zoom);
+					((double)(i - BOX_CENTER_X + img->center.x)) * img->zoom, \
+					((double)(j - BOX_CENTER_Y + img->center.y)) * img->zoom);
 			img->iter = iter_complex(&z, c, ITER, JULIA);
 			draw_julia(c_abs(z), img, i, j);
 			i++;

@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:55:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 16:14:40 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/20 07:58:38 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_complex(t_complex *c, double r, double i)
 	c->imag = i;
 }
 
-void	init_xy(t_xy *xy, int x, int y)
+void	init_xy(t_xy *xy, double x, double y)
 {
 	xy->x = x;
 	xy->y = y;

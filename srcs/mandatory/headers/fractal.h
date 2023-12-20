@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/19 22:09:20 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:27:04 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,16 @@ typedef struct s_julia3d {
 	int	last_layer;
 }		t_julia3d;
 
+typedef struct s_burningship3d {
+	t_xy	plane;
+	t_xyz	sphere;
+	double	phi;
+	double	theta;
+}			t_burningship3d;
+
 // fractal_utils
 void		init_complex(t_complex *c, double r, double i);
-void		init_xy(t_xy *xy, int x, int y);
+void		init_xy(t_xy *xy, double x, double y);
 double		c_abs(t_complex z);
 void		c_default_or_arg(t_data *img, t_complex *c);
 
@@ -97,7 +104,7 @@ void		draw_tricorn(double z_abs, t_data *img, int i, int j);
 void		init_angle(t_vec3d *angle, t_data *img);
 void		init_matrix(t_matrix *matrix);
 void		init_vec3d(double *vector, double x, double y, double z);
-void		init_xyz(t_xyz *xyz, int x, int y, int z);
+void		init_xyz(t_xyz *xyz, double x, double y, double z);
 
 // fractal3d_utils
 double		c_abs_3d(t_point point);
@@ -118,6 +125,16 @@ void		generate_new_real32xyz(t_point *mandelbrot3d, \
 				t_matrix rotation_matrix);
 void		matrix_point_multiply(t_point *mandelbrot3d, \
 				t_matrix rotation_matrix, int q);
+
+// fractal3d_utils_stereographic_projection
+bool		on_sphere(double x, double y);
+void		stereographic_projection(t_burningship3d *burn, int i, int j);
+void		draw_burningship3d(t_data *img, double z_abs, int i, int j);
+double		generate_burningship3d(t_data *img, int i, int j);
+
+// fractal3d_utils_execute
+void		draw_burningship3d(t_data *img, double z_abs, int i, int j);
+bool		on_sphere(double x, double y);
 
 // logistic_utils
 bool		check_inbox(t_xy xy);
