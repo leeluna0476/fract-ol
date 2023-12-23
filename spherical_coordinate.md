@@ -15,11 +15,11 @@
 	0도는 수직선 위, 90도는 수평면 위, 180도는 수직선 아래를 가리킨다.
 
 phi(고도각) 계산:
-phi = arccos(j / radius)
+phi = acos(j / radius)
 	- j는 3차원 좌표에서의 y 좌표를 나타내며, radius는 3차원 좌표의 반지름이다.
 
 theta(방위각) 계산:
-theta = arccos(i / radius * sin(phi))
+theta = acos(i / radius * sin(phi))
 	- i는 3차원 좌표에서의 x 좌표를 나타내며, radius는 3차원 좌표의 반지름이다.
 
 
