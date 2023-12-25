@@ -49,4 +49,4 @@
 	- 망델브로 집합과 bifurcation diagram of logistic map의 연관성?
 - [ ] 3D Julia
 - [ ] 3D Burningship (feat. **stereographic projection**, spherical coordinate, linear interpolation)
-	- 구면 좌표계$P = (r, φ, θ)$란, 공간을 반지름, 고도각, 방위각으로 표현하는 좌표계 중 하나이다.
+	- 구면 좌표계 $P = (r, φ, θ)$ 란, 공간을 반지름, 고도각, 방위각으로 표현하는 좌표계 중 하나이다.
