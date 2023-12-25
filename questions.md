@@ -10,7 +10,7 @@
   - Mandelbrot: $z_{n+1} = z_n ^2 + c$
   - Julia: $z_{n+1} = z_n ^2 + c$
   - Burningship: $z_{n+1} = (|Re(z_n)| + |Im(z_n)|i)^2 + c$
-  - Tricorn: $z_{n+1} = $\(\bar{z}\)_n ^2 + c$
+  - Tricorn: $z_{n+1} = \(\bar{z}\)_n ^2 + c
 
 ## UI
 - [ ] Screen
