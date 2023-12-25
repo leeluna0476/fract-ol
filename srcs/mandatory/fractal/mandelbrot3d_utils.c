@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:30:00 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/19 20:25:41 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/25 14:50:23 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	generate_mandelbrot3d(t_point *mandelbrot3d)
 			idx = (i - BOXLEFT) + (j - BOXTOP) * BOXWIDTH;
 			set_values_mandelbrot3d(mandelbrot3d, idx, i, j);
 			init_complex(&c, ((double)(i - BOX_CENTER_X)) / 400, \
-					((double)(j - BOX_CENTER_Y)) / 400);
+					((double)(BOX_CENTER_Y - j)) / 400);
 			iter_mandelbrot3d(mandelbrot3d, idx, c);
 			init_complex(&z_value, mandelbrot3d[idx].real * 200, \
 					mandelbrot3d[idx].imag * 200);
@@ -70,18 +70,18 @@ void	check_and_draw(t_data *img, t_point *mandelbrot3d, int u)
 	int		k;
 
 	init_xy(&print_xy, mandelbrot3d[u].ax + \
-			BOX_CENTER_X, mandelbrot3d[u].ay + BOX_CENTER_Y);
+			BOX_CENTER_X, BOX_CENTER_Y - mandelbrot3d[u].ay);
 	if (check_inbox(print_xy) == true)
 		my_mlx_pixel_put(img, print_xy.x, print_xy.y, YELLOW);
 	init_xy(&print_xy, mandelbrot3d[u].ix + \
-			BOX_CENTER_X, mandelbrot3d[u].iy + BOX_CENTER_Y);
+			BOX_CENTER_X, BOX_CENTER_Y - mandelbrot3d[u].iy);
 	if (check_inbox(print_xy) == true)
 		my_mlx_pixel_put(img, print_xy.x, print_xy.y, RED);
 	k = 0;
 	while (k < 32)
 	{
 		init_xy(&print_xy, mandelbrot3d[u].x32[k] + BOX_CENTER_X, \
-				mandelbrot3d[u].y32[k] + BOX_CENTER_Y);
+				BOX_CENTER_Y - mandelbrot3d[u].y32[k]);
 		if (check_inbox(print_xy) == true)
 		{
 			my_mlx_pixel_put(img, print_xy.x, print_xy.y, BLUE);

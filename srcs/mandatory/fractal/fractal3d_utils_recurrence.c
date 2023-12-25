@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:14:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/20 09:21:22 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/25 14:48:08 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void	iter_julia3d(t_julia3d *dots, t_complex c, int z_value)
 		while (i < BOXRIGHT)
 		{
 			init_complex(&z, (double)(i - BOX_CENTER_X) / 300, \
-					(double)(j - BOX_CENTER_Y) / 300);
+					(double)(BOX_CENTER_Y - j) / 300);
 			iter_complex(&z, c, ITER_SMALL, JULIA);
 			current_idx = (i - BOXLEFT) + (j - BOXTOP) * \
 					BOXWIDTH + z_value * DOTS_PER_SLICE;
 			if (c_abs(z) < 2)
 				set_dot_values(&dots[current_idx], \
-					i - BOX_CENTER_X, j - BOX_CENTER_Y, z_value);
+					i - BOX_CENTER_X, BOX_CENTER_Y - j, z_value);
 			i++;
 		}
 		j++;

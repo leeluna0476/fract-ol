@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:55:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/22 19:32:32 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/25 10:53:37 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	c_default_or_arg(t_data *img, t_complex *c)
 {
 	if (img->fractal && ft_strncmp(img->fractal, "julia", \
 				ft_strlen(img->fractal)) == 0)
-		init_complex(c, img->julia_c.real, img->julia_c.imag * -1);
+		init_complex(c, img->julia_c.real, img->julia_c.imag);
 	else
 		init_complex(c, -0.7269, 0.1889);
 }

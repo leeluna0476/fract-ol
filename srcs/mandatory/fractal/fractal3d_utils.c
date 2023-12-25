@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:27:28 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/18 17:15:43 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/25 14:52:59 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	set_values_mandelbrot3d(t_point *mandelbrot3d, int idx, int i, int j)
 	t_xy	box_xy;
 	int		k;
 
-	init_xy(&box_xy, i - BOX_CENTER_X, j - BOX_CENTER_Y);
+	init_xy(&box_xy, i - BOX_CENTER_X, BOX_CENTER_Y - j);
 	mandelbrot3d[idx].real = 0;
 	mandelbrot3d[idx].rx = box_xy.x;
 	mandelbrot3d[idx].ry = box_xy.y;
