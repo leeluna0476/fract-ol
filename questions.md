@@ -1,10 +1,13 @@
 # 설명 노트
+## MiniLibX
+- [ ] What is MLX?
+  - MLX는 프랑스의 스태프 ol씨가 만든 그래픽 라이브러리다.
 ## Fractal
 - [ ] What is a fractal?
   - 프랙탈은 일부 작은 조각이 전체와 비슷한 형태를 가지는 기하학적 구조를 말한다. 이러한 특징을 자기유사성이라고 하는데, 자기유사성을 가지는 구조를 프랙탈 구조라고 한다.
   - 브누아 망델브로(Benoît B. Mandelbrot)가 처음 사용한 단어이다. 어원은 조각났다는 뜻의 라틴어 fractus이다.
 - [ ] What is a complex number? (feat. complex plane)
-  - complex conjugate
+  - 복소수는 $z = a + bi$ 꼴의 수이다. $a$, $b$는 실수, $i$는 허수 단위이다. $i^2$는 $-1$을 만족시킨다.
   - 켤레 복소수는 복소수의 허수부에 덧셈 역원(opposite number)을 취하여 얻는 복소수이다.
 - [ ] What are Mandelbrot, Julia, Burningship, Tricorn sets?
   - 수식 정리하기.
@@ -23,6 +26,8 @@
     - 위 점화식으로 정의된 수열을 발산하게 만드는 $c$의 집합이다.
 	- 망델브로 집합과 다른 점은, 복소수를 제곱하기 전에 실수부와 허수부를 절대값으로 설정한다.
   - Tricorn: $z_{n+1} = \bar{z}_n ^2 + c$
+    - 위 점화식으로 정의된 수열을 발산하게 만드는 $c$의 집합이다.
+	- 망델브로 집합과 다른 점은, 복소수 $z$의 켤레 복소수를 취하여 연산한다.
 
 ## UI
 - [ ] Screen
