@@ -37,13 +37,16 @@
 	- 망델브로 집합과 다른 점은, 복소수 $z$의 켤레 복소수를 취하여 연산을 한다는 점이다.
 
 ## UI
-- [ ] Screen
-- [ ] Button
-- [ ] Key
-- [ ] Mouse
+- [x] Screen
+- [x] Button
+- [x] Key
+- [x] Mouse
   - Wheels, left click
 
 ## 3D Fractal
 - [ ] 3D Mandelbrot (feat. **rotation matrix**, bifurcation diagram of logistic map)
+	- 단순히 하나의 좌표에 높이를 주는 방식이 아닌, 진동하는 분기 다이어그램을 눈으로 보려면?
+	- 망델브로 집합과 bifurcation diagram of logistic map의 연관성?
 - [ ] 3D Julia
 - [ ] 3D Burningship (feat. **stereographic projection**, spherical coordinate, linear interpolation)
+	- 구면 좌표계$P = (r, φ, θ)$란, 공간을 반지름, 고도각, 방위각으로 표현하는 좌표계 중 하나이다.
