@@ -8,6 +8,9 @@
   - 브누아 망델브로(Benoît B. Mandelbrot)가 처음 사용한 단어이다. 어원은 조각났다는 뜻의 라틴어 fractus이다.
 - [ ] What is a complex number? (feat. complex plane)
   - 복소수는 $z = a + bi$ 꼴의 수이다. $a$, $b$는 실수, $i$는 허수 단위이다. $i^2$는 $-1$을 만족시킨다.
+  - $a$는 실수부, $b$는 허수부라고 한다.
+  - 복소평면은 복소수를 기하학적으로 표현하기 위해 개발된 좌표평면이다.
+  - 서로 직교하는 실수축과 허수축으로 이루어져 있으며, 실수부가 실수축에, 허수부가 허수축에 대응된 형태의 데카르트 좌표로 볼 수 있다.
   - 켤레 복소수는 복소수의 허수부에 덧셈 역원(opposite number)을 취하여 얻는 복소수이다.
 - [ ] What are Mandelbrot, Julia, Burningship, Tricorn sets?
   - 수식 정리하기.
