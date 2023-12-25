@@ -17,7 +17,7 @@
 - [ ] Button
 - [ ] Key
 - [ ] Mouse
-		Wheels, left click
+  - Wheels, left click
 
 ## 3D Fractal
 - [ ] 3D Mandelbrot (feat. **rotation matrix**, bifurcation diagram of logistic map)
