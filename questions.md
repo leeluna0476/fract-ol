@@ -45,8 +45,10 @@
 
 ## 3D Fractal
 - [ ] 3D Mandelbrot (feat. **rotation matrix**, bifurcation diagram of logistic map)
-	- 단순히 하나의 좌표에 높이를 주는 방식이 아닌, 진동하는 분기 다이어그램을 눈으로 보려면?
-	- 망델브로 집합과 bifurcation diagram of logistic map의 연관성?
+  - 단순히 하나의 좌표에 높이를 주는 방식이 아닌, 진동하는 분기 다이어그램을 눈으로 보려면?
+  - 망델브로 집합과 bifurcation diagram of logistic map의 연관성?
 - [ ] 3D Julia
+  - $c$값을 바꿔주면 모양이 변하는 줄리아 집합의 특성을 이용해서, 여러 개의 줄리아를 층층이 쌓아올리고, 마우스 좌클릭으로 각 층을 볼 수 있다.
 - [ ] 3D Burningship (feat. **stereographic projection**, spherical coordinate, linear interpolation)
-	- 구면 좌표계는 3차원 공간을 나타내는 좌표계의 하나로, 보통 $P = (r, φ, θ)$ 반지름, 고도각, 방위각으로 표현한다.
+  - 구면 좌표계는 3차원 공간을 나타내는 좌표계의 하나로, 보통 $P = (r, φ, θ)$ 반지름, 고도각, 방위각으로 표현한다.
+  - 3D Burningship은 원을 하나 그려서 그것이 구라고 상상하고 단위구와 복소평면의 좌표를 일대일 대응시켜서 평면 위에 있는 프랙탈을 구면 위에 사영시킨다.
