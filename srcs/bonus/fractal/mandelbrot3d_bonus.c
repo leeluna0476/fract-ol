@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logistic_map_bonus.c                               :+:      :+:    :+:   */
+/*   mandelbrot3d_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 19:12:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/26 19:12:31 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:12:41 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:12:46 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal_bonus.h"
 
-void	logistic_map(t_data *img)
+void	mandelbrot3d(t_data *img)
 {
-	double	r;
-	double	x;
-	t_xy	scaled;
-	int		iter;
+	t_point		*mandelbrot3d;
+	t_vec3d		angle;
+	t_matrix	rotation_matrix;
 
-	r = 0.0;
-	while (r <= 4)
-	{
-		x = 0.5;
-		iter = 0;
-		while (iter < 1000)
-		{
-			logistic_next(r, &x);
-			if (iter >= 950)
-			{
-				init_xy(&scaled, (int)(r * BOXWIDTH / 4) + BOXLEFT, \
-						(BOXWIDTH - 441) - (int)(x * BOXWIDTH / 2));
-				if (check_inbox(scaled) == true)
-					my_mlx_pixel_put(img, scaled.x, scaled.y, WHITE);
-			}
-			iter++;
-		}
-		r += 0.001;
-	}
+	mandelbrot3d = malloc(TOTAL_DOTS * sizeof(t_point));
+	generate_mandelbrot3d(mandelbrot3d);
+	init_angle(&angle, img);
+	rotation_matrix = generate_rotation_matrix(angle);
+	make_box_black(img);
+	draw_mandelbrot3d(img, mandelbrot3d, rotation_matrix);
+	free(mandelbrot3d);
 	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);
 }

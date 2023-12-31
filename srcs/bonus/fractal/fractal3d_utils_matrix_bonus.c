@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractal3d_utils_matrix.c                           :+:      :+:    :+:   */
+/*   fractal3d_utils_matrix_bonus.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 14:34:03 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/26 18:57:03 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:10:52 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:10:57 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "fractal_bonus.h"
 
 t_matrix	multiply_matrix(t_matrix mat1, t_matrix mat2)
 {

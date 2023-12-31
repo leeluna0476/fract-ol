@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:42:45 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/21 14:20:46 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/26 19:02:36 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # define CONVERGE1		0.2
 # define CONVERGE2		0.9
 # define DIVERGE1		2
-# define DIVERGE2		3
 # define JULIA_DEF_CR	-0.7269
 # define JULIA_DEF_CI	0.1889
 # define SLICE_GAP		0.01

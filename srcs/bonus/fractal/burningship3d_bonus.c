@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logistic_map_bonus.c                               :+:      :+:    :+:   */
+/*   burningship3d_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 19:12:26 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/26 19:12:31 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:10:01 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:10:05 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal_bonus.h"
 
-void	logistic_map(t_data *img)
+// stereographic projection
+void	burningship3d(t_data *img)
 {
-	double	r;
-	double	x;
-	t_xy	scaled;
-	int		iter;
+	double			z_abs;
+	int				i;
+	int				j;
 
-	r = 0.0;
-	while (r <= 4)
+	make_box_black(img);
+	j = BOXTOP;
+	while (j < BOXBOT)
 	{
-		x = 0.5;
-		iter = 0;
-		while (iter < 1000)
+		i = BOXLEFT;
+		while (i < BOXRIGHT)
 		{
-			logistic_next(r, &x);
-			if (iter >= 950)
+			if (on_sphere(BOX_CENTER_X - i, BOX_CENTER_Y - j) == true)
 			{
-				init_xy(&scaled, (int)(r * BOXWIDTH / 4) + BOXLEFT, \
-						(BOXWIDTH - 441) - (int)(x * BOXWIDTH / 2));
-				if (check_inbox(scaled) == true)
-					my_mlx_pixel_put(img, scaled.x, scaled.y, WHITE);
+				z_abs = generate_burningship3d(img, i, j);
+				draw_burningship3d(img, z_abs, i, j);
 			}
-			iter++;
+			i++;
 		}
-		r += 0.001;
+		j++;
 	}
 	mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img, 0, 0);
 }

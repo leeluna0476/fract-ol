@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:41:18 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 15:59:42 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:12:56 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:13:03 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,21 @@
 
 void	mandelbrot(t_data *img)
 {
-	t_xy		box_std;
 	t_complex	z;
 	t_complex	c;
 	int			i;
 	int			j;
 
-	box_std.x = (BOX_STD_X + BOXLEFT) - img->center.x;
-	box_std.y = (BOX_STD_Y + BOXTOP) - img->center.y;
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			init_complex(&z, 0, 0);
 			init_complex(&c, \
-					((double)(i - box_std.x)) * img->zoom, \
-					((double)(j - box_std.y)) * img->zoom);
+					((double)(i - BOX_CENTER_X + img->center.x)) * img->zoom, \
+					((double)(BOX_CENTER_Y - j - img->center.y)) * img->zoom);
 			img->iter = iter_complex(&z, c, ITER, MANDELBROT);
 			draw_mandelbrot(c_abs(z), img, i, j);
 			i++;

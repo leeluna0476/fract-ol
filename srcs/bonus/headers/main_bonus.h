@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:44:23 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/12 09:45:22 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:09:18 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:16:44 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define MAIN_BONUS_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 # include "ui_bonus.h"
 

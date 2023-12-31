@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:39:43 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 09:03:18 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:10:22 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:10:25 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 void	burningship(t_data *img)
 {
-	t_xy		box_std;
 	t_complex	z;
 	t_complex	c;
 	int			i;
 	int			j;
 
-	box_std.x = (BOX_STD_X + BOXLEFT) - img->center.x;
-	box_std.y = (BOX_STD_Y + BOXTOP) - img->center.y;
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			init_complex(&z, 0, 0);
 			init_complex(&c, \
-					((double)(i - box_std.x)) * img->zoom, \
-					((double)(j - box_std.y)) * img->zoom);
-			img->iter = iter_complex(&z, c, ITER_SMALL, BURNINGSHIP);
+					((double)(i - BOX_CENTER_X + img->center.x)) * img->zoom, \
+					((double)(j - BOX_CENTER_Y + img->center.y)) * img->zoom);
+			img->iter = iter_complex(&z, c, ITER, BURNINGSHIP);
 			draw_burningship(c_abs(z), img, i, j);
 			i++;
 		}

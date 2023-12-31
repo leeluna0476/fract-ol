@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:40:27 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 15:40:31 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:14:30 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:14:35 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,25 @@ void	call_set(t_data *img)
 
 void	call_set_3d(t_data *img)
 {
-	if (img->button_on_off[THDJULIA] == true)
+	if (img->button_on_off[THDMANDELBROT] == true)
+		mandelbrot3d(img);
+	else if (img->button_on_off[THDJULIA] == true)
 		julia3d(img);
+	else if (img->button_on_off[THDBURNINGSHIP] == true)
+		burningship3d(img);
 }
 
 void	choose_set(t_data *img)
 {
 	call_set(img);
-	call_set_3d(img);
+	if (img->button_on_off[THDJULIA] == true)
+		call_set_3d(img);
 }
 
-int	terminate_program(void)
+int	terminate_program(t_data *img)
 {
+	mlx_destroy_image(img->mlx_ptr, img->img);
+	mlx_destroy_window(img->mlx_ptr, img->win_ptr);
 	exit(0);
 }
 

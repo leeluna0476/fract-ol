@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:11:35 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/20 09:15:35 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/25 15:13:11 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	tricorn(t_data *img)
 			init_complex(&z, 0, 0);
 			init_complex(&c, \
 					((double)(i - BOX_CENTER_X + img->center.x)) * img->zoom, \
-					((double)(j - BOX_CENTER_Y + img->center.y)) * img->zoom);
+					((double)(BOX_CENTER_Y - j - img->center.y)) * img->zoom);
 			img->iter = iter_complex(&z, c, ITER, TRICORN);
 			draw_tricorn(c_abs(z), img, i, j);
 			i++;

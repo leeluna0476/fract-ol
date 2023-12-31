@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 09:48:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/25 14:24:53 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:49:52 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	parse_main_args(t_data *img, int argc, char *argv[])
 			if (ft_strncmp(img->fractal, "julia", ft_strlen(img->fractal)) == 0)
 			{
 				if (argc == 2)
-					init_complex(&(img->julia_c), -0.7269, 0.1889);
+					init_complex(&(img->julia_c), -0.7269, -0.1889);
 				else
 				{
 					if (argc < 4 || !is_num(argv[2]) || !is_num(argv[3]))
@@ -92,11 +92,11 @@ int	main(int argc, char *argv[])
 	else
 	{
 		print_errmsg();
-		return (0);
+		terminate_program(&img);
 	}
 	hook(&img);
 	mlx_put_image_to_window(img.mlx_ptr, img.win_ptr, img.img, 0, 0);
 	write_menu(&img);
 	mlx_loop(img.mlx_ptr);
-	return (0);
+	terminate_program(&img);
 }

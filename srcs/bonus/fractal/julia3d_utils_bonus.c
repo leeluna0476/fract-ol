@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:40:44 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 15:28:38 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:12:08 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:12:15 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 bool	all_diverge(t_complex c)
 {
-	t_xy		box_std;
 	t_complex	z;
 	int			i;
 	int			j;
 
-	init_xy(&box_std, BOX_STD_X + BOXLEFT, BOX_STD_Y + BOXTOP);
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
-			init_complex(&z, (double)(i - box_std.x) / 300, \
-					(double)(j - box_std.y) / 300);
-			iter_complex(&z, c, 100, JULIA);
+			init_complex(&z, (double)(i - BOX_CENTER_X) / 300, \
+					(double)(BOX_CENTER_Y - j) / 300);
+			iter_complex(&z, c, ITER_SMALL, JULIA);
 			if (c_abs(z) < 2)
 				return (false);
 			i++;
@@ -66,8 +64,8 @@ int	find_layer(t_data *img, t_julia3d *dots)
 	i = img->last_layer * DOTS_PER_SLICE;
 	while (i >= 0)
 	{
-		if (img->mouse.x == dots[i].x + (BOX_STD_X + BOXLEFT) && \
-				img->mouse.y == dots[i].y + (BOX_STD_Y + BOXTOP))
+		if (img->mouse.x == dots[i].x + (BOX_CENTER_X) && \
+				img->mouse.y == (BOX_CENTER_Y) - dots[i].y)
 			break ;
 		i--;
 	}
@@ -89,8 +87,8 @@ void	draw_julia3d(t_data *img, t_julia3d *dots, \
 		img->last_layer = dots->last_layer;
 	while (u < total_dots)
 	{
-		dots_xy.x = dots[u].x + BOX_STD_X + BOXLEFT;
-		dots_xy.y = dots[u].y + BOX_STD_Y + BOXTOP;
+		dots_xy.x = dots[u].x + BOX_CENTER_X;
+		dots_xy.y = BOX_CENTER_Y - dots[u].y;
 		if (check_inbox(dots_xy) == true)
 		{
 			if (dots[u].color != 0)

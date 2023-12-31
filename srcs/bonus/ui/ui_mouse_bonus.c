@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:41:21 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 14:09:43 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:15:29 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:15:34 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	wheel(int button, t_data *img)
 	}
 	else if (button == WHEEL_CLICK)
 		init_zoom_center(img);
-	choose_set(img);
+	call_set(img);
 	if (check_write(img) == true)
 		write_menu(img);
 }
@@ -92,13 +92,13 @@ int	mouse_move(int x, int y, void *param)
 	start_y = 80;
 	while (start_y <= 130)
 	{
-		_button(img, 30, start_y);
+		button(img, 30, start_y);
 		start_y += 50;
 	}
 	start_y = 230;
 	while (start_y <= 680)
 	{
-		_button(img, 30, start_y);
+		button(img, 30, start_y);
 		start_y += 50;
 	}
 	write_menu(img);

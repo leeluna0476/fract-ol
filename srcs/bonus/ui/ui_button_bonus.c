@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:40:18 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 14:09:14 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:14:23 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:14:28 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	make_button(t_data *img, t_xy start, t_xy button_wh, int color)
 	}
 }
 
-void	_button(t_data *img, int start_x, int start_y)
+void	button(t_data *img, int start_x, int start_y)
 {
 	t_xy	start;
 	t_xy	button_wh;

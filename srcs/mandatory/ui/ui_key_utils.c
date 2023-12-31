@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:51:51 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 12:59:05 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:45:09 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	control_theme(int key, t_data *img)
 void	control_key(int key, t_data *img)
 {
 	if (key == KEY_ESC)
-		terminate_program();
+		terminate_program(img);
 	else if ((key != KEY_6 && (key >= KEY_1 && key <= KEY_5)) || key == KEY_0)
 		control_fractals(key, img);
 	else if (key >= KEY_6 && key <= KEY_8)

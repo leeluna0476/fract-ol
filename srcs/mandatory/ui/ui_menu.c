@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:30:57 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/17 21:37:52 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/26 19:06:15 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	write_2ds(t_data *img, int *line, int *gap)
 			*line, WHITE, "4: Tricorn");
 	*line += *gap;
 	mlx_string_put(img->mlx_ptr, img->win_ptr, 50, \
-			*line, WHITE, "5: bifurcation diagram of logistic map");
+			*line, WHITE, "5: Bifurcation diagram of logistic map");
 }
 
 void	write_3ds(t_data *img, int *line, int *gap)
@@ -84,9 +84,6 @@ void	write_guides(t_data *img, int *line, int *gap)
 			*line, WHITE, "    h(left) l(right) j(down) k(up)");
 }
 
-// reset button:
-// 	가로: 30 ~ 330
-// 	세로: 480 ~ 550
 void	write_menu(t_data *img)
 {
 	int	line;

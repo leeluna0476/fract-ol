@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:40:35 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 15:40:40 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:14:38 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:14:42 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void	init_box(t_data *img)
 	int	j;
 
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			my_mlx_pixel_put(img, i, j, BLACK);
 			i++;
@@ -84,10 +84,10 @@ void	clear_box(t_data *img)
 	int	j;
 
 	j = BOXTOP;
-	while (j <= BOXBOT)
+	while (j < BOXBOT)
 	{
 		i = BOXLEFT;
-		while (i <= BOXRIGHT)
+		while (i < BOXRIGHT)
 		{
 			my_mlx_pixel_put(img, i, j, BACKCOLOR);
 			i++;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 20:44:54 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/15 14:08:19 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:09:33 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:09:43 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define BOXHEIGHT		930
 # define BOX_STD_X		710
 # define BOX_STD_Y		465
+# define BOX_CENTER_X	1160
+# define BOX_CENTER_Y	515
 
 # define BACKCOLOR		0x3C3D42
 # define MENUCOLOR		0x505259
@@ -92,8 +94,8 @@ typedef struct s_complex {
 }			t_complex;
 
 typedef struct s_xy {
-	int	x;
-	int	y;
+	double	x;
+	double	y;
 }				t_xy;
 
 typedef struct s_theme {
@@ -152,7 +154,7 @@ bool	check_write(t_data *img);
  * set buttons
  */
 void	make_button(t_data *img, t_xy start, t_xy button_wh, int color);
-void	_button(t_data *img, int start_x, int start_y);
+void	button(t_data *img, int start_x, int start_y);
 void	make_all_false(t_data *img);
 void	turn_on_button(t_data *img, int button);
 bool	check_if_2d(t_data *img);
@@ -163,7 +165,7 @@ bool	check_if_2d(t_data *img);
 void	call_set(t_data *img);
 void	call_set_3d(t_data *img);
 void	choose_set(t_data *img);
-int		terminate_program(void);
+int		terminate_program(t_data *img);
 void	execute_button(t_data *img, int button, void (*f)(t_data *));
 
 /* ui_key

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 15:40:44 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/14 15:40:48 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:14:45 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:14:50 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ void	key_fractals(t_data *img, int key)
 		execute_button(img, TRICORN, init_zoom_center);
 	else if (key == KEY_5)
 		execute_button(img, LOGISTIC, make_box_black);
+	else if (key == KEY_6)
+		execute_button(img, THDMANDELBROT, init_zoom_center);
 	else if (key == KEY_7)
 		execute_button(img, THDJULIA, init_zoom_center);
+	else if (key == KEY_8)
+		execute_button(img, THDBURNINGSHIP, init_zoom_center);
 	else
 		execute_button(img, CLEAR, clear_box);
 }
@@ -43,13 +47,13 @@ void	key_offset(t_data *img, int key)
 	else if (key == KEY_UP)
 		img->center.y -= 80;
 	else if (key == KEY_H)
-		img->rotate.y -= 30;
+		img->rotate.y -= 10;
 	else if (key == KEY_J)
-		img->rotate.x -= 30;
+		img->rotate.x += 10;
 	else if (key == KEY_K)
-		img->rotate.x += 30;
+		img->rotate.x -= 10;
 	else if (key == KEY_L)
-		img->rotate.y += 30;
+		img->rotate.y += 10;
 }
 
 int	key_press(int key, void *param)

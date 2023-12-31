@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 08:25:53 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/25 14:22:23 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/31 18:40:11 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	mandelbrot_julia_next(t_complex *z, t_complex c)
 	double	r;
 	double	i;
 
-	(void)c;
 	r = z->real;
 	i = z->imag;
 	z->real = r * r - i * i + c.real;
@@ -34,7 +33,7 @@ void	burningship_next(t_complex *z, t_complex c)
 	if (r < 0)
 		r *= -1;
 	if (i < 0)
-		r *= -1;
+		i *= -1;
 	z->real = r * r - i * i + c.real;
 	z->imag = 2 * r * i + c.imag;
 }

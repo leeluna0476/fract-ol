@@ -1,49 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logistic_utils_bonus.c                             :+:      :+:    :+:   */
+/*   fractal3d_utils_init_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 19:12:34 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/26 19:12:38 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:10:39 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:10:43 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal_bonus.h"
 
-bool	check_inbox(t_xy xy)
+void	init_angle(t_vec3d *angle, t_data *img)
 {
-	if (xy.x >= BOXLEFT && xy.x <= BOXRIGHT)
-	{
-		if (xy.y >= BOXTOP && xy.y <= BOXBOT)
-			return (true);
-	}
-	return (false);
+	angle->vec[0] = M_PI * img->rotate.x / 180;
+	angle->vec[1] = M_PI * img->rotate.y / 180;
+	angle->vec[2] = 0;
 }
 
-void	make_box_black(t_data *img)
+void	init_matrix(t_matrix *matrix)
 {
 	int	i;
 	int	j;
 
-	j = BOXTOP;
-	while (j < BOXBOT)
+	j = 0;
+	while (j < 3)
 	{
-		i = BOXLEFT;
-		while (i < BOXRIGHT)
+		i = 0;
+		while (i < 3)
 		{
-			my_mlx_pixel_put(img, i, j, BLACK);
+			matrix->mat[i][j] = 0;
 			i++;
 		}
+		matrix->mat[j][j] = 1;
 		j++;
 	}
 }
 
-void	logistic_next(double r, double *x)
+void	init_vec3d(double *vector, double x, double y, double z)
 {
-	double	_x;
-
-	_x = *x;
-	*x = r * _x * (1 - _x);
+	vector[0] = x;
+	vector[1] = y;
+	vector[2] = z;
 }

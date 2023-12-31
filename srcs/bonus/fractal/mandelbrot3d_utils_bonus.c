@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot3d_utils.c                               :+:      :+:    :+:   */
+/*   mandelbrot3d_utils_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 16:30:00 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/26 19:01:42 by seojilee         ###   ########.fr       */
+/*   Created: 2023/12/26 19:12:49 by seojilee          #+#    #+#             */
+/*   Updated: 2023/12/26 19:12:53 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "fractal_bonus.h"
 
 void	set_mandelbrot3d_height(t_point *mandelbrot3d, t_complex z_value)
 {

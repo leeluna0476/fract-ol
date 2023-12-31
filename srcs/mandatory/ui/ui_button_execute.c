@@ -6,7 +6,7 @@
 /*   By: seojilee <seojilee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:24:04 by seojilee          #+#    #+#             */
-/*   Updated: 2023/12/19 21:51:16 by seojilee         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:55:24 by seojilee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ void	choose_set(t_data *img)
 		call_set_3d(img);
 }
 
-int	terminate_program(void)
+int	terminate_program(t_data *img)
 {
+	mlx_destroy_image(img->mlx_ptr, img->img);
+	mlx_destroy_window(img->mlx_ptr, img->win_ptr);
 	exit(0);
 }
 
