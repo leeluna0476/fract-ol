@@ -72,7 +72,9 @@ Try it!
 |3|Burningship set|
 |4|Tricorn set|
 |5|Bifurcation diagram of logistic map|
+|6|3D Mandelbrot set|
 |7|3D Julia set|
+|8|3D Burningship set|
 
 ---
 
@@ -98,7 +100,9 @@ You can click the same keys with buttons to call each function.
 |3|Burningship set|
 |4|Tricorn set|
 |5|Bifurcation diagram of logistic map|
+|6|3D Mandelbrot set|
 |7|3D Julia set|
+|8|3D Burningship set|
 
 ## Mouse controls
 You can control fractals by mouse click.
@@ -107,4 +111,5 @@ You can control fractals by mouse click.
 |---|---|
 |Wheel UP|Zoom in|
 |Wheel DOWN|Zoom out|
-|Left click|Set the mouse point as the center of the box|
+|Wheel CLICK|Reset offset values|
+|Left CLICK|Set the mouse point as the center of the box|
