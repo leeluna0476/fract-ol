@@ -14,18 +14,18 @@
 	고도각은 지점이 수직선(수직 방향)으로부터 떨어진 각도를 나타낸다.
 	0도는 수직선 위, 90도는 수평면 위, 180도는 수직선 아래를 가리킨다.
 
-phi(고도각) 계산:
-phi = acos(j / radius)
-	- j는 3차원 좌표에서의 y 좌표를 나타내며, radius는 3차원 좌표의 반지름이다.
+$phi$(고도각) 계산:
+$phi = \cos^{-1}(\frac{j}{r})$
+	- $j$는 3차원 좌표에서의 $y$ 좌표를 나타내며, $r$는 3차원 좌표의 반지름이다.
 
-theta(방위각) 계산:
-theta = acos(i / radius * sin(phi))
-	- i는 3차원 좌표에서의 x 좌표를 나타내며, radius는 3차원 좌표의 반지름이다.
+$theta$(방위각) 계산:
+$theta = \cos^{-1}(\frac{i}{r * \sin(phi))$
+	- $i$는 3차원 좌표에서의 $x$ 좌표를 나타내며, $r$는 3차원 좌표의 반지름이다.
 
 
 고도각과 방위각을 가지고 3차원 구면좌표 구하기:
-x = radius * sin(phi) * cos(theta)
-y = radius * sin(phi) * sin(theta)
-z = radius * cos(phi)
+$x = r\sin(phi)\cos(theta)$
+$y = r\sin(phi)\sin(theta)$
+$z = r\cos(phi)$
 
-3차원 공간을 표현하기 위해서는 x, y, z를 알아야 하는데, x, y는 알고 있지만 z는 모르기 때문에 x, y를 가지고 phi와 theta를 구해서 다시 x, y, z를 구한다.
+3차원 공간을 표현하기 위해서는 x, y, z를 알아야 하는데, $i$, $j$를 $x$와 $z$ 좌표로 사용해서 phi와 theta를 구하고 다시 x, y, z를 구한다.
