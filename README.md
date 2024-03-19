@@ -1,8 +1,9 @@
 # fract-ol
-**Implementation description →** 
+<!--**Implementation description →** 
 [Implementation](implementation.md)
 
 ---
+-->
 
 [1. Arguments](#Arguments)
 
