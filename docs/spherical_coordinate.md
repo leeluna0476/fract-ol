@@ -21,13 +21,16 @@ $phi = \cos^{-1}\frac{j}{r}$
 
 $theta$(방위각) 계산:
 
-$theta = \cos^{-1}\frac{i}{r * \sin(phi)}$
+$theta = \cos^{-1}\frac{i}{r\sin(phi)}$
 - $i$는 3차원 좌표에서의 $x$ 좌표를 나타내며, $r$는 3차원 좌표의 반지름이다.
 
 
 고도각과 방위각을 가지고 3차원 구면좌표 구하기:
+
 $x = r\sin(phi)\cos(theta)$
+
 $y = r\sin(phi)\sin(theta)$
+
 $z = r\cos(phi)$
 
 3차원 공간을 표현하기 위해서는 x, y, z를 알아야 하는데, $i$, $j$를 $x$와 $z$ 좌표로 사용해서 phi와 theta를 구하고 다시 x, y, z를 구한다.
