@@ -14,6 +14,7 @@
 [4. Mouse controls](#Mouse-controls)
 
 ---
+External Library: `MiniLibX` (for `x86_64`),
 
 Copy and paste the script below to your bash.
 ```bash
